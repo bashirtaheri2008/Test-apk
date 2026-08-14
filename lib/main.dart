@@ -3,10 +3,12 @@ import 'screens/splash_screen.dart';
 import 'screens/auth_screen.dart';
 import 'screens/main_screen.dart';
 import 'services/prefs_service.dart';
+import 'services/local_store.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await PrefsService.init();
+  await LocalStore.init();
   runApp(const HamgapApp());
 }
 
@@ -17,12 +19,6 @@ class HamgapApp extends StatefulWidget {
 }
 
 class _HamgapAppState extends State<HamgapApp> {
-  @override
-  void initState() {
-    super.initState();
-    PrefsService.init().then((_) => setState(() {}));
-  }
-
   ThemeMode _getThemeMode() {
     switch (PrefsService.themeMode) {
       case 'dark': return ThemeMode.dark;

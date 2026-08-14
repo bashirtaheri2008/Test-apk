@@ -1,8 +1,8 @@
-import 'dart:developer' as dev;
 import 'package:flutter/material.dart';
 import '../models/chat_models.dart';
 import '../services/api_service.dart';
 import '../services/prefs_service.dart';
+import '../services/local_store.dart';
 import '../widgets/avatar.dart';
 import 'chat_screen.dart';
 import 'profile_screen.dart';
@@ -16,7 +16,6 @@ class ChatListScreen extends StatefulWidget {
 class _ChatListScreenState extends State<ChatListScreen> {
   List<ChatItem> _chats = [];
   List<ChatItem> _filtered = [];
-  bool _loading = true;
   bool _searching = false;
   final _searchCtrl = TextEditingController();
   String _myUid = '';
@@ -30,24 +29,17 @@ class _ChatListScreenState extends State<ChatListScreen> {
     _loadChats();
   }
 
-  Future<void> _loadChats() async {
-    setState(() => _loading = true);
-    try {
-      final chats = await ApiService.getUserChats(_myUid);
-      chats.sort((a, b) {
-        if (a.isPinned && !b.isPinned) return -1;
-        if (!a.isPinned && b.isPinned) return 1;
-        return b.lastTimestamp.compareTo(a.lastTimestamp);
-      });
-      setState(() {
-        _chats = chats;
-        _filtered = chats;
-        _loading = false;
-      });
-    } catch (e) {
-      dev.log('Error: $e');
-      setState(() => _loading = false);
-    }
+  void _loadChats() {
+    final chats = LocalStore.getChatList();
+    chats.sort((a, b) {
+      if (a.isPinned && !b.isPinned) return -1;
+      if (!a.isPinned && b.isPinned) return 1;
+      return b.lastTimestamp.compareTo(a.lastTimestamp);
+    });
+    setState(() {
+      _chats = chats;
+      _filtered = chats;
+    });
   }
 
   void _filter(String q) {
@@ -88,7 +80,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
                       textDirection: TextDirection.ltr,
                       textAlign: TextAlign.center,
                       decoration: InputDecoration(
-                        hintText: '+93×××××××××',
+                        hintText: '700123456',
                         filled: true,
                         fillColor: Colors.grey.shade100,
                         border: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide.none),
@@ -102,28 +94,28 @@ class _ChatListScreenState extends State<ChatListScreen> {
           actions: [
             TextButton(onPressed: () => Navigator.pop(context), child: const Text('انصراف')),
             FilledButton(
-              onPressed: () async {
+              onPressed: () {
                 Navigator.pop(context);
                 final phone = phoneCtrl.text.trim();
                 if (phone.length != 9) {
                   _snack('شماره نامعتبر است');
                   return;
                 }
-                final user = await ApiService.findUserByPhone('+93$phone');
-                if (user != null) {
-                  await ApiService.ensureChatExists(_myUid, user.uid, _myName);
-                  _loadChats();
-                  if (mounted) {
-                    Navigator.push(context, MaterialPageRoute(
-                      builder: (_) => ChatScreen(
-                        partnerId: user.uid,
-                        partnerName: user.name.isNotEmpty ? user.name : '+93$phone',
-                        partnerPhoto: user.photoURL,
-                      ),
-                    ));
-                  }
-                } else {
-                  _snack('کاربر یافت نشد');
+                final partnerId = '93$phone';
+                final partnerName = '+93 $phone';
+                // Create local chat entry
+                LocalStore.updateChatItem(ChatItem(
+                  chatId: 'local_$partnerId',
+                  partnerId: partnerId,
+                  partnerName: partnerName,
+                  lastMessage: '',
+                  lastTimestamp: DateTime.now().millisecondsSinceEpoch,
+                ));
+                _loadChats();
+                if (mounted) {
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (_) => ChatScreen(partnerId: partnerId, partnerName: partnerName),
+                  )).then((_) => _loadChats());
                 }
               },
               child: const Text('افزودن'),
@@ -170,104 +162,108 @@ class _ChatListScreenState extends State<ChatListScreen> {
               ),
             ),
           Expanded(
-            child: _loading
-                ? const Center(child: CircularProgressIndicator())
-                : _filtered.isEmpty
-                    ? Center(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.chat_bubble_outline, size: 80, color: theme.colorScheme.onSurfaceVariant.withOpacity(0.3)),
-                            const SizedBox(height: 16),
-                            Text('هیچ مکالمه‌ای وجود ندارد', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: theme.colorScheme.onSurfaceVariant)),
-                            const SizedBox(height: 6),
-                            Text('گفتگو را شروع کنید', style: TextStyle(fontSize: 14, color: theme.colorScheme.onSurfaceVariant.withOpacity(0.6))),
-                          ],
+            child: _filtered.isEmpty
+                ? Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.chat_bubble_outline, size: 80, color: theme.colorScheme.onSurfaceVariant.withOpacity(0.3)),
+                        const SizedBox(height: 16),
+                        Text('هیچ مکالمه‌ای وجود ندارد', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: theme.colorScheme.onSurfaceVariant)),
+                        const SizedBox(height: 6),
+                        Text('گفتگو را شروع کنید', style: TextStyle(fontSize: 14, color: theme.colorScheme.onSurfaceVariant.withOpacity(0.6))),
+                      ],
+                    ),
+                  )
+                : ListView.builder(
+                    itemCount: _filtered.length,
+                    itemBuilder: (ctx, i) {
+                      final chat = _filtered[i];
+                      return Dismissible(
+                        key: ValueKey(chat.chatId),
+                        background: Container(
+                          color: Colors.green,
+                          alignment: Alignment.centerRight,
+                          padding: const EdgeInsets.only(right: 20),
+                          child: const Icon(Icons.push_pin, color: Colors.white),
                         ),
-                      )
-                    : ListView.builder(
-                        itemCount: _filtered.length,
-                        itemBuilder: (ctx, i) {
-                          final chat = _filtered[i];
-                          return Dismissible(
-                            key: ValueKey(chat.chatId),
-                            background: Container(
-                              color: Colors.green,
-                              alignment: Alignment.centerRight,
-                              padding: const EdgeInsets.only(right: 20),
-                              child: const Icon(Icons.push_pin, color: Colors.white),
-                            ),
-                            secondaryBackground: Container(
-                              color: Colors.red,
-                              alignment: Alignment.centerLeft,
-                              padding: const EdgeInsets.only(left: 20),
-                              child: const Icon(Icons.delete, color: Colors.white),
-                            ),
-                            confirmDismiss: (direction) async {
-                              if (direction == DismissDirection.startToEnd) {
-                                setState(() => chat.isPinned = !chat.isPinned);
-                                return false;
-                              }
-                              return true;
-                            },
-                            child: ListTile(
-                              contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-                              leading: Avatar(name: chat.partnerName, photoUrl: chat.partnerPhoto, showOnline: chat.isOnline),
-                              title: Row(
-                                children: [
-                                  if (chat.isPinned)
-                                    const Padding(padding: EdgeInsets.only(left: 4), child: Icon(Icons.push_pin, size: 16, color: Colors.grey)),
-                                  Expanded(
-                                    child: Text(
-                                      chat.partnerName.isNotEmpty ? chat.partnerName : chat.partnerId,
-                                      style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                                      maxLines: 1,
-                                      overflow: TextOverflow.ellipsis,
-                                    ),
-                                  ),
-                                  if (chat.isMuted)
-                                    const Padding(padding: EdgeInsets.only(right: 4), child: Icon(Icons.volume_off, size: 16, color: Colors.grey)),
-                                  Text(
-                                    formatChatTime(chat.lastTimestamp),
-                                    style: TextStyle(
-                                      fontSize: 12,
-                                      color: chat.unreadCount > 0 ? theme.colorScheme.primary : theme.colorScheme.onSurfaceVariant,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              subtitle: Row(
-                                children: [
-                                  Expanded(
-                                    child: Text(
-                                      chat.lastMessage.isNotEmpty ? chat.lastMessage : 'شروع گفتگو…',
-                                      style: TextStyle(fontSize: 14, color: theme.colorScheme.onSurfaceVariant),
-                                      maxLines: 1,
-                                      overflow: TextOverflow.ellipsis,
-                                    ),
-                                  ),
-                                  if (chat.unreadCount > 0)
-                                    Container(
-                                      padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 3),
-                                      decoration: BoxDecoration(color: theme.colorScheme.primary, borderRadius: BorderRadius.circular(11)),
-                                      child: Text(
-                                        chat.unreadCount.toString(),
-                                        style: const TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.bold),
-                                      ),
-                                    ),
-                                ],
-                              ),
-                              onTap: () => Navigator.push(ctx, MaterialPageRoute(
-                                builder: (_) => ChatScreen(
-                                  partnerId: chat.partnerId,
-                                  partnerName: chat.partnerName,
-                                  partnerPhoto: chat.partnerPhoto,
-                                ),
-                              )),
-                            ),
-                          );
+                        secondaryBackground: Container(
+                          color: Colors.red,
+                          alignment: Alignment.centerLeft,
+                          padding: const EdgeInsets.only(left: 20),
+                          child: const Icon(Icons.delete, color: Colors.white),
+                        ),
+                        confirmDismiss: (direction) async {
+                          if (direction == DismissDirection.startToEnd) {
+                            setState(() => chat.isPinned = !chat.isPinned);
+                            LocalStore.updateChatItem(chat);
+                            return false;
+                          }
+                          LocalStore.clearChat(chat.partnerId);
+                          _loadChats();
+                          return true;
                         },
-                      ),
+                        child: ListTile(
+                          contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                          leading: Avatar(name: chat.partnerName, photoUrl: chat.partnerPhoto, showOnline: chat.isOnline),
+                          title: Row(
+                            children: [
+                              if (chat.isPinned)
+                                const Padding(padding: EdgeInsets.only(left: 4), child: Icon(Icons.push_pin, size: 16, color: Colors.grey)),
+                              Expanded(
+                                child: Text(
+                                  chat.partnerName,
+                                  style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                              if (chat.isMuted)
+                                const Padding(padding: EdgeInsets.only(right: 4), child: Icon(Icons.volume_off, size: 16, color: Colors.grey)),
+                              Text(
+                                formatChatTime(chat.lastTimestamp),
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: chat.unreadCount > 0 ? theme.colorScheme.primary : theme.colorScheme.onSurfaceVariant,
+                                ),
+                              ),
+                            ],
+                          ),
+                          subtitle: Row(
+                            children: [
+                              Expanded(
+                                child: Text(
+                                  chat.lastMessage.isNotEmpty ? chat.lastMessage : 'شروع گفتگو…',
+                                  style: TextStyle(fontSize: 14, color: theme.colorScheme.onSurfaceVariant),
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                              if (chat.unreadCount > 0)
+                                Container(
+                                  padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 3),
+                                  decoration: BoxDecoration(color: theme.colorScheme.primary, borderRadius: BorderRadius.circular(11)),
+                                  child: Text(
+                                    chat.unreadCount.toString(),
+                                    style: const TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                            ],
+                          ),
+                          onTap: () {
+                            LocalStore.markAsRead(chat.partnerId);
+                            Navigator.push(ctx, MaterialPageRoute(
+                              builder: (_) => ChatScreen(
+                                partnerId: chat.partnerId,
+                                partnerName: chat.partnerName,
+                                partnerPhoto: chat.partnerPhoto,
+                              ),
+                            )).then((_) => _loadChats());
+                          },
+                        ),
+                      );
+                    },
+                  ),
           ),
         ],
       ),
