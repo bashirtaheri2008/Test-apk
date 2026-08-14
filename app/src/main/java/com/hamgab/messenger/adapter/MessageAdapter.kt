@@ -1,4 +1,5 @@
 package com.hamgab.messenger.adapter
+import com.hamgab.messenger.R
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

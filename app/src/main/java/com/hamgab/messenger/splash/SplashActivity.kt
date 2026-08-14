@@ -1,4 +1,5 @@
 package com.hamgab.messenger.splash
+import com.hamgab.messenger.R
 
 import android.content.Intent
 import android.os.Bundle
