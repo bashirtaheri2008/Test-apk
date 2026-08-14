@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:developer' as dev;
 import 'package:flutter/material.dart';
 import '../models/chat_models.dart';
@@ -9,337 +10,163 @@ import 'profile_screen.dart';
 
 class ChatListScreen extends StatefulWidget {
   const ChatListScreen({super.key});
-
   @override
   State<ChatListScreen> createState() => _ChatListScreenState();
 }
 
 class _ChatListScreenState extends State<ChatListScreen> {
   List<ChatItem> _chats = [];
-  List<ChatItem> _filteredChats = [];
+  List<ChatItem> _filtered = [];
   bool _loading = true;
   bool _searching = false;
-  final _searchController = TextEditingController();
+  final _searchCtrl = TextEditingController();
   String _myUid = '';
   String _myName = '';
 
   @override
   void initState() {
     super.initState();
-    _loadPrefs();
-  }
-
-  void _loadPrefs() {
-    setState(() {
-      _myUid = PrefsService.uid;
-      _myName = PrefsService.name;
-    });
+    _myUid = PrefsService.uid;
+    _myName = PrefsService.name;
     _loadChats();
   }
 
   Future<void> _loadChats() async {
-    if (_myUid.isEmpty) return;
     setState(() => _loading = true);
     try {
       final chats = await ApiService.getUserChats(_myUid);
-      setState(() {
-        _chats = chats;
-        _filteredChats = chats;
-        _loading = false;
+      // Sort: pinned first, then by timestamp
+      chats.sort((a, b) {
+        if (a.isPinned && !b.isPinned) return -1;
+        if (!a.isPinned && b.isPinned) return 1;
+        return b.lastTimestamp.compareTo(a.lastTimestamp);
       });
-    } catch (e) {
-      dev.log('Error loading chats: $e');
-      setState(() => _loading = false);
-    }
+      setState(() { _chats = chats; _filtered = chats; _loading = false; });
+    } catch (e) { dev.log('Error: $e'); setState(() => _loading = false); }
   }
 
-  void _filter(String query) {
-    setState(() {
-      _filteredChats = query.isEmpty
-          ? _chats
-          : _chats.where((c) => c.partnerName.toLowerCase().contains(query.toLowerCase())).toList();
-    });
+  void _filter(String q) {
+    setState(() => _filtered = q.isEmpty ? _chats : _chats.where((c) => c.partnerName.toLowerCase().contains(q.toLowerCase())).toList());
   }
 
-  void _showAddContact() {
-    final phoneController = TextEditingController();
-    showDialog(
-      context: context,
-      builder: (_) => Directionality(
-        textDirection: TextDirection.rtl,
-        child: AlertDialog(
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-          title: const Text('گفتگوی جدید'),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const Text('شماره تلفن مخاطب را وارد کنید', style: TextStyle(fontSize: 13, color: Colors.grey)),
-              const SizedBox(height: 16),
-              Row(
-                children: [
-                  Container(
-                    height: 48,
-                    padding: const EdgeInsets.symmetric(horizontal: 14),
-                    decoration: BoxDecoration(
-                      color: Colors.grey.shade100,
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: const Center(child: Text('+93', style: TextStyle(fontWeight: FontWeight.bold))),
-                  ),
-                  const SizedBox(width: 8),
-                  Expanded(
-                    child: TextField(
-                      controller: phoneController,
-                      keyboardType: TextInputType.phone,
-                      textDirection: TextDirection.ltr,
-                      textAlign: TextAlign.center,
-                      decoration: InputDecoration(
-                        hintText: '+93×××××××××',
-                        filled: true,
-                        fillColor: Colors.grey.shade100,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(12),
-                          borderSide: BorderSide.none,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-          actions: [
-            TextButton(onPressed: () => Navigator.pop(context), child: const Text('انصراف')),
-            FilledButton(
-              onPressed: () async {
-                Navigator.pop(context);
-                final phone = phoneController.text.trim();
-                if (phone.length != 9) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('شماره نامعتبر است')),
-                  );
-                  return;
-                }
-                final normalized = '+93$phone';
-                final user = await ApiService.findUserByPhone(normalized);
-                if (user != null) {
-                  await ApiService.ensureChatExists(_myUid, user.uid, _myName);
-                  _loadChats();
-                  if (mounted) {
-                    Navigator.push(context, MaterialPageRoute(
-                      builder: (_) => ChatScreen(
-                        partnerId: user.uid,
-                        partnerName: user.name.isNotEmpty ? user.name : normalized,
-                        partnerPhoto: user.photoURL,
-                      ),
-                    ));
-                  }
-                } else {
-                  if (mounted) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('کاربر یافت نشد')),
-                    );
-                  }
-                }
-              },
-              child: const Text('افزودن'),
-            ),
-          ],
-        ),
+  void _newChat() {
+    final phoneCtrl = TextEditingController();
+    showDialog(context: context, builder: (_) => Directionality(
+      textDirection: TextDirection.rtl,
+      child: AlertDialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        title: const Text('گفتگوی جدید'),
+        content: Column(mainAxisSize: MainAxisSize.min, children: [
+          const Text('شماره تلفن مخاطب را وارد کنید', style: TextStyle(fontSize: 13, color: Colors.grey)),
+          const SizedBox(height: 16),
+          Row(children: [
+            Container(height: 48, padding: const EdgeInsets.symmetric(horizontal: 14),
+              decoration: BoxDecoration(color: Colors.grey.shade100, borderRadius: BorderRadius.circular(12)),
+              child: const Center(child: Text('+93', style: TextStyle(fontWeight: FontWeight.bold)))),
+            const SizedBox(width: 8),
+            Expanded(child: TextField(
+              controller: phoneCtrl, keyboardType: TextInputType.phone, textDirection: TextDirection.ltr, textAlign: TextAlign.center,
+              decoration: InputDecoration(hintText: '+93×××××××××', filled: true, fillColor: Colors.grey.shade100,
+                border: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide.none)),
+            )),
+          ]),
+        ]),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(context), child: const Text('انصراف')),
+          FilledButton(onPressed: () async {
+            Navigator.pop(context);
+            final phone = phoneCtrl.text.trim();
+            if (phone.length != 9) { _snack('شماره نامعتبر است'); return; }
+            final user = await ApiService.findUserByPhone('+93$phone');
+            if (user != null) {
+              await ApiService.ensureChatExists(_myUid, user.uid, _myName);
+              _loadChats();
+              if (mounted) Navigator.push(context, MaterialPageRoute(
+                builder: (_) => ChatScreen(partnerId: user.uid, partnerName: user.name.isNotEmpty ? user.name : '+93$phone', partnerPhoto: user.photoURL)));
+            } else { _snack('کاربر یافت نشد'); }
+          }, child: const Text('افزودن')),
+        ],
       ),
-    );
+    ));
   }
 
-  void _logout() async {
-    showDialog(
-      context: context,
-      builder: (_) => Directionality(
-        textDirection: TextDirection.rtl,
-        child: AlertDialog(
-          title: const Text('خروج'),
-          content: const Text('آیا مطمئن هستید می‌خواهید خارج شوید؟'),
-          actions: [
-            TextButton(onPressed: () => Navigator.pop(context), child: const Text('انصراف')),
-            TextButton(
-              style: TextButton.styleFrom(foregroundColor: Colors.red),
-              onPressed: () async {
-                await PrefsService.logout();
-                if (mounted) {
-                  Navigator.pushNamedAndRemoveUntil(context, '/', (_) => false);
-                }
-              },
-              child: const Text('بله، خروج'),
-            ),
-          ],
-        ),
-      ),
-    );
+  void _snack(String msg) {
+    if (mounted) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(msg)));
   }
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return Directionality(
-      textDirection: TextDirection.rtl,
-      child: Scaffold(
-        body: CustomScrollView(
-          slivers: [
-            SliverAppBar(
-              floating: true,
-              snap: true,
-              title: _searching
-                  ? TextField(
-                      controller: _searchController,
-                      autofocus: true,
-                      decoration: const InputDecoration(
-                        hintText: 'جستجوی مکالمه…',
-                        border: InputBorder.none,
-                      ),
-                      onChanged: _filter,
-                    )
-                  : const Text('پیام‌ها', style: TextStyle(fontWeight: FontWeight.bold)),
-              actions: [
-                IconButton(
-                  icon: Icon(_searching ? Icons.close : Icons.search),
-                  onPressed: () {
-                    setState(() {
-                      _searching = !_searching;
-                      if (!_searching) {
-                        _searchController.clear();
-                        _filter('');
+    return Scaffold(
+      body: Column(children: [
+        if (_searching)
+          Container(padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+            child: TextField(controller: _searchCtrl, autofocus: true, decoration: InputDecoration(
+              hintText: 'جستجوی مکالمه…', filled: true, fillColor: theme.colorScheme.surfaceContainerHighest,
+              border: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide.none),
+              suffixIcon: IconButton(icon: const Icon(Icons.close), onPressed: () { setState(() { _searching = false; _searchCtrl.clear(); _filter(''); }); }))),
+              onChanged: _filter)),
+        Expanded(child: _loading
+          ? const Center(child: CircularProgressIndicator())
+          : _filtered.isEmpty
+            ? Center(child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+                Icon(Icons.chat_bubble_outline, size: 80, color: theme.colorScheme.onSurfaceVariant.withOpacity(0.3)),
+                const SizedBox(height: 16),
+                Text('هیچ مکالمه‌ای وجود ندارد', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: theme.colorScheme.onSurfaceVariant)),
+                const SizedBox(height: 6),
+                Text('گفتگو را شروع کنید', style: TextStyle(fontSize: 14, color: theme.colorScheme.onSurfaceVariant.withOpacity(0.6))),
+              ]))
+            : ListView.builder(
+                itemCount: _filtered.length,
+                itemBuilder: (ctx, i) {
+                  final chat = _filtered[i];
+                  return Dismissible(
+                    key: ValueKey(chat.chatId),
+                    background: Container(color: Colors.green, alignment: Alignment.centerRight, padding: const EdgeInsets.only(right: 20),
+                      child: const Icon(Icons.push_pin, color: Colors.white)),
+                    secondaryBackground: Container(color: Colors.red, alignment: Alignment.centerLeft, padding: const EdgeInsets.only(left: 20),
+                      child: const Icon(Icons.delete, color: Colors.white)),
+                    confirmDismiss: (direction) async {
+                      if (direction == DismissDirection.startToEnd) {
+                        setState(() => chat.isPinned = !chat.isPinned);
+                        return false;
                       }
-                    });
-                  },
-                ),
-                IconButton(
-                  icon: const Icon(Icons.person_outline),
-                  onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const ProfileScreen())),
-                ),
-                PopupMenuButton(
-                  itemBuilder: (_) => [
-                    const PopupMenuItem(value: 'about', child: Text('درباره هم‌گب')),
-                    const PopupMenuItem(value: 'logout', child: Text('خروج')),
-                  ],
-                  onSelected: (val) {
-                    if (val == 'logout') _logout();
-                    if (val == 'about') {
-                      showDialog(
-                        context: context,
-                        builder: (_) => Directionality(
-                          textDirection: TextDirection.rtl,
-                          child: AlertDialog(
-                            title: const Text('درباره هم‌گب'),
-                            content: const Text('پیام‌رسان هم‌گب\nنسخه ۳.۰ (Flutter)\nارتباط امن، سریع و هوشمند'),
-                            actions: [
-                              TextButton(onPressed: () => Navigator.pop(context), child: const Text('باشه')),
-                            ],
-                          ),
-                        ),
-                      );
-                    }
-                  },
-                ),
-              ],
-            ),
-            if (_loading)
-              const SliverFillRemaining(child: Center(child: CircularProgressIndicator()))
-            else if (_filteredChats.isEmpty)
-              SliverFillRemaining(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(Icons.chat_bubble_outline,
-                        size: 80, color: theme.colorScheme.onSurfaceVariant.withOpacity(0.3)),
-                    const SizedBox(height: 16),
-                    Text('هیچ مکالمه‌ای وجود ندارد',
-                        style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                            color: theme.colorScheme.onSurfaceVariant)),
-                    const SizedBox(height: 6),
-                    Text('گفتگو را شروع کنید',
-                        style: TextStyle(fontSize: 14, color: theme.colorScheme.onSurfaceVariant.withOpacity(0.6))),
-                  ],
-                ),
-              )
-            else
-              SliverList(
-                delegate: SliverChildBuilderDelegate(
-                  (ctx, i) {
-                    final chat = _filteredChats[i];
-                    return ListTile(
+                      return true;
+                    },
+                    child: ListTile(
                       contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-                      leading: Avatar(
-                        name: chat.partnerName,
-                        photoUrl: chat.partnerPhoto,
-                        showOnline: chat.isOnline,
-                      ),
-                      title: Row(
-                        children: [
-                          Expanded(
-                            child: Text(
-                              chat.partnerName.isNotEmpty ? chat.partnerName : chat.partnerId,
-                              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
-                          Text(
-                            formatChatTime(chat.lastTimestamp),
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: chat.unreadCount > 0
-                                  ? theme.colorScheme.primary
-                                  : theme.colorScheme.onSurfaceVariant,
-                            ),
-                          ),
-                        ],
-                      ),
-                      subtitle: Row(
-                        children: [
-                          Expanded(
-                            child: Text(
-                              chat.lastMessage.isNotEmpty ? chat.lastMessage : 'شروع گفتگو…',
-                              style: TextStyle(fontSize: 14, color: theme.colorScheme.onSurfaceVariant),
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
-                          if (chat.unreadCount > 0)
-                            Container(
-                              padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 3),
-                              decoration: BoxDecoration(
-                                color: theme.colorScheme.primary,
-                                borderRadius: BorderRadius.circular(11),
-                              ),
-                              child: Text(
-                                chat.unreadCount.toString(),
-                                style: const TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                        ],
-                      ),
-                      onTap: () {
-                        Navigator.push(ctx, MaterialPageRoute(
-                          builder: (_) => ChatScreen(
-                            partnerId: chat.partnerId,
-                            partnerName: chat.partnerName,
-                            partnerPhoto: chat.partnerPhoto,
-                          ),
-                        ));
-                      },
-                    );
-                  },
-                  childCount: _filteredChats.length,
-                ),
-              ),
-          ],
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: _showAddContact,
-          child: const Icon(Icons.add),
-        ),
-      ),
+                      leading: Avatar(name: chat.partnerName, photoUrl: chat.partnerPhoto, showOnline: chat.isOnline),
+                      title: Row(children: [
+                        if (chat.isPinned) const Padding(padding: EdgeInsets.only(left: 4), child: Icon(Icons.push_pin, size: 16, color: Colors.grey)),
+                        Expanded(child: Text(chat.partnerName.isNotEmpty ? chat.partnerName : chat.partnerId,
+                          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16), maxLines: 1, overflow: TextOverflow.ellipsis)),
+                        if (chat.isMuted) const Padding(padding: EdgeInsets.only(right: 4), child: Icon(Icons.volume_off, size: 16, color: Colors.grey)),
+                        Text(formatChatTime(chat.lastTimestamp), style: TextStyle(fontSize: 12,
+                          color: chat.unreadCount > 0 ? theme.colorScheme.primary : theme.colorScheme.onSurfaceVariant)),
+                      ]),
+                      subtitle: Row(children: [
+                        Expanded(child: Text(chat.lastMessage.isNotEmpty ? chat.lastMessage : 'شروع گفتگو…',
+                          style: TextStyle(fontSize: 14, color: theme.colorScheme.onSurfaceVariant), maxLines: 1, overflow: TextOverflow.ellipsis)),
+                        if (chat.unreadCount > 0) Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 3),
+                          decoration: BoxDecoration(color: theme.colorScheme.primary, borderRadius: BorderRadius.circular(11)),
+                          child: Text(chat.unreadCount.toString(), style: const TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.bold))),
+                      ]),
+                      onTap: () => Navigator.push(ctx, MaterialPageRoute(
+                        builder: (_) => ChatScreen(partnerId: chat.partnerId, partnerName: chat.partnerName, partnerPhoto: chat.partnerPhoto))),
+                    ),
+                  );
+                },
+              )),
+      ]),
+      floatingActionButton: Column(mainAxisAlignment: MainAxisAlignment.end, children: [
+        if (!_searching) FloatingActionButton(
+          mini: true, heroTag: 'search',
+          onPressed: () => setState(() => _searching = true),
+          child: const Icon(Icons.search)),
+        const SizedBox(height: 8),
+        FloatingActionButton(onPressed: _newChat, heroTag: 'newchat', child: const Icon(Icons.add)),
+      ]),
     );
   }
 }
