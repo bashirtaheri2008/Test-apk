@@ -1,1 +1,126 @@
-cGFja2FnZSBjb20uaGFtZ2FiLm1lc3Nlbmdlci5jaGF0CgppbXBvcnQgYW5kcm9pZC5vcy5CdW5kbGUKaW1wb3J0IGFuZHJvaWQub3MuSGFuZGxlcgppbXBvcnQgYW5kcm9pZC5vcy5Mb29wZXIKaW1wb3J0IGFuZHJvaWQudmlldy5WaWV3CmltcG9ydCBhbmRyb2lkeC5hcHBjb21wYXQuYXBwLkFwcENvbXBhdEFjdGl2aXR5CmltcG9ydCBhbmRyb2lkeC5saWZlY3ljbGUubGlmZWN5Y2xlU2NvcGUKaW1wb3J0IGFuZHJvaWR4LnJlY3ljbGVydmlldy53aWRnZXQuTGluZWFyTGF5b3V0TWFuYWdlcgppbXBvcnQgY29tLmJ1bXB0ZWNoLmdsaWRlLkdsaWRlCmltcG9ydCBjb20uaGFtZ2FiLm1lc3Nlbmdlci5kYXRhLkZpcmVzdG9yZUFwaQppbXBvcnQgY29tLmhhbWdhYi5tZXNzZW5nZXIuZGF0YS5NZXNzYWdlCmltcG9ydCBjb20uaGFtZ2FiLm1lc3Nlbmdlci5kYXRhLlByZWZzCmltcG9ydCBjb20uaGFtZ2FiLm1lc3Nlbmdlci5hZGFwdGVyLk1lc3NhZ2VBZGFwdGVyCmltcG9ydCBjb20uaGFtZ2FiLm1lc3Nlbmdlci5kYXRhYmluZGluZy5BY3Rpdml0eUNoYXRCaW5kaW5nCmltcG9ydCBrb3RsaW54LmNvcm91dGluZXMubGF1bmNoCgpjbGFzcyBDaGF0QWN0aXZpdHkgOiBBcHBDb21wYXRBY3Rpdml0eSgpIHsKCiAgICBwcml2YXRlIGxhdGVpbml0IHZhciBiaW5kaW5nOiBBY3Rpdml0eUNoYXRCaW5kaW5nCiAgICBwcml2YXRlIGxhdGVpbml0IHZhciBwcmVmczogUHJlZnMKICAgIHByaXZhdGUgdmFsIGFwaSA9IEZpcmVzdG9yZUFwaSgpCiAgICBwcml2YXRlIGxhdGVpbml0IHZhciBhZGFwdGVyOiBNZXNzYWdlQWRhcHRlcgoKICAgIHByaXZhdGUgdmFyIHBhcnRuZXJJZCA9ICIiCiAgICBwcml2YXRlIHZhciBwYXJ0bmVyTmFtZSA9ICIiCiAgICBwcml2YXRlIHZhciBwYXJ0bmVyUGhvdG8gPSAiIgogICAgcHJpdmF0ZSB2YWwgaGFuZGxlciA9IEhhbmRsZXIoTG9vcGVyLmdldE1haW5Mb29wZXIoKSkKICAgIHByaXZhdGUgdmFyIHBvbGxSdW5uaW5nID0gdHJ1ZQoKICAgIHByaXZhdGUgdmFsIHBvbGxSdW5uYWJsZSA9IG9iamVjdCA6IFJ1bm5hYmxlIHsKICAgICAgICBvdmVycmlkZSBmdW4gcnVuKCkgewogICAgICAgICAgICBpZiAocG9sbFJ1bm5pbmcpIHsKICAgICAgICAgICAgICAgIGxvYWRNZXNzYWdlcygpCiAgICAgICAgICAgICAgICBoYW5kbGVyLnBvc3REZWxheWVkKHRoaXMsIDMwMDApCiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICB9CgogICAgb3ZlcnJpZGUgZnVuIG9uQ3JlYXRlKHNhdmVkSW5zdGFuY2VTdGF0ZTogQnVuZGxlPykgewogICAgICAgIHN1cGVyLm9uQ3JlYXRlKHNhdmVkSW5zdGFuY2VTdGF0ZSkKICAgICAgICBiaW5kaW5nID0gQWN0aXZpdHlDaGF0QmluZGluZy5pbmZsYXRlKGxheW91dEluZmxhdGVyKQogICAgICAgIHNldENvbnRlbnRWaWV3KGJpbmRpbmcucm9vdCkKICAgICAgICBwcmVmcyA9IFByZWZzKHRoaXMpCgogICAgICAgIHBhcnRuZXJJZCA9IGludGVudC5nZXRTdHJpbmdFeHRyYSgicGFydG5lcklkIikgPzogIiIKICAgICAgICBwYXJ0bmVyTmFtZSA9IGludGVudC5nZXRTdHJpbmdFeHRyYSgicGFydG5lck5hbWUiKSA/OiAiIgogICAgICAgIHBhcnRuZXJQaG90byA9IGludGVudC5nZXRTdHJpbmdFeHRyYSgicGFydG5lclBob3RvIikgPzogIiIKCiAgICAgICAgaWYgKHBhcnRuZXJJZC5pc0VtcHR5KCkpIHsKICAgICAgICAgICAgZmluaXNoKCkKICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgfQoKICAgICAgICAvLyBTZXR1cCBoZWFkZXIKICAgICAgICBiaW5kaW5nLnBhcnRuZXJOYW1lLnRleHQgPSBwYXJ0bmVyTmFtZQogICAgICAgIGlmIChwYXJ0bmVyUGhvdG8uaXNOb3RFbXB0eSgpKSB7CiAgICAgICAgICAgIEdsaWRlLndpdGgodGhpcykubG9hZChwYXJ0bmVyUGhvdG8pLmNpcmNsZUNyb3AoKS5pbnRvKGJpbmRpbmcucGFydG5lckF2YXRhcikKICAgICAgICB9CgogICAgICAgIGJpbmRpbmcuYmFja0J0bi5zZXRPbkNsaWNrTGlzdGVuZXIgeyBmaW5pc2goKSB9CgogICAgICAgIC8vIFNldHVwIG1lc3NhZ2VzIGxpc3QKICAgICAgICBhZGFwdGVyID0gTWVzc2FnZUFkYXB0ZXIocHJlZnMudWlkKQogICAgICAgIGJpbmRpbmcubWVzc2FnZXNMaXN0LmxheW91dE1hbmFnZXIgPSBMaW5lYXJMYXlvdXRNYW5hZ2VyKHRoaXMpLmFwcGx5IHsKICAgICAgICAgICAgc3RhY2tGcm9tRW5kID0gdHJ1ZQogICAgICAgIH0KICAgICAgICBiaW5kaW5nLm1lc3NhZ2VzTGlzdC5hZGFwdGVyID0gYWRhcHRlcgoKICAgICAgICAvLyBTZW5kIGJ1dHRvbgogICAgICAgIGJpbmRpbmcuc2VuZEJ0bi5zZXRPbkNsaWNrTGlzdGVuZXIgewogICAgICAgICAgICB2YWwgdGV4dCA9IGJpbmRpbmcubWVzc2FnZUlucHV0LnRleHQudG9TdHJpbmcoKS50cmltKCkKICAgICAgICAgICAgaWYgKHRleHQuaXNOb3RFbXB0eSgpKSB7CiAgICAgICAgICAgICAgICBzZW5kTWVzc2FnZSh0ZXh0KQogICAgICAgICAgICAgICAgYmluZGluZy5tZXNzYWdlSW5wdXQudGV4dD8uY2xlYXIoKQogICAgICAgICAgICB9CiAgICAgICAgfQoKICAgICAgICBsb2FkTWVzc2FnZXMoKQogICAgfQoKICAgIHByaXZhdGUgZnVuIGxvYWRNZXNzYWdlcygpIHsKICAgICAgICBsaWZlY3ljbGVTY29wZS5sYXVuY2ggewogICAgICAgICAgICB2YWwgbWVzc2FnZXMgPSBhcGkuZ2V0Q2hhdE1lc3NhZ2VzKHByZWZzLnVpZCwgcGFydG5lcklkKQogICAgICAgICAgICBpZiAobWVzc2FnZXMuaXNOb3RFbXB0eSgpKSB7CiAgICAgICAgICAgICAgICBhZGFwdGVyLnVwZGF0ZShtZXNzYWdlcykKICAgICAgICAgICAgICAgIGJpbmRpbmcubWVzc2FnZXNMaXN0LnNjcm9sbFRvUG9zaXRpb24oYWRhcHRlci5pdGVtQ291bnQgLSAxKQogICAgICAgICAgICB9CiAgICAgICAgfQogICAgfQoKICAgIHByaXZhdGUgZnVuIHNlbmRNZXNzYWdlKHRleHQ6IFN0cmluZykgewogICAgICAgIGxpZmVjeWNsZVNjb3BlLmxhdW5jaCB7CiAgICAgICAgICAgIGFwaS5lbnN1cmVDaGF0RXhpc3RzKHByZWZzLnVpZCwgcGFydG5lcklkLCBwYXJ0bmVyTmFtZSwgcHJlZnMubmFtZSkKICAgICAgICAgICAgdmFsIHN1Y2Nlc3MgPSBhcGkuc2VuZE1lc3NhZ2UocHJlZnMudWlkLCBwYXJ0bmVySWQsIHRleHQsIHByZWZzLm5hbWUpCiAgICAgICAgICAgIGlmIChzdWNjZXNzKSB7CiAgICAgICAgICAgICAgICB2YWwgbXNnID0gTWVzc2FnZSgKICAgICAgICAgICAgICAgICAgICBzZW5kZXJJZCA9IHByZWZzLnVpZCwKICAgICAgICAgICAgICAgICAgICBzZW5kZXJOYW1lID0gcHJlZnMubmFtZSwKICAgICAgICAgICAgICAgICAgICB0ZXh0ID0gdGV4dCwKICAgICAgICAgICAgICAgICAgICB0aW1lc3RhbXAgPSBTeXN0ZW0uY3VycmVudFRpbWVNaWxsaXMoKQogICAgICAgICAgICAgICAgKQogICAgICAgICAgICAgICAgYWRhcHRlci5hZGRNZXNzYWdlKG1zZykKICAgICAgICAgICAgICAgIGJpbmRpbmcubWVzc2FnZXNMaXN0LnNjcm9sbFRvUG9zaXRpb24oYWRhcHRlci5pdGVtQ291bnQgLSAxKQogICAgICAgICAgICB9CiAgICAgICAgfQogICAgfQoKICAgIG92ZXJyaWRlIGZ1biBvblJlc3VtZSgpIHsKICAgICAgICBzdXBlci5vblJlc3VtZSgpCiAgICAgICAgcG9sbFJ1bm5pbmcgPSB0cnVlCiAgICAgICAgaGFuZGxlci5wb3N0RGVsYXllZChwb2xsUnVubmFibGUsIDMwMDApCiAgICB9CgogICAgb3ZlcnJpZGUgZnVuIG9uUGF1c2UoKSB7CiAgICAgICAgc3VwZXIub25QYXVzZSgpCiAgICAgICAgcG9sbFJ1bm5pbmcgPSBmYWxzZQogICAgICAgIGhhbmRsZXIucmVtb3ZlQ2FsbGJhY2tzKHBvbGxSdW5uYWJsZSkKICAgIH0KCiAgICBvdmVycmlkZSBmdW4gb25EZXN0cm95KCkgewogICAgICAgIHN1cGVyLm9uRGVzdHJveSgpCiAgICAgICAgcG9sbFJ1bm5pbmcgPSBmYWxzZQogICAgICAgIGhhbmRsZXIucmVtb3ZlQ2FsbGJhY2tzKHBvbGxSdW5uYWJsZSkKICAgIH0KfQo=
+package com.hamgab.messenger.chat
+
+import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
+import com.hamgab.messenger.data.FirestoreApi
+import com.hamgab.messenger.data.Message
+import com.hamgab.messenger.data.Prefs
+import com.hamgab.messenger.adapter.MessageAdapter
+import com.hamgab.messenger.databinding.ActivityChatBinding
+import kotlinx.coroutines.launch
+
+class ChatActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityChatBinding
+    private lateinit var prefs: Prefs
+    private val api = FirestoreApi()
+    private lateinit var adapter: MessageAdapter
+
+    private var partnerId = ""
+    private var partnerName = ""
+    private var partnerPhoto = ""
+    private val handler = Handler(Looper.getMainLooper())
+    private var pollRunning = true
+
+    private val pollRunnable = object : Runnable {
+        override fun run() {
+            if (pollRunning) {
+                loadMessages()
+                handler.postDelayed(this, 3000)
+            }
+        }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityChatBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        prefs = Prefs(this)
+
+        partnerId = intent.getStringExtra("partnerId") ?: ""
+        partnerName = intent.getStringExtra("partnerName") ?: ""
+        partnerPhoto = intent.getStringExtra("partnerPhoto") ?: ""
+
+        if (partnerId.isEmpty()) {
+            finish()
+            return
+        }
+
+        // Setup header
+        binding.partnerName.text = partnerName
+        if (partnerPhoto.isNotEmpty()) {
+            Glide.with(this).load(partnerPhoto).circleCrop().into(binding.partnerAvatar)
+        }
+
+        binding.backBtn.setOnClickListener { finish() }
+
+        // Setup messages list
+        adapter = MessageAdapter(prefs.uid)
+        binding.messagesList.layoutManager = LinearLayoutManager(this).apply {
+            stackFromEnd = true
+        }
+        binding.messagesList.adapter = adapter
+
+        // Send button
+        binding.sendBtn.setOnClickListener {
+            val text = binding.messageInput.text.toString().trim()
+            if (text.isNotEmpty()) {
+                sendMessage(text)
+                binding.messageInput.text?.clear()
+            }
+        }
+
+        loadMessages()
+    }
+
+    private fun loadMessages() {
+        lifecycleScope.launch {
+            val messages = api.getChatMessages(prefs.uid, partnerId)
+            if (messages.isNotEmpty()) {
+                adapter.update(messages)
+                binding.messagesList.scrollToPosition(adapter.itemCount - 1)
+            }
+        }
+    }
+
+    private fun sendMessage(text: String) {
+        lifecycleScope.launch {
+            api.ensureChatExists(prefs.uid, partnerId, partnerName, prefs.name)
+            val success = api.sendMessage(prefs.uid, partnerId, text, prefs.name)
+            if (success) {
+                val msg = Message(
+                    senderId = prefs.uid,
+                    senderName = prefs.name,
+                    text = text,
+                    timestamp = System.currentTimeMillis()
+                )
+                adapter.addMessage(msg)
+                binding.messagesList.scrollToPosition(adapter.itemCount - 1)
+            }
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        pollRunning = true
+        handler.postDelayed(pollRunnable, 3000)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        pollRunning = false
+        handler.removeCallbacks(pollRunnable)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        pollRunning = false
+        handler.removeCallbacks(pollRunnable)
+    }
+}

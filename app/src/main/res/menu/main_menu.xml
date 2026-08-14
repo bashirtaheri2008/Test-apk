@@ -1,1 +1,16 @@
-PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPG1lbnUgeG1sbnM6YW5kcm9pZD0iaHR0cDovL3NjaGVtYXMuYW5kcm9pZC5jb20vYXBrL3Jlcy9hbmRyb2lkIj4KICAgIDxpdGVtCiAgICAgICAgYW5kcm9pZDppZD0iQCtpZC9hY3Rpb25fcHJvZmlsZSIKICAgICAgICBhbmRyb2lkOnRpdGxlPSJAc3RyaW5nL3Byb2ZpbGUiCiAgICAgICAgYW5kcm9pZDppY29uPSJAYW5kcm9pZDpkcmF3YWJsZS9pY19tZW51X215X3Byb2ZpbGUiCiAgICAgICAgYXBwOnNob3dBc0FjdGlvbj0ibmV2ZXIiIHhtbG5zOmFwcD0iaHR0cDovL3NjaGVtYXMuYW5kcm9pZC5jb20vYXBrL3Jlcy1hdXRvIiAvPgogICAgPGl0ZW0KICAgICAgICBhbmRyb2lkOmlkPSJAK2lkL2FjdGlvbl9hYm91dCIKICAgICAgICBhbmRyb2lkOnRpdGxlPSJAc3RyaW5nL2Fib3V0IgogICAgICAgIGFwcDpzaG93QXNBY3Rpb249Im5ldmVyIiB4bWxuczphcHA9Imh0dHA6Ly9zY2hlbWFzLmFuZHJvaWQuY29tL2Fway9yZXMtYXV0byIgLz4KICAgIDxpdGVtCiAgICAgICAgYW5kcm9pZDppZD0iQCtpZC9hY3Rpb25fbG9nb3V0IgogICAgICAgIGFuZHJvaWQ6dGl0bGU9IkBzdHJpbmcvbG9nb3V0IgogICAgICAgIGFwcDpzaG93QXNBY3Rpb249Im5ldmVyIiB4bWxuczphcHA9Imh0dHA6Ly9zY2hlbWFzLmFuZHJvaWQuY29tL2Fway9yZXMtYXV0byIgLz4KPC9tZW51Pgo=
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_profile"
+        android:title="@string/profile"
+        android:icon="@android:drawable/ic_menu_my_profile"
+        app:showAsAction="never" xmlns:app="http://schemas.android.com/apk/res-auto" />
+    <item
+        android:id="@+id/action_about"
+        android:title="@string/about"
+        app:showAsAction="never" xmlns:app="http://schemas.android.com/apk/res-auto" />
+    <item
+        android:id="@+id/action_logout"
+        android:title="@string/logout"
+        app:showAsAction="never" xmlns:app="http://schemas.android.com/apk/res-auto" />
+</menu>

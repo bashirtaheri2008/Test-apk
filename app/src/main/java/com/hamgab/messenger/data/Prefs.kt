@@ -1,1 +1,40 @@
-cGFja2FnZSBjb20uaGFtZ2FiLm1lc3Nlbmdlci5kYXRhCgppbXBvcnQgYW5kcm9pZC5jb250ZW50LkNvbnRleHQKaW1wb3J0IGFuZHJvaWQuY29udGVudC5TaGFyZWRQcmVmZXJlbmNlcwoKY2xhc3MgUHJlZnMoY29udGV4dDogQ29udGV4dCkgewogICAgcHJpdmF0ZSB2YWwgc3A6IFNoYXJlZFByZWZlcmVuY2VzID0gY29udGV4dC5nZXRTaGFyZWRQcmVmZXJlbmNlcygiaGFtZ2FiIiwgQ29udGV4dC5NT0RFX1BSSVZBVEUpCgogICAgdmFyIHVpZDogU3RyaW5nCiAgICAgICAgZ2V0KCkgPSBzcC5nZXRTdHJpbmcoInVpZCIsICIiKSA/OiAiIgogICAgICAgIHNldCh2KSB7IHNwLmVkaXQoKS5wdXRTdHJpbmcoInVpZCIsIHYpLmFwcGx5KCkgfQoKICAgIHZhciBwaG9uZTogU3RyaW5nCiAgICAgICAgZ2V0KCkgPSBzcC5nZXRTdHJpbmcoInBob25lIiwgIiIpID86ICIiCiAgICAgICAgc2V0KHYpIHsgc3AuZWRpdCgpLnB1dFN0cmluZygicGhvbmUiLCB2KS5hcHBseSgpIH0KCiAgICB2YXIgbmFtZTogU3RyaW5nCiAgICAgICAgZ2V0KCkgPSBzcC5nZXRTdHJpbmcoIm5hbWUiLCAiIikgPzogIiIKICAgICAgICBzZXQodikgeyBzcC5lZGl0KCkucHV0U3RyaW5nKCJuYW1lIiwgdikuYXBwbHkoKSB9CgogICAgdmFyIGJpbzogU3RyaW5nCiAgICAgICAgZ2V0KCkgPSBzcC5nZXRTdHJpbmcoImJpbyIsICIiKSA/OiAiIgogICAgICAgIHNldCh2KSB7IHNwLmVkaXQoKS5wdXRTdHJpbmcoImJpbyIsIHYpLmFwcGx5KCkgfQoKICAgIHZhciBwaG90b1VSTDogU3RyaW5nCiAgICAgICAgZ2V0KCkgPSBzcC5nZXRTdHJpbmcoInBob3RvVVJMIiwgIiIpID86ICIiCiAgICAgICAgc2V0KHYpIHsgc3AuZWRpdCgpLnB1dFN0cmluZygicGhvdG9VUkwiLCB2KS5hcHBseSgpIH0KCiAgICB2YXIgaXNEYXJrVGhlbWU6IEJvb2xlYW4KICAgICAgICBnZXQoKSA9IHNwLmdldEJvb2xlYW4oImRhcmtfdGhlbWUiLCBmYWxzZSkKICAgICAgICBzZXQodikgeyBzcC5lZGl0KCkucHV0Qm9vbGVhbigiZGFya190aGVtZSIsIHYpLmFwcGx5KCkgfQoKICAgIHZhciBpc0xvZ2dlZEluOiBCb29sZWFuCiAgICAgICAgZ2V0KCkgPSBzcC5nZXRCb29sZWFuKCJsb2dnZWRfaW4iLCBmYWxzZSkKICAgICAgICBzZXQodikgeyBzcC5lZGl0KCkucHV0Qm9vbGVhbigibG9nZ2VkX2luIiwgdikuYXBwbHkoKSB9CgogICAgZnVuIGxvZ291dCgpIHsKICAgICAgICBzcC5lZGl0KCkuY2xlYXIoKS5hcHBseSgpCiAgICB9Cn0K
+package com.hamgab.messenger.data
+
+import android.content.Context
+import android.content.SharedPreferences
+
+class Prefs(context: Context) {
+    private val sp: SharedPreferences = context.getSharedPreferences("hamgab", Context.MODE_PRIVATE)
+
+    var uid: String
+        get() = sp.getString("uid", "") ?: ""
+        set(v) { sp.edit().putString("uid", v).apply() }
+
+    var phone: String
+        get() = sp.getString("phone", "") ?: ""
+        set(v) { sp.edit().putString("phone", v).apply() }
+
+    var name: String
+        get() = sp.getString("name", "") ?: ""
+        set(v) { sp.edit().putString("name", v).apply() }
+
+    var bio: String
+        get() = sp.getString("bio", "") ?: ""
+        set(v) { sp.edit().putString("bio", v).apply() }
+
+    var photoURL: String
+        get() = sp.getString("photoURL", "") ?: ""
+        set(v) { sp.edit().putString("photoURL", v).apply() }
+
+    var isDarkTheme: Boolean
+        get() = sp.getBoolean("dark_theme", false)
+        set(v) { sp.edit().putBoolean("dark_theme", v).apply() }
+
+    var isLoggedIn: Boolean
+        get() = sp.getBoolean("logged_in", false)
+        set(v) { sp.edit().putBoolean("logged_in", v).apply() }
+
+    fun logout() {
+        sp.edit().clear().apply()
+    }
+}

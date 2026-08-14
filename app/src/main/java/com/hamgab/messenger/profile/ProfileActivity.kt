@@ -1,1 +1,82 @@
-cGFja2FnZSBjb20uaGFtZ2FiLm1lc3Nlbmdlci5wcm9maWxlCgppbXBvcnQgYW5kcm9pZC5hcHAuQWxlcnREaWFsb2cKaW1wb3J0IGFuZHJvaWQuY29udGVudC5JbnRlbnQKaW1wb3J0IGFuZHJvaWQub3MuQnVuZGxlCmltcG9ydCBhbmRyb2lkeC5hcHBjb21wYXQuYXBwLkFwcENvbXBhdEFjdGl2aXR5CmltcG9ydCBhbmRyb2lkeC5saWZlY3ljbGUubGlmZWN5Y2xlU2NvcGUKaW1wb3J0IGNvbS5idW1wdGVjaC5nbGlkZS5HbGlkZQppbXBvcnQgY29tLmhhbWdhYi5tZXNzZW5nZXIuYXV0aC5BdXRoQWN0aXZpdHkKaW1wb3J0IGNvbS5oYW1nYWIubWVzc2VuZ2VyLmRhdGEuRmlyZXN0b3JlQXBpCmltcG9ydCBjb20uaGFtZ2FiLm1lc3Nlbmdlci5kYXRhLlByZWZzCmltcG9ydCBjb20uaGFtZ2FiLm1lc3Nlbmdlci5kYXRhYmluZGluZy5BY3Rpdml0eVByb2ZpbGVCaW5kaW5nCmltcG9ydCBjb20uaGFtZ2FiLm1lc3Nlbmdlci5kYXRhYmluZGluZy5EaWFsb2dFZGl0UHJvZmlsZUJpbmRpbmcKaW1wb3J0IGtvdGxpbnguY29yb3V0aW5lcy5sYXVuY2gKCmNsYXNzIFByb2ZpbGVBY3Rpdml0eSA6IEFwcENvbXBhdEFjdGl2aXR5KCkgewoKICAgIHByaXZhdGUgbGF0ZWluaXQgdmFyIGJpbmRpbmc6IEFjdGl2aXR5UHJvZmlsZUJpbmRpbmcKICAgIHByaXZhdGUgbGF0ZWluaXQgdmFyIHByZWZzOiBQcmVmcwogICAgcHJpdmF0ZSB2YWwgYXBpID0gRmlyZXN0b3JlQXBpKCkKCiAgICBvdmVycmlkZSBmdW4gb25DcmVhdGUoc2F2ZWRJbnN0YW5jZVN0YXRlOiBCdW5kbGU/KSB7CiAgICAgICAgc3VwZXIub25DcmVhdGUoc2F2ZWRJbnN0YW5jZVN0YXRlKQogICAgICAgIGJpbmRpbmcgPSBBY3Rpdml0eVByb2ZpbGVCaW5kaW5nLmluZmxhdGUobGF5b3V0SW5mbGF0ZXIpCiAgICAgICAgc2V0Q29udGVudFZpZXcoYmluZGluZy5yb290KQogICAgICAgIHByZWZzID0gUHJlZnModGhpcykKCiAgICAgICAgYmluZGluZy50b29sYmFyLnNldE5hdmlnYXRpb25PbkNsaWNrTGlzdGVuZXIgeyBmaW5pc2goKSB9CgogICAgICAgIGxvYWRQcm9maWxlKCkKCiAgICAgICAgYmluZGluZy5lZGl0QnRuLnNldE9uQ2xpY2tMaXN0ZW5lciB7IHNob3dFZGl0RGlhbG9nKCkgfQoKICAgICAgICBiaW5kaW5nLmxvZ291dEJ0bi5zZXRPbkNsaWNrTGlzdGVuZXIgewogICAgICAgICAgICBwcmVmcy5sb2dvdXQoKQogICAgICAgICAgICB2YWwgaW50ZW50ID0gSW50ZW50KHRoaXMsIEF1dGhBY3Rpdml0eTo6Y2xhc3MuamF2YSkKICAgICAgICAgICAgaW50ZW50LmZsYWdzID0gSW50ZW50LkZMQUdfQUNUSVZJVFlfTkVXX1RBU0sgb3IgSW50ZW50LkZMQUdfQUNUSVZJVFlfQ0xFQVJfVEFTSwogICAgICAgICAgICBzdGFydEFjdGl2aXR5KGludGVudCkKICAgICAgICAgICAgZmluaXNoKCkKICAgICAgICB9CiAgICB9CgogICAgcHJpdmF0ZSBmdW4gbG9hZFByb2ZpbGUoKSB7CiAgICAgICAgYmluZGluZy5kaXNwbGF5TmFtZS50ZXh0ID0gcHJlZnMubmFtZS5pZkVtcHR5IHsgItqp2KfYsdio2LEg2YfZheKAjNqv2KgiIH0KICAgICAgICBiaW5kaW5nLmRpc3BsYXlQaG9uZS50ZXh0ID0gcHJlZnMucGhvbmUKICAgICAgICBiaW5kaW5nLmRpc3BsYXlCaW8udGV4dCA9IHByZWZzLmJpbwoKICAgICAgICBpZiAocHJlZnMucGhvdG9VUkwuaXNOb3RFbXB0eSgpKSB7CiAgICAgICAgICAgIEdsaWRlLndpdGgodGhpcykubG9hZChwcmVmcy5waG90b1VSTCkuY2lyY2xlQ3JvcCgpLmludG8oYmluZGluZy5hdmF0YXIpCiAgICAgICAgfQogICAgfQoKICAgIHByaXZhdGUgZnVuIHNob3dFZGl0RGlhbG9nKCkgewogICAgICAgIHZhbCBkaWFsb2dCaW5kaW5nID0gRGlhbG9nRWRpdFByb2ZpbGVCaW5kaW5nLmluZmxhdGUobGF5b3V0SW5mbGF0ZXIpCiAgICAgICAgZGlhbG9nQmluZGluZy5lZGl0TmFtZS5zZXRUZXh0KHByZWZzLm5hbWUpCiAgICAgICAgZGlhbG9nQmluZGluZy5lZGl0QmlvLnNldFRleHQocHJlZnMuYmlvKQoKICAgICAgICB2YWwgZGlhbG9nID0gQWxlcnREaWFsb2cuQnVpbGRlcih0aGlzKQogICAgICAgICAgICAuc2V0VmlldyhkaWFsb2dCaW5kaW5nLnJvb3QpCiAgICAgICAgICAgIC5jcmVhdGUoKQoKICAgICAgICBkaWFsb2dCaW5kaW5nLnNhdmVCdG4uc2V0T25DbGlja0xpc3RlbmVyIHsKICAgICAgICAgICAgdmFsIG5hbWUgPSBkaWFsb2dCaW5kaW5nLmVkaXROYW1lLnRleHQudG9TdHJpbmcoKS50cmltKCkKICAgICAgICAgICAgdmFsIGJpbyA9IGRpYWxvZ0JpbmRpbmcuZWRpdEJpby50ZXh0LnRvU3RyaW5nKCkudHJpbSgpCgogICAgICAgICAgICBpZiAobmFtZS5pc0VtcHR5KCkpIHsKICAgICAgICAgICAgICAgIGRpYWxvZ0JpbmRpbmcuZWRpdE5hbWUuZXJyb3IgPSAi2YbYp9mFINix2Kcg2YjYp9ix2K8g2qnZhtuM2K8iCiAgICAgICAgICAgICAgICByZXR1cm5Ac2V0T25DbGlja0xpc3RlbmVyCiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIGxpZmVjeWNsZVNjb3BlLmxhdW5jaCB7CiAgICAgICAgICAgICAgICBhcGkudXBkYXRlVXNlclByb2ZpbGUocHJlZnMudWlkLCBuYW1lLCBiaW8sIHByZWZzLnBob3RvVVJMKQogICAgICAgICAgICAgICAgcHJlZnMubmFtZSA9IG5hbWUKICAgICAgICAgICAgICAgIHByZWZzLmJpbyA9IGJpbwogICAgICAgICAgICAgICAgbG9hZFByb2ZpbGUoKQogICAgICAgICAgICAgICAgZGlhbG9nLmRpc21pc3MoKQogICAgICAgICAgICB9CiAgICAgICAgfQoKICAgICAgICBkaWFsb2cuc2hvdygpCiAgICB9Cn0K
+package com.hamgab.messenger.profile
+
+import android.app.AlertDialog
+import android.content.Intent
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import com.bumptech.glide.Glide
+import com.hamgab.messenger.auth.AuthActivity
+import com.hamgab.messenger.data.FirestoreApi
+import com.hamgab.messenger.data.Prefs
+import com.hamgab.messenger.databinding.ActivityProfileBinding
+import com.hamgab.messenger.databinding.DialogEditProfileBinding
+import kotlinx.coroutines.launch
+
+class ProfileActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityProfileBinding
+    private lateinit var prefs: Prefs
+    private val api = FirestoreApi()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityProfileBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        prefs = Prefs(this)
+
+        binding.toolbar.setNavigationOnClickListener { finish() }
+
+        loadProfile()
+
+        binding.editBtn.setOnClickListener { showEditDialog() }
+
+        binding.logoutBtn.setOnClickListener {
+            prefs.logout()
+            val intent = Intent(this, AuthActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+            finish()
+        }
+    }
+
+    private fun loadProfile() {
+        binding.displayName.text = prefs.name.ifEmpty { "کاربر هم‌گب" }
+        binding.displayPhone.text = prefs.phone
+        binding.displayBio.text = prefs.bio
+
+        if (prefs.photoURL.isNotEmpty()) {
+            Glide.with(this).load(prefs.photoURL).circleCrop().into(binding.avatar)
+        }
+    }
+
+    private fun showEditDialog() {
+        val dialogBinding = DialogEditProfileBinding.inflate(layoutInflater)
+        dialogBinding.editName.setText(prefs.name)
+        dialogBinding.editBio.setText(prefs.bio)
+
+        val dialog = AlertDialog.Builder(this)
+            .setView(dialogBinding.root)
+            .create()
+
+        dialogBinding.saveBtn.setOnClickListener {
+            val name = dialogBinding.editName.text.toString().trim()
+            val bio = dialogBinding.editBio.text.toString().trim()
+
+            if (name.isEmpty()) {
+                dialogBinding.editName.error = "نام را وارد کنید"
+                return@setOnClickListener
+            }
+
+            lifecycleScope.launch {
+                api.updateUserProfile(prefs.uid, name, bio, prefs.photoURL)
+                prefs.name = name
+                prefs.bio = bio
+                loadProfile()
+                dialog.dismiss()
+            }
+        }
+
+        dialog.show()
+    }
+}

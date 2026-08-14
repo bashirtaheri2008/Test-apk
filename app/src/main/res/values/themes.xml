@@ -1,1 +1,30 @@
-PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHJlc291cmNlcz4KICAgIDxzdHlsZSBuYW1lPSJUaGVtZS5IYW1HYWIiIHBhcmVudD0iVGhlbWUuTWF0ZXJpYWwzLkRheU5pZ2h0Lk5vQWN0aW9uQmFyIj4KICAgICAgICA8aXRlbSBuYW1lPSJjb2xvclByaW1hcnkiPkBjb2xvci9wcmltYXJ5PC9pdGVtPgogICAgICAgIDxpdGVtIG5hbWU9ImNvbG9yUHJpbWFyeVZhcmlhbnQiPkBjb2xvci9wcmltYXJ5X2Rhcms8L2l0ZW0+CiAgICAgICAgPGl0ZW0gbmFtZT0iY29sb3JPblByaW1hcnkiPkBjb2xvci93aGl0ZTwvaXRlbT4KICAgICAgICA8aXRlbSBuYW1lPSJjb2xvclNlY29uZGFyeSI+QGNvbG9yL3NlY29uZGFyeTwvaXRlbT4KICAgICAgICA8aXRlbSBuYW1lPSJjb2xvck9uU2Vjb25kYXJ5Ij5AY29sb3Ivd2hpdGU8L2l0ZW0+CiAgICAgICAgPGl0ZW0gbmFtZT0iYW5kcm9pZDp3aW5kb3dCYWNrZ3JvdW5kIj5AY29sb3IvYmc8L2l0ZW0+CiAgICAgICAgPGl0ZW0gbmFtZT0iYW5kcm9pZDpzdGF0dXNCYXJDb2xvciI+QGNvbG9yL3N1cmZhY2U8L2l0ZW0+CiAgICAgICAgPGl0ZW0gbmFtZT0iYW5kcm9pZDpuYXZpZ2F0aW9uQmFyQ29sb3IiPkBjb2xvci9zdXJmYWNlPC9pdGVtPgogICAgPC9zdHlsZT4KCiAgICA8c3R5bGUgbmFtZT0iVGhlbWUuSGFtR2FiLkF1dGgiIHBhcmVudD0iVGhlbWUuSGFtR2FiIj4KICAgICAgICA8aXRlbSBuYW1lPSJhbmRyb2lkOndpbmRvd0JhY2tncm91bmQiPkBjb2xvci9zdXJmYWNlPC9pdGVtPgogICAgICAgIDxpdGVtIG5hbWU9ImFuZHJvaWQ6c3RhdHVzQmFyQ29sb3IiPkBjb2xvci9zdXJmYWNlPC9pdGVtPgogICAgPC9zdHlsZT4KCiAgICA8c3R5bGUgbmFtZT0iV2lkZ2V0LkhhbUdhYi5CdXR0b24iIHBhcmVudD0iV2lkZ2V0Lk1hdGVyaWFsMy5CdXR0b24iPgogICAgICAgIDxpdGVtIG5hbWU9ImNvcm5lclJhZGl1cyI+OGRwPC9pdGVtPgogICAgICAgIDxpdGVtIG5hbWU9ImFuZHJvaWQ6dGV4dFNpemUiPjE1c3A8L2l0ZW0+CiAgICAgICAgPGl0ZW0gbmFtZT0iYW5kcm9pZDp0ZXh0U3R5bGUiPmJvbGQ8L2l0ZW0+CiAgICAgICAgPGl0ZW0gbmFtZT0iYW5kcm9pZDpwYWRkaW5nVG9wIj4xNGRwPC9pdGVtPgogICAgICAgIDxpdGVtIG5hbWU9ImFuZHJvaWQ6cGFkZGluZ0JvdHRvbSI+MTRkcDwvaXRlbT4KICAgIDwvc3R5bGU+CgogICAgPHN0eWxlIG5hbWU9IldpZGdldC5IYW1HYWIuVGV4dElucHV0IiBwYXJlbnQ9IldpZGdldC5NYXRlcmlhbDMuVGV4dElucHV0TGF5b3V0Lk91dGxpbmVkQm94Ij4KICAgICAgICA8aXRlbSBuYW1lPSJib3hDb3JuZXJSYWRpdXMiPjhkcDwvaXRlbT4KICAgIDwvc3R5bGU+CjwvcmVzb3VyY2VzPgo=
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.HamGab" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:windowBackground">@color/bg</item>
+        <item name="android:statusBarColor">@color/surface</item>
+        <item name="android:navigationBarColor">@color/surface</item>
+    </style>
+
+    <style name="Theme.HamGab.Auth" parent="Theme.HamGab">
+        <item name="android:windowBackground">@color/surface</item>
+        <item name="android:statusBarColor">@color/surface</item>
+    </style>
+
+    <style name="Widget.HamGab.Button" parent="Widget.Material3.Button">
+        <item name="cornerRadius">8dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">14dp</item>
+    </style>
+
+    <style name="Widget.HamGab.TextInput" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadius">8dp</item>
+    </style>
+</resources>

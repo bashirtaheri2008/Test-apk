@@ -1,1 +1,60 @@
-cGx1Z2lucyB7CiAgICBpZCAnY29tLmFuZHJvaWQuYXBwbGljYXRpb24nCiAgICBpZCAnb3JnLmpldGJyYWlucy5rb3RsaW4uYW5kcm9pZCcKfQoKYW5kcm9pZCB7CiAgICBuYW1lc3BhY2UgJ2NvbS5oYW1nYWIubWVzc2VuZ2VyJwogICAgY29tcGlsZVNkayAzNAoKICAgIGRlZmF1bHRDb25maWcgewogICAgICAgIGFwcGxpY2F0aW9uSWQgImNvbS5oYW1nYWIubWVzc2VuZ2VyIgogICAgICAgIG1pblNkayAyNAogICAgICAgIHRhcmdldFNkayAzNAogICAgICAgIHZlcnNpb25Db2RlIDEKICAgICAgICB2ZXJzaW9uTmFtZSAiMi4wIgogICAgfQoKICAgIGJ1aWxkVHlwZXMgewogICAgICAgIHJlbGVhc2UgewogICAgICAgICAgICBtaW5pZnlFbmFibGVkIGZhbHNlCiAgICAgICAgfQogICAgfQoKICAgIGNvbXBpbGVPcHRpb25zIHsKICAgICAgICBzb3VyY2VDb21wYXRpYmlsaXR5IEphdmFWZXJzaW9uLlZFUlNJT05fMTcKICAgICAgICB0YXJnZXRDb21wYXRpYmlsaXR5IEphdmFWZXJzaW9uLlZFUlNJT05fMTcKICAgIH0KICAgIGtvdGxpbk9wdGlvbnMgewogICAgICAgIGp2bVRhcmdldCA9ICcxNycKICAgIH0KCiAgICBidWlsZEZlYXR1cmVzIHsKICAgICAgICB2aWV3QmluZGluZyB0cnVlCiAgICB9Cn0KCmRlcGVuZGVuY2llcyB7CiAgICBpbXBsZW1lbnRhdGlvbiAnYW5kcm9pZHguY29yZTpjb3JlLWt0eDoxLjEyLjAnCiAgICBpbXBsZW1lbnRhdGlvbiAnYW5kcm9pZHguYXBwY29tcGF0OmFwcGNvbXBhdDoxLjYuMScKICAgIGltcGxlbWVudGF0aW9uICdjb20uZ29vZ2xlLmFuZHJvaWQubWF0ZXJpYWw6bWF0ZXJpYWw6MS4xMS4wJwogICAgaW1wbGVtZW50YXRpb24gJ2FuZHJvaWR4LmNvbnN0cmFpbnRsYXlvdXQ6Y29uc3RyYWludGxheW91dDoyLjEuNCcKICAgIGltcGxlbWVudGF0aW9uICdhbmRyb2lkeC5yZWN5Y2xlcnZpZXc6cmVjeWNsZXJ2aWV3OjEuMy4yJwogICAgaW1wbGVtZW50YXRpb24gJ2FuZHJvaWR4LnN3aXBlcmVmcmVzaGxheW91dDpzd2lwZXJlZnJlc2hsYXlvdXQ6MS4xLjAnCgogICAgLy8gQ29yb3V0aW5lcwogICAgaW1wbGVtZW50YXRpb24gJ29yZy5qZXRicmFpbnMua290bGlueDprb3RsaW54LWNvcm91dGluZXMtYW5kcm9pZDoxLjcuMycKCiAgICAvLyBPa0h0dHAgZm9yIEZpcmVzdG9yZSBSRVNUIEFQSQogICAgaW1wbGVtZW50YXRpb24gJ2NvbS5zcXVhcmV1cC5va2h0dHAzOm9raHR0cDo0LjEyLjAnCgogICAgLy8gR3NvbgogICAgaW1wbGVtZW50YXRpb24gJ2NvbS5nb29nbGUuY29kZS5nc29uOmdzb246Mi4xMC4xJwoKICAgIC8vIEdsaWRlIGZvciBpbWFnZSBsb2FkaW5nCiAgICBpbXBsZW1lbnRhdGlvbiAnY29tLmdpdGh1Yi5idW1wdGVjaC5nbGlkZTpnbGlkZTo0LjE2LjAnCgogICAgLy8gTGlmZWN5Y2xlCiAgICBpbXBsZW1lbnRhdGlvbiAnYW5kcm9pZHgubGlmZWN5Y2xlOmxpZmVjeWNsZS1ydW50aW1lLWt0eDoyLjcuMCcKICAgIGltcGxlbWVudGF0aW9uICdhbmRyb2lkeC5saWZlY3ljbGU6bGlmZWN5Y2xlLXZpZXdtb2RlbC1rdHg6Mi43LjAnCn0K
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.hamgab.messenger'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.hamgab.messenger"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "2.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+
+    // Coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3'
+
+    // OkHttp for Firestore REST API
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+
+    // Gson
+    implementation 'com.google.code.gson:gson:2.10.1'
+
+    // Glide for image loading
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+
+    // Lifecycle
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0'
+}

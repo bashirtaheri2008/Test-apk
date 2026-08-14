@@ -1,1 +1,70 @@
-cGFja2FnZSBjb20uaGFtZ2FiLm1lc3Nlbmdlci5kYXRhCgppbXBvcnQgY29tLmdvb2dsZS5nc29uLmFubm90YXRpb25zLlNlcmlhbGl6ZWROYW1lCgpkYXRhIGNsYXNzIFVzZXIoCiAgICB2YWwgdWlkOiBTdHJpbmcgPSAiIiwKICAgIHZhbCBuYW1lOiBTdHJpbmcgPSAiIiwKICAgIHZhbCBiaW86IFN0cmluZyA9ICIiLAogICAgdmFsIHBob3RvVVJMOiBTdHJpbmcgPSAiIiwKICAgIHZhbCB2ZXJpZmllZDogQm9vbGVhbiA9IGZhbHNlLAogICAgdmFsIHBob25lOiBTdHJpbmcgPSAiIgopCgpkYXRhIGNsYXNzIE1lc3NhZ2UoCiAgICB2YWwgaWQ6IFN0cmluZyA9ICIiLAogICAgdmFsIHRleHQ6IFN0cmluZyA9ICIiLAogICAgdmFsIHNlbmRlcklkOiBTdHJpbmcgPSAiIiwKICAgIHZhbCBzZW5kZXJOYW1lOiBTdHJpbmcgPSAiIiwKICAgIHZhbCB0aW1lc3RhbXA6IExvbmcgPSAwLAogICAgdmFsIHR5cGU6IFN0cmluZyA9ICJ0ZXh0IiwKICAgIHZhbCBpbWFnZVVSTDogU3RyaW5nID0gIiIKKSA6IGphdmEuaW8uU2VyaWFsaXphYmxlCgpkYXRhIGNsYXNzIENoYXRJdGVtKAogICAgdmFsIGNoYXRJZDogU3RyaW5nID0gIiIsCiAgICB2YWwgcGFydG5lcklkOiBTdHJpbmcgPSAiIiwKICAgIHZhbCBwYXJ0bmVyTmFtZTogU3RyaW5nID0gIiIsCiAgICB2YWwgcGFydG5lclBob3RvOiBTdHJpbmcgPSAiIiwKICAgIHZhbCBsYXN0TWVzc2FnZTogU3RyaW5nID0gIiIsCiAgICB2YWwgbGFzdFRpbWVzdGFtcDogTG9uZyA9IDAsCiAgICB2YWwgdW5yZWFkQ291bnQ6IEludCA9IDAKKQoKZGF0YSBjbGFzcyBDb250YWN0KAogICAgdmFsIHVpZDogU3RyaW5nID0gIiIsCiAgICB2YWwgbmFtZTogU3RyaW5nID0gIiIsCiAgICB2YWwgcGhvbmU6IFN0cmluZyA9ICIiLAogICAgdmFsIHBob3RvVVJMOiBTdHJpbmcgPSAiIgopCgovLyBGaXJlc3RvcmUgUkVTVCBBUEkgcmVzcG9uc2Ugd3JhcHBlcnMKZGF0YSBjbGFzcyBGaXJlc3RvcmVEb2N1bWVudCgKICAgIHZhbCBuYW1lOiBTdHJpbmcgPSAiIiwKICAgIHZhbCBmaWVsZHM6IE1hcDxTdHJpbmcsIEZpcmVzdG9yZVZhbHVlPj8gPSBudWxsLAogICAgQFNlcmlhbGl6ZWROYW1lKCJjcmVhdGVUaW1lIikgdmFsIGNyZWF0ZVRpbWU6IFN0cmluZz8gPSBudWxsLAogICAgQFNlcmlhbGl6ZWROYW1lKCJ1cGRhdGVUaW1lIikgdmFsIHVwZGF0ZVRpbWU6IFN0cmluZz8gPSBudWxsCikKCmRhdGEgY2xhc3MgRmlyZXN0b3JlVmFsdWUoCiAgICB2YWwgc3RyaW5nVmFsdWU6IFN0cmluZz8gPSBudWxsLAogICAgdmFsIGludGVnZXJWYWx1ZTogU3RyaW5nPyA9IG51bGwsCiAgICB2YWwgYm9vbGVhblZhbHVlOiBCb29sZWFuPyA9IG51bGwsCiAgICB2YWwgdGltZXN0YW1wVmFsdWU6IFN0cmluZz8gPSBudWxsLAogICAgdmFsIGFycmF5VmFsdWU6IEZpcmVzdG9yZUFycmF5PyA9IG51bGwsCiAgICB2YWwgbWFwVmFsdWU6IEZpcmVzdG9yZU1hcD8gPSBudWxsLAogICAgdmFsIGRvdWJsZVZhbHVlOiBEb3VibGU/ID0gbnVsbAopCgpkYXRhIGNsYXNzIEZpcmVzdG9yZUFycmF5KAogICAgdmFsIHZhbHVlczogTGlzdDxGaXJlc3RvcmVWYWx1ZT4/ID0gbnVsbAopCgpkYXRhIGNsYXNzIEZpcmVzdG9yZU1hcCgKICAgIHZhbCBmaWVsZHM6IE1hcDxTdHJpbmcsIEZpcmVzdG9yZVZhbHVlPj8gPSBudWxsCikKCmRhdGEgY2xhc3MgRmlyZXN0b3JlTGlzdFJlc3BvbnNlKAogICAgdmFsIGRvY3VtZW50czogTGlzdDxGaXJlc3RvcmVEb2N1bWVudD4/ID0gbnVsbCwKICAgIEBTZXJpYWxpemVkTmFtZSgibmV4dFBhZ2VUb2tlbiIpIHZhbCBuZXh0UGFnZVRva2VuOiBTdHJpbmc/ID0gbnVsbAopCg==
+package com.hamgab.messenger.data
+
+import com.google.gson.annotations.SerializedName
+
+data class User(
+    val uid: String = "",
+    val name: String = "",
+    val bio: String = "",
+    val photoURL: String = "",
+    val verified: Boolean = false,
+    val phone: String = ""
+)
+
+data class Message(
+    val id: String = "",
+    val text: String = "",
+    val senderId: String = "",
+    val senderName: String = "",
+    val timestamp: Long = 0,
+    val type: String = "text",
+    val imageURL: String = ""
+) : java.io.Serializable
+
+data class ChatItem(
+    val chatId: String = "",
+    val partnerId: String = "",
+    val partnerName: String = "",
+    val partnerPhoto: String = "",
+    val lastMessage: String = "",
+    val lastTimestamp: Long = 0,
+    val unreadCount: Int = 0
+)
+
+data class Contact(
+    val uid: String = "",
+    val name: String = "",
+    val phone: String = "",
+    val photoURL: String = ""
+)
+
+// Firestore REST API response wrappers
+data class FirestoreDocument(
+    val name: String = "",
+    val fields: Map<String, FirestoreValue>? = null,
+    @SerializedName("createTime") val createTime: String? = null,
+    @SerializedName("updateTime") val updateTime: String? = null
+)
+
+data class FirestoreValue(
+    val stringValue: String? = null,
+    val integerValue: String? = null,
+    val booleanValue: Boolean? = null,
+    val timestampValue: String? = null,
+    val arrayValue: FirestoreArray? = null,
+    val mapValue: FirestoreMap? = null,
+    val doubleValue: Double? = null
+)
+
+data class FirestoreArray(
+    val values: List<FirestoreValue>? = null
+)
+
+data class FirestoreMap(
+    val fields: Map<String, FirestoreValue>? = null
+)
+
+data class FirestoreListResponse(
+    val documents: List<FirestoreDocument>? = null,
+    @SerializedName("nextPageToken") val nextPageToken: String? = null
+)

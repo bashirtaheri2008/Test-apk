@@ -1,1 +1,255 @@
-cGFja2FnZSBjb20uaGFtZ2FiLm1lc3Nlbmdlci5kYXRhCgppbXBvcnQgY29tLmdvb2dsZS5nc29uLkdzb24KaW1wb3J0IGtvdGxpbnguY29yb3V0aW5lcy5EaXNwYXRjaGVycwppbXBvcnQga290bGlueC5jb3JvdXRpbmVzLndpdGhDb250ZXh0CmltcG9ydCBva2h0dHAzLk1lZGlhVHlwZS5Db21wYW5pb24udG9NZWRpYVR5cGUKaW1wb3J0IG9raHR0cDMuT2tIdHRwQ2xpZW50CmltcG9ydCBva2h0dHAzLlJlcXVlc3QKaW1wb3J0IG9raHR0cDMuUmVxdWVzdEJvZHkuQ29tcGFuaW9uLnRvUmVxdWVzdEJvZHkKaW1wb3J0IGphdmEudXRpbC5jb25jdXJyZW50LlRpbWVVbml0CgpjbGFzcyBGaXJlc3RvcmVBcGkgewoKICAgIGNvbXBhbmlvbiBvYmplY3QgewogICAgICAgIHByaXZhdGUgY29uc3QgdmFsIFBST0pFQ1RfSUQgPSAid2ViLXJhc2EiCiAgICAgICAgcHJpdmF0ZSBjb25zdCB2YWwgQkFTRSA9ICJodHRwczovL2ZpcmVzdG9yZS5nb29nbGVhcGlzLmNvbS92MS9wcm9qZWN0cy8kUFJPSkVDVF9JRC9kYXRhYmFzZXMvKGRlZmF1bHQpL2RvY3VtZW50cyIKCiAgICAgICAgLy8gSU1HQkIga2V5IGZyb20gb3JpZ2luYWwgYXBwCiAgICAgICAgY29uc3QgdmFsIElNR0JCX0tFWSA9ICI4ZWZiZWIzM2I0NDg4ZDBkYzQxOGIwODFkZjM4ZDIxYiIKCiAgICAgICAgcHJpdmF0ZSB2YWwgY2xpZW50OiBPa0h0dHBDbGllbnQgPSBPa0h0dHBDbGllbnQuQnVpbGRlcigpCiAgICAgICAgICAgIC5jb25uZWN0VGltZW91dCgxNSwgVGltZVVuaXQuU0VDT05EUykKICAgICAgICAgICAgLnJlYWRUaW1lb3V0KDMwLCBUaW1lVW5pdC5TRUNPTkRTKQogICAgICAgICAgICAuYnVpbGQoKQoKICAgICAgICBwcml2YXRlIHZhbCBnc29uID0gR3NvbigpCiAgICAgICAgcHJpdmF0ZSB2YWwgSlNPTiA9ICJhcHBsaWNhdGlvbi9qc29uIi50b01lZGlhVHlwZSgpCgogICAgICAgIHByaXZhdGUgZnVuIGVzYyh2YWx1ZTogU3RyaW5nKTogU3RyaW5nIHsKICAgICAgICAgICAgdmFsIHNiID0gU3RyaW5nQnVpbGRlcigpCiAgICAgICAgICAgIGZvciAoYyBpbiB2YWx1ZSkgewogICAgICAgICAgICAgICAgd2hlbiAoYykgewogICAgICAgICAgICAgICAgICAgICdcXCcsICciJywgJy8nLCAnXG4nLCAnXHInLCAnXHQnIC0+IHsKICAgICAgICAgICAgICAgICAgICAgICAgc2IuYXBwZW5kKCdcXCcpCiAgICAgICAgICAgICAgICAgICAgICAgIHdoZW4gKGMpIHsgJ1xcJyAtPiBzYi5hcHBlbmQoJ1xcJyk7ICciJyAtPiBzYi5hcHBlbmQoJyInKTsgJy8nIC0+IHNiLmFwcGVuZCgnLycpOyAnXG4nIC0+IHNiLmFwcGVuZCgnbicpOyAnXHInIC0+IHNiLmFwcGVuZCgncicpOyAnXHQnIC0+IHNiLmFwcGVuZCgndCcpOyBlbHNlIC0+IHNiLmFwcGVuZChjKSB9CiAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgIGVsc2UgLT4gewogICAgICAgICAgICAgICAgICAgICAgICBpZiAoYy5jb2RlIDwgMHgyMCB8fCBjLmNvZGUgPiAweDEwRkZGRikgc2IuYXBwZW5kKCJcXHUkeyIlMDR4Ii5mb3JtYXQoYy5jb2RlKX0iKQogICAgICAgICAgICAgICAgICAgICAgICBlbHNlIHNiLmFwcGVuZChjKQogICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQogICAgICAgICAgICByZXR1cm4gc2IudG9TdHJpbmcoKQogICAgICAgIH0KCiAgICAgICAgLy8gQ29udmVydCBhIEtvdGxpbiBtYXAgdG8gRmlyZXN0b3JlIFJFU1QgZmllbGRzIEpTT04KICAgICAgICBwcml2YXRlIGZ1biB0b0ZpZWxkcyhkYXRhOiBNYXA8U3RyaW5nLCBBbnk/Pik6IFN0cmluZyB7CiAgICAgICAgICAgIHZhbCBzYiA9IFN0cmluZ0J1aWxkZXIoInsiKQogICAgICAgICAgICB2YXIgZmlyc3QgPSB0cnVlCiAgICAgICAgICAgIGZvciAoKGtleSwgdmFsdWUpIGluIGRhdGEpIHsKICAgICAgICAgICAgICAgIGlmICghZmlyc3QpIHNiLmFwcGVuZCgiLCIpCiAgICAgICAgICAgICAgICBmaXJzdCA9IGZhbHNlCiAgICAgICAgICAgICAgICBzYi5hcHBlbmQoIlwiIikuYXBwZW5kKGtleSkuYXBwZW5kKCJcIjoiKQogICAgICAgICAgICAgICAgd2hlbiAodmFsdWUpIHsKICAgICAgICAgICAgICAgICAgICBpcyBTdHJpbmcgLT4gc2IuYXBwZW5kKCJ7XCJzdHJpbmdWYWx1ZVwiOlwiIikuYXBwZW5kKGVzYyh2YWx1ZSkpLmFwcGVuZCgiXCJ9IikKICAgICAgICAgICAgICAgICAgICBpcyBJbnQgLT4gc2IuYXBwZW5kKCJ7XCJpbnRlZ2VyVmFsdWVcIjpcIiIpLmFwcGVuZCh2YWx1ZSkuYXBwZW5kKCJcIn0iKQogICAgICAgICAgICAgICAgICAgIGlzIExvbmcgLT4gc2IuYXBwZW5kKCJ7XCJpbnRlZ2VyVmFsdWVcIjpcIiIpLmFwcGVuZCh2YWx1ZSkuYXBwZW5kKCJcIn0iKQogICAgICAgICAgICAgICAgICAgIGlzIEJvb2xlYW4gLT4gc2IuYXBwZW5kKCJ7XCJib29sZWFuVmFsdWVcIjoiKS5hcHBlbmQodmFsdWUpLmFwcGVuZCgifSIpCiAgICAgICAgICAgICAgICAgICAgbnVsbCAtPiBzYi5hcHBlbmQoIntcIm51bGxWYWx1ZVwiOm51bGx9IikKICAgICAgICAgICAgICAgICAgICBlbHNlIC0+IHNiLmFwcGVuZCgie1wic3RyaW5nVmFsdWVcIjpcIiIpLmFwcGVuZChlc2ModmFsdWUudG9TdHJpbmcoKSkpLmFwcGVuZCgiXCJ9IikKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQogICAgICAgICAgICBzYi5hcHBlbmQoIn0iKQogICAgICAgICAgICByZXR1cm4gc2IudG9TdHJpbmcoKQogICAgICAgIH0KCiAgICAgICAgcHJpdmF0ZSBmdW4gZ2V0U3RyaW5nKGZpZWxkOiBGaXJlc3RvcmVWYWx1ZT8pOiBTdHJpbmcgPSBmaWVsZD8uc3RyaW5nVmFsdWUgPzogIiIKCiAgICAgICAgcHJpdmF0ZSBmdW4gZ2V0TG9uZyhmaWVsZDogRmlyZXN0b3JlVmFsdWU/KTogTG9uZyA9IGZpZWxkPy5pbnRlZ2VyVmFsdWU/LnRvTG9uZ09yTnVsbCgpID86IDBMCgogICAgICAgIHByaXZhdGUgZnVuIGdldEJvb2woZmllbGQ6IEZpcmVzdG9yZVZhbHVlPyk6IEJvb2xlYW4gPSBmaWVsZD8uYm9vbGVhblZhbHVlID86IGZhbHNlCgogICAgICAgIGZ1biBkb2NUb1VzZXIoZG9jOiBGaXJlc3RvcmVEb2N1bWVudCk6IFVzZXIgewogICAgICAgICAgICB2YWwgZiA9IGRvYy5maWVsZHMKICAgICAgICAgICAgcmV0dXJuIFVzZXIoCiAgICAgICAgICAgICAgICB1aWQgPSBkb2MubmFtZS5zdWJzdHJpbmdBZnRlckxhc3QoIi8iKSwKICAgICAgICAgICAgICAgIG5hbWUgPSBnZXRTdHJpbmcoZj8uZ2V0KCJuYW1lIikpLAogICAgICAgICAgICAgICAgYmlvID0gZ2V0U3RyaW5nKGY/LmdldCgiYmlvIikpLAogICAgICAgICAgICAgICAgcGhvdG9VUkwgPSBnZXRTdHJpbmcoZj8uZ2V0KCJwaG90b1VSTCIpKSwKICAgICAgICAgICAgICAgIHZlcmlmaWVkID0gZ2V0Qm9vbChmPy5nZXQoInZlcmlmaWVkIikpLAogICAgICAgICAgICAgICAgcGhvbmUgPSBnZXRTdHJpbmcoZj8uZ2V0KCJwaG9uZSIpKQogICAgICAgICAgICApCiAgICAgICAgfQoKICAgICAgICBmdW4gZG9jVG9NZXNzYWdlKGRvYzogRmlyZXN0b3JlRG9jdW1lbnQpOiBNZXNzYWdlIHsKICAgICAgICAgICAgdmFsIGYgPSBkb2MuZmllbGRzCiAgICAgICAgICAgIHJldHVybiBNZXNzYWdlKAogICAgICAgICAgICAgICAgaWQgPSBkb2MubmFtZS5zdWJzdHJpbmdBZnRlckxhc3QoIi8iKSwKICAgICAgICAgICAgICAgIHRleHQgPSBnZXRTdHJpbmcoZj8uZ2V0KCJ0ZXh0IikpLAogICAgICAgICAgICAgICAgc2VuZGVySWQgPSBnZXRTdHJpbmcoZj8uZ2V0KCJzZW5kZXJJZCIpKSwKICAgICAgICAgICAgICAgIHNlbmRlck5hbWUgPSBnZXRTdHJpbmcoZj8uZ2V0KCJzZW5kZXJOYW1lIikpLAogICAgICAgICAgICAgICAgdGltZXN0YW1wID0gZ2V0TG9uZyhmPy5nZXQoInRpbWVzdGFtcCIpKSwKICAgICAgICAgICAgICAgIHR5cGUgPSBnZXRTdHJpbmcoZj8uZ2V0KCJ0eXBlIikpLmlmRW1wdHkgeyAidGV4dCIgfSwKICAgICAgICAgICAgICAgIGltYWdlVVJMID0gZ2V0U3RyaW5nKGY/LmdldCgiaW1hZ2VVUkwiKSkKICAgICAgICAgICAgKQogICAgICAgIH0KCiAgICAgICAgcHJpdmF0ZSBmdW4gY2hhdElkKGE6IFN0cmluZywgYjogU3RyaW5nKTogU3RyaW5nIHsKICAgICAgICAgICAgcmV0dXJuIGlmIChhIDwgYikgIiR7YX1fJGIiIGVsc2UgIiR7Yn1fJGEiCiAgICAgICAgfQogICAgfQoKICAgIHN1c3BlbmQgZnVuIGdldFVzZXIodWlkOiBTdHJpbmcpOiBVc2VyPyA9IHdpdGhDb250ZXh0KERpc3BhdGNoZXJzLklPKSB7CiAgICAgICAgdHJ5IHsKICAgICAgICAgICAgdmFsIHJlcSA9IFJlcXVlc3QuQnVpbGRlcigpLnVybCgiJEJBU0UvdXNlcnMvJHVpZCIpLmdldCgpLmJ1aWxkKCkKICAgICAgICAgICAgdmFsIHJlcyA9IGNsaWVudC5uZXdDYWxsKHJlcSkuZXhlY3V0ZSgpCiAgICAgICAgICAgIGlmICghcmVzLmlzU3VjY2Vzc2Z1bCkgcmV0dXJuQHdpdGhDb250ZXh0IG51bGwKICAgICAgICAgICAgdmFsIGRvYyA9IGdzb24uZnJvbUpzb24ocmVzLmJvZHk/LnN0cmluZygpLCBGaXJlc3RvcmVEb2N1bWVudDo6Y2xhc3MuamF2YSkKICAgICAgICAgICAgZG9jVG9Vc2VyKGRvYykKICAgICAgICB9IGNhdGNoIChlOiBFeGNlcHRpb24pIHsgbnVsbCB9CiAgICB9CgogICAgc3VzcGVuZCBmdW4gY3JlYXRlT3JVcGRhdGVVc2VyKHVpZDogU3RyaW5nLCBwaG9uZTogU3RyaW5nLCBuYW1lOiBTdHJpbmcsIGJpbzogU3RyaW5nLCBwaG90b1VSTDogU3RyaW5nKTogQm9vbGVhbiA9IHdpdGhDb250ZXh0KERpc3BhdGNoZXJzLklPKSB7CiAgICAgICAgdHJ5IHsKICAgICAgICAgICAgdmFsIGRhdGEgPSBtYXBPZigKICAgICAgICAgICAgICAgICJwaG9uZSIgdG8gcGhvbmUsCiAgICAgICAgICAgICAgICAibmFtZSIgdG8gbmFtZSwKICAgICAgICAgICAgICAgICJiaW8iIHRvIGJpbywKICAgICAgICAgICAgICAgICJwaG90b1VSTCIgdG8gcGhvdG9VUkwsCiAgICAgICAgICAgICAgICAidmVyaWZpZWQiIHRvIGZhbHNlCiAgICAgICAgICAgICkKICAgICAgICAgICAgdmFsIGJvZHkgPSAie1wiZmllbGRzXCI6JHt0b0ZpZWxkcyhkYXRhKX19Ii50b1JlcXVlc3RCb2R5KEpTT04pCiAgICAgICAgICAgIHZhbCByZXEgPSBSZXF1ZXN0LkJ1aWxkZXIoKQogICAgICAgICAgICAgICAgLnVybCgiJEJBU0UvdXNlcnMvJHVpZD91cGRhdGVNYXNrLmZpZWxkUGF0aHM9cGhvbmUmdXBkYXRlTWFzay5maWVsZFBhdGhzPW5hbWUmdXBkYXRlTWFzay5maWVsZFBhdGhzPWJpbyZ1cGRhdGVNYXNrLmZpZWxkUGF0aHM9cGhvdG9VUkwmdXBkYXRlTWFzay5maWVsZFBhdGhzPXZlcmlmaWVkIikKICAgICAgICAgICAgICAgIC5wYXRjaChib2R5KQogICAgICAgICAgICAgICAgLmJ1aWxkKCkKICAgICAgICAgICAgdmFsIHJlcyA9IGNsaWVudC5uZXdDYWxsKHJlcSkuZXhlY3V0ZSgpCiAgICAgICAgICAgIHJlcy5pc1N1Y2Nlc3NmdWwKICAgICAgICB9IGNhdGNoIChlOiBFeGNlcHRpb24pIHsgZmFsc2UgfQogICAgfQoKICAgIHN1c3BlbmQgZnVuIGdldENoYXRNZXNzYWdlcyh1aWQ6IFN0cmluZywgcGFydG5lcklkOiBTdHJpbmcpOiBMaXN0PE1lc3NhZ2U+ID0gd2l0aENvbnRleHQoRGlzcGF0Y2hlcnMuSU8pIHsKICAgICAgICB0cnkgewogICAgICAgICAgICB2YWwgY2lkID0gY2hhdElkKHVpZCwgcGFydG5lcklkKQogICAgICAgICAgICB2YWwgcmVxID0gUmVxdWVzdC5CdWlsZGVyKCkKICAgICAgICAgICAgICAgIC51cmwoIiRCQVNFL2NoYXRzLyRjaWQvbWVzc2FnZXM/b3JkZXJCeT10aW1lc3RhbXAmcGFnZVNpemU9MTAwIikKICAgICAgICAgICAgICAgIC5nZXQoKQogICAgICAgICAgICAgICAgLmJ1aWxkKCkKICAgICAgICAgICAgdmFsIHJlcyA9IGNsaWVudC5uZXdDYWxsKHJlcSkuZXhlY3V0ZSgpCiAgICAgICAgICAgIGlmICghcmVzLmlzU3VjY2Vzc2Z1bCkgcmV0dXJuQHdpdGhDb250ZXh0IGVtcHR5TGlzdCgpCiAgICAgICAgICAgIHZhbCBsaXN0ID0gZ3Nvbi5mcm9tSnNvbihyZXMuYm9keT8uc3RyaW5nKCksIEZpcmVzdG9yZUxpc3RSZXNwb25zZTo6Y2xhc3MuamF2YSkKICAgICAgICAgICAgbGlzdD8uZG9jdW1lbnRzPy5tYXAgeyBkb2NUb01lc3NhZ2UoaXQpIH0gPzogZW1wdHlMaXN0KCkKICAgICAgICB9IGNhdGNoIChlOiBFeGNlcHRpb24pIHsgZW1wdHlMaXN0KCkgfQogICAgfQoKICAgIHN1c3BlbmQgZnVuIHNlbmRNZXNzYWdlKHVpZDogU3RyaW5nLCBwYXJ0bmVySWQ6IFN0cmluZywgdGV4dDogU3RyaW5nLCBzZW5kZXJOYW1lOiBTdHJpbmcpOiBCb29sZWFuID0gd2l0aENvbnRleHQoRGlzcGF0Y2hlcnMuSU8pIHsKICAgICAgICB0cnkgewogICAgICAgICAgICB2YWwgY2lkID0gY2hhdElkKHVpZCwgcGFydG5lcklkKQogICAgICAgICAgICB2YWwgdHMgPSBTeXN0ZW0uY3VycmVudFRpbWVNaWxsaXMoKQogICAgICAgICAgICB2YWwgZGF0YSA9IG1hcE9mKAogICAgICAgICAgICAgICAgInRleHQiIHRvIHRleHQsCiAgICAgICAgICAgICAgICAic2VuZGVySWQiIHRvIHVpZCwKICAgICAgICAgICAgICAgICJzZW5kZXJOYW1lIiB0byBzZW5kZXJOYW1lLAogICAgICAgICAgICAgICAgInRpbWVzdGFtcCIgdG8gdHMsCiAgICAgICAgICAgICAgICAidHlwZSIgdG8gInRleHQiCiAgICAgICAgICAgICkKICAgICAgICAgICAgdmFsIGJvZHkgPSAie1wiZmllbGRzXCI6JHt0b0ZpZWxkcyhkYXRhKX19Ii50b1JlcXVlc3RCb2R5KEpTT04pCiAgICAgICAgICAgIHZhbCByZXEgPSBSZXF1ZXN0LkJ1aWxkZXIoKQogICAgICAgICAgICAgICAgLnVybCgiJEJBU0UvY2hhdHMvJGNpZC9tZXNzYWdlcyIpCiAgICAgICAgICAgICAgICAucG9zdChib2R5KQogICAgICAgICAgICAgICAgLmJ1aWxkKCkKICAgICAgICAgICAgdmFsIHJlcyA9IGNsaWVudC5uZXdDYWxsKHJlcSkuZXhlY3V0ZSgpCiAgICAgICAgICAgIHJlcy5pc1N1Y2Nlc3NmdWwKICAgICAgICB9IGNhdGNoIChlOiBFeGNlcHRpb24pIHsgZmFsc2UgfQogICAgfQoKICAgIHN1c3BlbmQgZnVuIGdldFVzZXJDaGF0cyh1aWQ6IFN0cmluZyk6IExpc3Q8Q2hhdEl0ZW0+ID0gd2l0aENvbnRleHQoRGlzcGF0Y2hlcnMuSU8pIHsKICAgICAgICB0cnkgewogICAgICAgICAgICAvLyBRdWVyeSBjaGF0cyB3aGVyZSBtZW1iZXJzIGFycmF5IGNvbnRhaW5zIHVpZAogICAgICAgICAgICAvLyBGaXJlc3RvcmUgUkVTVCBzdHJ1Y3R1cmVkUXVlcnkKICAgICAgICAgICAgdmFsIHF1ZXJ5Qm9keSA9ICIiIgogICAgICAgICAgICAgICAgeyJzdHJ1Y3R1cmVkUXVlcnkiOnsiZnJvbSI6W3siY29sbGVjdGlvbklkIjoiY2hhdHMifV0sIndoZXJlIjp7ImZpZWxkRmlsdGVyIjp7ImZpZWxkIjp7ImZpZWxkUGF0aCI6Im1lbWJlcnMifSwiZmlsdGVyIjp7ImFycmF5RmlsdGVyIjp7Im9wZXJhdG9yIjoiQVJSQVlfQ09OVEFJTlMiLCJ2YWx1ZSI6eyJzdHJpbmdWYWx1ZSI6IiR1aWQifX19fX0sIm9yZGVyQnkiOlt7ImZpZWxkIjp7ImZpZWxkUGF0aCI6Imxhc3RUaW1lc3RhbXAifSwiZGlyZWN0aW9uIjoiREVTQ0VORElORyJ9XX19CiAgICAgICAgICAgICIiIi50cmltSW5kZW50KCkKCiAgICAgICAgICAgIHZhbCByZXEgPSBSZXF1ZXN0LkJ1aWxkZXIoKQogICAgICAgICAgICAgICAgLnVybCgiJEJBU0U6cnVuUXVlcnkiKQogICAgICAgICAgICAgICAgLnBvc3QocXVlcnlCb2R5LnRvUmVxdWVzdEJvZHkoSlNPTikpCiAgICAgICAgICAgICAgICAuYnVpbGQoKQogICAgICAgICAgICB2YWwgcmVzID0gY2xpZW50Lm5ld0NhbGwocmVxKS5leGVjdXRlKCkKICAgICAgICAgICAgaWYgKCFyZXMuaXNTdWNjZXNzZnVsKSByZXR1cm5Ad2l0aENvbnRleHQgZW1wdHlMaXN0KCkKICAgICAgICAgICAgdmFsIHJlc3BvbnNlVGV4dCA9IHJlcy5ib2R5Py5zdHJpbmcoKSA/OiByZXR1cm5Ad2l0aENvbnRleHQgZW1wdHlMaXN0KCkKCiAgICAgICAgICAgIC8vIFBhcnNlIHJlc3BvbnNlIOKAlCBhcnJheSBvZiBkb2N1bWVudHMKICAgICAgICAgICAgdmFsIGRvY3MgPSBnc29uLmZyb21Kc29uKHJlc3BvbnNlVGV4dCwgQXJyYXk8RmlyZXN0b3JlRG9jdW1lbnQ+OjpjbGFzcy5qYXZhKQogICAgICAgICAgICBkb2NzPy5tYXBOb3ROdWxsIHsgZG9jIC0+CiAgICAgICAgICAgICAgICB2YWwgZiA9IGRvYy5maWVsZHMgPzogcmV0dXJuQG1hcE5vdE51bGwgbnVsbAogICAgICAgICAgICAgICAgdmFsIGNoYXREb2NJZCA9IGRvYy5uYW1lLnN1YnN0cmluZ0FmdGVyTGFzdCgiLyIpCiAgICAgICAgICAgICAgICAvLyBFeHRyYWN0IHRoZSBwYXJ0bmVyIElEIGZyb20gbWVtYmVycyBhcnJheQogICAgICAgICAgICAgICAgdmFsIG1lbWJlcnNBcnIgPSBmWyJtZW1iZXJzIl0/LmFycmF5VmFsdWU/LnZhbHVlcz8ubWFwIHsgaXQuc3RyaW5nVmFsdWUgPzogIiIgfSA/OiBlbXB0eUxpc3QoKQogICAgICAgICAgICAgICAgdmFsIHBhcnRuZXJJZCA9IG1lbWJlcnNBcnIuZmlyc3RPck51bGwgeyBpdCAhPSB1aWQgfSA/OiAiIgogICAgICAgICAgICAgICAgaWYgKHBhcnRuZXJJZC5pc0VtcHR5KCkpIHJldHVybkBtYXBOb3ROdWxsIG51bGwKCiAgICAgICAgICAgICAgICB2YWwgcGFydG5lciA9IGdldFVzZXIocGFydG5lcklkKQogICAgICAgICAgICAgICAgQ2hhdEl0ZW0oCiAgICAgICAgICAgICAgICAgICAgY2hhdElkID0gY2hhdERvY0lkLAogICAgICAgICAgICAgICAgICAgIHBhcnRuZXJJZCA9IHBhcnRuZXJJZCwKICAgICAgICAgICAgICAgICAgICBwYXJ0bmVyTmFtZSA9IHBhcnRuZXI/Lm5hbWUgPzogcGFydG5lcklkLAogICAgICAgICAgICAgICAgICAgIHBhcnRuZXJQaG90byA9IHBhcnRuZXI/LnBob3RvVVJMID86ICIiLAogICAgICAgICAgICAgICAgICAgIGxhc3RNZXNzYWdlID0gZ2V0U3RyaW5nKGZbImxhc3RNZXNzYWdlIl0pLAogICAgICAgICAgICAgICAgICAgIGxhc3RUaW1lc3RhbXAgPSBnZXRMb25nKGZbImxhc3RUaW1lc3RhbXAiXSksCiAgICAgICAgICAgICAgICAgICAgdW5yZWFkQ291bnQgPSBnZXRMb25nKGZbInVucmVhZENvdW50Il0pLnRvSW50KCkKICAgICAgICAgICAgICAgICkKICAgICAgICAgICAgfSA/OiBlbXB0eUxpc3QoKQogICAgICAgIH0gY2F0Y2ggKGU6IEV4Y2VwdGlvbikgeyBlbXB0eUxpc3QoKSB9CiAgICB9CgogICAgc3VzcGVuZCBmdW4gZW5zdXJlQ2hhdEV4aXN0cyh1aWQ6IFN0cmluZywgcGFydG5lcklkOiBTdHJpbmcsIHBhcnRuZXJOYW1lOiBTdHJpbmcsIG15TmFtZTogU3RyaW5nKTogQm9vbGVhbiA9IHdpdGhDb250ZXh0KERpc3BhdGNoZXJzLklPKSB7CiAgICAgICAgdHJ5IHsKICAgICAgICAgICAgdmFsIGNpZCA9IGNoYXRJZCh1aWQsIHBhcnRuZXJJZCkKICAgICAgICAgICAgLy8gQ2hlY2sgaWYgY2hhdCBkb2N1bWVudCBleGlzdHMKICAgICAgICAgICAgdmFsIGNoZWNrUmVxID0gUmVxdWVzdC5CdWlsZGVyKCkudXJsKCIkQkFTRS9jaGF0cy8kY2lkIikuZ2V0KCkuYnVpbGQoKQogICAgICAgICAgICB2YWwgY2hlY2tSZXMgPSBjbGllbnQubmV3Q2FsbChjaGVja1JlcSkuZXhlY3V0ZSgpCiAgICAgICAgICAgIGlmIChjaGVja1Jlcy5pc1N1Y2Nlc3NmdWwpIHJldHVybkB3aXRoQ29udGV4dCB0cnVlIC8vIGFscmVhZHkgZXhpc3RzCgogICAgICAgICAgICAvLyBDcmVhdGUgY2hhdCBkb2MKICAgICAgICAgICAgdmFsIGRhdGEgPSBtYXBPZigKICAgICAgICAgICAgICAgICJtZW1iZXJzIiB0byB1aWQsIC8vIHdpbGwgYmUgb3ZlcndyaXR0ZW4gYmVsb3cKICAgICAgICAgICAgICAgICJsYXN0TWVzc2FnZSIgdG8gIiIsCiAgICAgICAgICAgICAgICAibGFzdFRpbWVzdGFtcCIgdG8gU3lzdGVtLmN1cnJlbnRUaW1lTWlsbGlzKCksCiAgICAgICAgICAgICAgICAiY3JlYXRlZEF0IiB0byBTeXN0ZW0uY3VycmVudFRpbWVNaWxsaXMoKQogICAgICAgICAgICApCiAgICAgICAgICAgIC8vIFdlIG5lZWQgYXJyYXkgZm9yIG1lbWJlcnMg4oCUIGJ1aWxkIG1hbnVhbGx5CiAgICAgICAgICAgIHZhbCBib2R5ID0gIiIiCiAgICAgICAgICAgICAgICB7ImZpZWxkcyI6ewogICAgICAgICAgICAgICAgICAgICJtZW1iZXJzIjp7ImFycmF5VmFsdWUiOnsidmFsdWVzIjpbeyJzdHJpbmdWYWx1ZSI6IiR1aWQifSx7InN0cmluZ1ZhbHVlIjoiJHBhcnRuZXJJZCJ9XX19LAogICAgICAgICAgICAgICAgICAgICJsYXN0TWVzc2FnZSI6eyJzdHJpbmdWYWx1ZSI6IiJ9LAogICAgICAgICAgICAgICAgICAgICJsYXN0VGltZXN0YW1wIjp7ImludGVnZXJWYWx1ZSI6IiR7U3lzdGVtLmN1cnJlbnRUaW1lTWlsbGlzKCl9In0sCiAgICAgICAgICAgICAgICAgICAgImNyZWF0ZWRBdCI6eyJpbnRlZ2VyVmFsdWUiOiIke1N5c3RlbS5jdXJyZW50VGltZU1pbGxpcygpfSJ9CiAgICAgICAgICAgICAgICB9fQogICAgICAgICAgICAiIiIudHJpbUluZGVudCgpLnRvUmVxdWVzdEJvZHkoSlNPTikKCiAgICAgICAgICAgIHZhbCByZXEgPSBSZXF1ZXN0LkJ1aWxkZXIoKS51cmwoIiRCQVNFL2NoYXRzLyRjaWQiKS5wYXRjaChib2R5KS5idWlsZCgpCiAgICAgICAgICAgIHZhbCByZXMgPSBjbGllbnQubmV3Q2FsbChyZXEpLmV4ZWN1dGUoKQogICAgICAgICAgICByZXMuaXNTdWNjZXNzZnVsCiAgICAgICAgfSBjYXRjaCAoZTogRXhjZXB0aW9uKSB7IGZhbHNlIH0KICAgIH0KCiAgICBzdXNwZW5kIGZ1biBhZGRDb250YWN0QnlQaG9uZShteVVpZDogU3RyaW5nLCBwaG9uZTogU3RyaW5nKTogVXNlcj8gPSB3aXRoQ29udGV4dChEaXNwYXRjaGVycy5JTykgewogICAgICAgIHRyeSB7CiAgICAgICAgICAgIHZhbCB1aWQgPSBwaG9uZS5yZXBsYWNlKFJlZ2V4KCJbXjAtOV0iKSwgIiIpCiAgICAgICAgICAgIC8vIENoZWNrIGlmIHRoaXMgdXNlciBleGlzdHMKICAgICAgICAgICAgdmFsIHVzZXIgPSBnZXRVc2VyKHVpZCkKICAgICAgICAgICAgaWYgKHVzZXIgIT0gbnVsbCAmJiB1c2VyLnVpZC5pc05vdEVtcHR5KCkpIHsKICAgICAgICAgICAgICAgIHJldHVybkB3aXRoQ29udGV4dCB1c2VyCiAgICAgICAgICAgIH0KICAgICAgICAgICAgLy8gQ3JlYXRlIGEgcGxhY2Vob2xkZXIgdXNlcgogICAgICAgICAgICBjcmVhdGVPclVwZGF0ZVVzZXIodWlkLCBwaG9uZSwgIiIsICIiLCAiIikKICAgICAgICAgICAgZ2V0VXNlcih1aWQpCiAgICAgICAgfSBjYXRjaCAoZTogRXhjZXB0aW9uKSB7IG51bGwgfQogICAgfQoKICAgIHN1c3BlbmQgZnVuIHVwZGF0ZVVzZXJQcm9maWxlKHVpZDogU3RyaW5nLCBuYW1lOiBTdHJpbmcsIGJpbzogU3RyaW5nLCBwaG90b1VSTDogU3RyaW5nKTogQm9vbGVhbiA9IHdpdGhDb250ZXh0KERpc3BhdGNoZXJzLklPKSB7CiAgICAgICAgY3JlYXRlT3JVcGRhdGVVc2VyKHVpZCwgIiIsIG5hbWUsIGJpbywgcGhvdG9VUkwpCiAgICB9Cn0K
+package com.hamgab.messenger.data
+
+import com.google.gson.Gson
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import okhttp3.RequestBody.Companion.toRequestBody
+import java.util.concurrent.TimeUnit
+
+class FirestoreApi {
+
+    companion object {
+        private const val PROJECT_ID = "web-rasa"
+        private const val BASE = "https://firestore.googleapis.com/v1/projects/$PROJECT_ID/databases/(default)/documents"
+
+        // IMGBB key from original app
+        const val IMGBB_KEY = "8efbeb33b4488d0dc418b081df38d21b"
+
+        private val client: OkHttpClient = OkHttpClient.Builder()
+            .connectTimeout(15, TimeUnit.SECONDS)
+            .readTimeout(30, TimeUnit.SECONDS)
+            .build()
+
+        private val gson = Gson()
+        private val JSON = "application/json".toMediaType()
+
+        private fun esc(value: String): String {
+            val sb = StringBuilder()
+            for (c in value) {
+                when (c) {
+                    '\\', '"', '/', '\n', '\r', '\t' -> {
+                        sb.append('\\')
+                        when (c) { '\\' -> sb.append('\\'); '"' -> sb.append('"'); '/' -> sb.append('/'); '\n' -> sb.append('n'); '\r' -> sb.append('r'); '\t' -> sb.append('t'); else -> sb.append(c) }
+                    }
+                    else -> {
+                        if (c.code < 0x20 || c.code > 0x10FFFF) sb.append("\\u${"%04x".format(c.code)}")
+                        else sb.append(c)
+                    }
+                }
+            }
+            return sb.toString()
+        }
+
+        // Convert a Kotlin map to Firestore REST fields JSON
+        private fun toFields(data: Map<String, Any?>): String {
+            val sb = StringBuilder("{")
+            var first = true
+            for ((key, value) in data) {
+                if (!first) sb.append(",")
+                first = false
+                sb.append("\"").append(key).append("\":")
+                when (value) {
+                    is String -> sb.append("{\"stringValue\":\"").append(esc(value)).append("\"}")
+                    is Int -> sb.append("{\"integerValue\":\"").append(value).append("\"}")
+                    is Long -> sb.append("{\"integerValue\":\"").append(value).append("\"}")
+                    is Boolean -> sb.append("{\"booleanValue\":").append(value).append("}")
+                    null -> sb.append("{\"nullValue\":null}")
+                    else -> sb.append("{\"stringValue\":\"").append(esc(value.toString())).append("\"}")
+                }
+            }
+            sb.append("}")
+            return sb.toString()
+        }
+
+        private fun getString(field: FirestoreValue?): String = field?.stringValue ?: ""
+
+        private fun getLong(field: FirestoreValue?): Long = field?.integerValue?.toLongOrNull() ?: 0L
+
+        private fun getBool(field: FirestoreValue?): Boolean = field?.booleanValue ?: false
+
+        fun docToUser(doc: FirestoreDocument): User {
+            val f = doc.fields
+            return User(
+                uid = doc.name.substringAfterLast("/"),
+                name = getString(f?.get("name")),
+                bio = getString(f?.get("bio")),
+                photoURL = getString(f?.get("photoURL")),
+                verified = getBool(f?.get("verified")),
+                phone = getString(f?.get("phone"))
+            )
+        }
+
+        fun docToMessage(doc: FirestoreDocument): Message {
+            val f = doc.fields
+            return Message(
+                id = doc.name.substringAfterLast("/"),
+                text = getString(f?.get("text")),
+                senderId = getString(f?.get("senderId")),
+                senderName = getString(f?.get("senderName")),
+                timestamp = getLong(f?.get("timestamp")),
+                type = getString(f?.get("type")).ifEmpty { "text" },
+                imageURL = getString(f?.get("imageURL"))
+            )
+        }
+
+        private fun chatId(a: String, b: String): String {
+            return if (a < b) "${a}_$b" else "${b}_$a"
+        }
+    }
+
+    suspend fun getUser(uid: String): User? = withContext(Dispatchers.IO) {
+        try {
+            val req = Request.Builder().url("$BASE/users/$uid").get().build()
+            val res = client.newCall(req).execute()
+            if (!res.isSuccessful) return@withContext null
+            val doc = gson.fromJson(res.body?.string(), FirestoreDocument::class.java)
+            docToUser(doc)
+        } catch (e: Exception) { null }
+    }
+
+    suspend fun createOrUpdateUser(uid: String, phone: String, name: String, bio: String, photoURL: String): Boolean = withContext(Dispatchers.IO) {
+        try {
+            val data = mapOf(
+                "phone" to phone,
+                "name" to name,
+                "bio" to bio,
+                "photoURL" to photoURL,
+                "verified" to false
+            )
+            val body = "{\"fields\":${toFields(data)}}".toRequestBody(JSON)
+            val req = Request.Builder()
+                .url("$BASE/users/$uid?updateMask.fieldPaths=phone&updateMask.fieldPaths=name&updateMask.fieldPaths=bio&updateMask.fieldPaths=photoURL&updateMask.fieldPaths=verified")
+                .patch(body)
+                .build()
+            val res = client.newCall(req).execute()
+            res.isSuccessful
+        } catch (e: Exception) { false }
+    }
+
+    suspend fun getChatMessages(uid: String, partnerId: String): List<Message> = withContext(Dispatchers.IO) {
+        try {
+            val cid = chatId(uid, partnerId)
+            val req = Request.Builder()
+                .url("$BASE/chats/$cid/messages?orderBy=timestamp&pageSize=100")
+                .get()
+                .build()
+            val res = client.newCall(req).execute()
+            if (!res.isSuccessful) return@withContext emptyList()
+            val list = gson.fromJson(res.body?.string(), FirestoreListResponse::class.java)
+            list?.documents?.map { docToMessage(it) } ?: emptyList()
+        } catch (e: Exception) { emptyList() }
+    }
+
+    suspend fun sendMessage(uid: String, partnerId: String, text: String, senderName: String): Boolean = withContext(Dispatchers.IO) {
+        try {
+            val cid = chatId(uid, partnerId)
+            val ts = System.currentTimeMillis()
+            val data = mapOf(
+                "text" to text,
+                "senderId" to uid,
+                "senderName" to senderName,
+                "timestamp" to ts,
+                "type" to "text"
+            )
+            val body = "{\"fields\":${toFields(data)}}".toRequestBody(JSON)
+            val req = Request.Builder()
+                .url("$BASE/chats/$cid/messages")
+                .post(body)
+                .build()
+            val res = client.newCall(req).execute()
+            res.isSuccessful
+        } catch (e: Exception) { false }
+    }
+
+    suspend fun getUserChats(uid: String): List<ChatItem> = withContext(Dispatchers.IO) {
+        try {
+            // Query chats where members array contains uid
+            // Firestore REST structuredQuery
+            val queryBody = """
+                {"structuredQuery":{"from":[{"collectionId":"chats"}],"where":{"fieldFilter":{"field":{"fieldPath":"members"},"filter":{"arrayFilter":{"operator":"ARRAY_CONTAINS","value":{"stringValue":"$uid"}}}}},"orderBy":[{"field":{"fieldPath":"lastTimestamp"},"direction":"DESCENDING"}]}}
+            """.trimIndent()
+
+            val req = Request.Builder()
+                .url("$BASE:runQuery")
+                .post(queryBody.toRequestBody(JSON))
+                .build()
+            val res = client.newCall(req).execute()
+            if (!res.isSuccessful) return@withContext emptyList()
+            val responseText = res.body?.string() ?: return@withContext emptyList()
+
+            // Parse response — array of documents
+            val docs = gson.fromJson(responseText, Array<FirestoreDocument>::class.java)
+            docs?.mapNotNull { doc ->
+                val f = doc.fields ?: return@mapNotNull null
+                val chatDocId = doc.name.substringAfterLast("/")
+                // Extract the partner ID from members array
+                val membersArr = f["members"]?.arrayValue?.values?.map { it.stringValue ?: "" } ?: emptyList()
+                val partnerId = membersArr.firstOrNull { it != uid } ?: ""
+                if (partnerId.isEmpty()) return@mapNotNull null
+
+                val partner = getUser(partnerId)
+                ChatItem(
+                    chatId = chatDocId,
+                    partnerId = partnerId,
+                    partnerName = partner?.name ?: partnerId,
+                    partnerPhoto = partner?.photoURL ?: "",
+                    lastMessage = getString(f["lastMessage"]),
+                    lastTimestamp = getLong(f["lastTimestamp"]),
+                    unreadCount = getLong(f["unreadCount"]).toInt()
+                )
+            } ?: emptyList()
+        } catch (e: Exception) { emptyList() }
+    }
+
+    suspend fun ensureChatExists(uid: String, partnerId: String, partnerName: String, myName: String): Boolean = withContext(Dispatchers.IO) {
+        try {
+            val cid = chatId(uid, partnerId)
+            // Check if chat document exists
+            val checkReq = Request.Builder().url("$BASE/chats/$cid").get().build()
+            val checkRes = client.newCall(checkReq).execute()
+            if (checkRes.isSuccessful) return@withContext true // already exists
+
+            // Create chat doc
+            val data = mapOf(
+                "members" to uid, // will be overwritten below
+                "lastMessage" to "",
+                "lastTimestamp" to System.currentTimeMillis(),
+                "createdAt" to System.currentTimeMillis()
+            )
+            // We need array for members — build manually
+            val body = """
+                {"fields":{
+                    "members":{"arrayValue":{"values":[{"stringValue":"$uid"},{"stringValue":"$partnerId"}]}},
+                    "lastMessage":{"stringValue":""},
+                    "lastTimestamp":{"integerValue":"${System.currentTimeMillis()}"},
+                    "createdAt":{"integerValue":"${System.currentTimeMillis()}"}
+                }}
+            """.trimIndent().toRequestBody(JSON)
+
+            val req = Request.Builder().url("$BASE/chats/$cid").patch(body).build()
+            val res = client.newCall(req).execute()
+            res.isSuccessful
+        } catch (e: Exception) { false }
+    }
+
+    suspend fun addContactByPhone(myUid: String, phone: String): User? = withContext(Dispatchers.IO) {
+        try {
+            val uid = phone.replace(Regex("[^0-9]"), "")
+            // Check if this user exists
+            val user = getUser(uid)
+            if (user != null && user.uid.isNotEmpty()) {
+                return@withContext user
+            }
+            // Create a placeholder user
+            createOrUpdateUser(uid, phone, "", "", "")
+            getUser(uid)
+        } catch (e: Exception) { null }
+    }
+
+    suspend fun updateUserProfile(uid: String, name: String, bio: String, photoURL: String): Boolean = withContext(Dispatchers.IO) {
+        createOrUpdateUser(uid, "", name, bio, photoURL)
+    }
+}

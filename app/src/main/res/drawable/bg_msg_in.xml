@@ -1,1 +1,5 @@
-PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHNoYXBlIHhtbG5zOmFuZHJvaWQ9Imh0dHA6Ly9zY2hlbWFzLmFuZHJvaWQuY29tL2Fway9yZXMvYW5kcm9pZCIgYW5kcm9pZDpzaGFwZT0icmVjdGFuZ2xlIj4KICAgIDxzb2xpZCBhbmRyb2lkOmNvbG9yPSJAY29sb3IvbXNnX2luX2JnIi8+CiAgICA8Y29ybmVycyBhbmRyb2lkOnRvcFJpZ2h0UmFkaXVzPSIxMmRwIiBhbmRyb2lkOmJvdHRvbVJpZ2h0UmFkaXVzPSIyZHAiIGFuZHJvaWQ6Ym90dG9tTGVmdFJhZGl1cz0iMTJkcCIgYW5kcm9pZDp0b3BMZWZ0UmFkaXVzPSIxMmRwIi8+Cjwvc2hhcGU+Cg==
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="@color/msg_in_bg"/>
+    <corners android:topRightRadius="12dp" android:bottomRightRadius="2dp" android:bottomLeftRadius="12dp" android:topLeftRadius="12dp"/>
+</shape>

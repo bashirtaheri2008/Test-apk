@@ -1,1 +1,14 @@
-PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHZlY3RvciB4bWxuczphbmRyb2lkPSJodHRwOi8vc2NoZW1hcy5hbmRyb2lkLmNvbS9hcGsvcmVzL2FuZHJvaWQiCiAgICBhbmRyb2lkOndpZHRoPSIxMDhkcCIKICAgIGFuZHJvaWQ6aGVpZ2h0PSIxMDhkcCIKICAgIGFuZHJvaWQ6dmlld3BvcnRXaWR0aD0iMTA4IgogICAgYW5kcm9pZDp2aWV3cG9ydEhlaWdodD0iMTA4Ij4KICAgIDwhLS0gQ2hhdCBidWJibGUgaWNvbiAtLT4KICAgIDxwYXRoCiAgICAgICAgYW5kcm9pZDpmaWxsQ29sb3I9IiNmZmZmZmYiCiAgICAgICAgYW5kcm9pZDpwYXRoRGF0YT0iTTU0LDMwIEM0MiwzMCAzMiwzOCAzMiw0OCBDMzIsNTggNDIsNjYgNTQsNjYgQzU3LDY2IDYwLDY1LjUgNjIuNSw2NC44IEw3Miw2OCBMNjksNjAgQzczLDU2IDc2LDUyIDc2LDQ4IEM3NiwzOCA2NiwzMCA1NCwzMCBaIi8+CiAgICA8cGF0aAogICAgICAgIGFuZHJvaWQ6ZmlsbENvbG9yPSJAY29sb3IvcHJpbWFyeSIKICAgICAgICBhbmRyb2lkOnBhdGhEYXRhPSJNNDgsNDQgTDYwLDQ0IEw2MCw0NiBMNDgsNDYgWiBNNDgsNDggTDU2LDQ4IEw1Niw1MCBMNDgsNTAgWiIvPgo8L3ZlY3Rvcj4K
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Chat bubble icon -->
+    <path
+        android:fillColor="#ffffff"
+        android:pathData="M54,30 C42,30 32,38 32,48 C32,58 42,66 54,66 C57,66 60,65.5 62.5,64.8 L72,68 L69,60 C73,56 76,52 76,48 C76,38 66,30 54,30 Z"/>
+    <path
+        android:fillColor="@color/primary"
+        android:pathData="M48,44 L60,44 L60,46 L48,46 Z M48,48 L56,48 L56,50 L48,50 Z"/>
+</vector>

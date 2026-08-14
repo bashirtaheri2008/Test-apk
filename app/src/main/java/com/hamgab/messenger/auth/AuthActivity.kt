@@ -1,1 +1,232 @@
-cGFja2FnZSBjb20uaGFtZ2FiLm1lc3Nlbmdlci5hdXRoCgppbXBvcnQgYW5kcm9pZC5jb250ZW50LkludGVudAppbXBvcnQgYW5kcm9pZC5vcy5CdW5kbGUKaW1wb3J0IGFuZHJvaWQub3MuSGFuZGxlcgppbXBvcnQgYW5kcm9pZC5vcy5Mb29wZXIKaW1wb3J0IGFuZHJvaWQudGV4dC5FZGl0YWJsZQppbXBvcnQgYW5kcm9pZC50ZXh0LlRleHRXYXRjaGVyCmltcG9ydCBhbmRyb2lkLnZpZXcuVmlldwppbXBvcnQgYW5kcm9pZC53aWRnZXQuRWRpdFRleHQKaW1wb3J0IGFuZHJvaWQud2lkZ2V0LlRleHRWaWV3CmltcG9ydCBhbmRyb2lkeC5hcHBjb21wYXQuYXBwLkFwcENvbXBhdEFjdGl2aXR5CmltcG9ydCBhbmRyb2lkeC5saWZlY3ljbGUubGlmZWN5Y2xlU2NvcGUKaW1wb3J0IGNvbS5oYW1nYWIubWVzc2VuZ2VyLk1haW5BY3Rpdml0eQppbXBvcnQgY29tLmhhbWdhYi5tZXNzZW5nZXIuZGF0YS5GaXJlc3RvcmVBcGkKaW1wb3J0IGNvbS5oYW1nYWIubWVzc2VuZ2VyLmRhdGEuUHJlZnMKaW1wb3J0IGNvbS5oYW1nYWIubWVzc2VuZ2VyLmRhdGFiaW5kaW5nLkFjdGl2aXR5QXV0aEJpbmRpbmcKaW1wb3J0IGtvdGxpbnguY29yb3V0aW5lcy5sYXVuY2gKaW1wb3J0IGphdmEudXRpbC5SYW5kb20KCmNsYXNzIEF1dGhBY3Rpdml0eSA6IEFwcENvbXBhdEFjdGl2aXR5KCkgewoKICAgIHByaXZhdGUgbGF0ZWluaXQgdmFyIGJpbmRpbmc6IEFjdGl2aXR5QXV0aEJpbmRpbmcKICAgIHByaXZhdGUgdmFsIGFwaSA9IEZpcmVzdG9yZUFwaSgpCiAgICBwcml2YXRlIGxhdGVpbml0IHZhciBwcmVmczogUHJlZnMKICAgIHByaXZhdGUgdmFyIGN1cnJlbnRPVFAgPSAiIgogICAgcHJpdmF0ZSB2YXIgY3VycmVudFBob25lID0gIiIKICAgIHByaXZhdGUgdmFyIHJlc2VuZFRpbWVyOiBJbnQgPSAwCiAgICBwcml2YXRlIHZhbCBoYW5kbGVyID0gSGFuZGxlcihMb29wZXIuZ2V0TWFpbkxvb3BlcigpKQogICAgcHJpdmF0ZSB2YWwgcmVzZW5kUnVubmFibGUgPSBvYmplY3QgOiBSdW5uYWJsZSB7CiAgICAgICAgb3ZlcnJpZGUgZnVuIHJ1bigpIHsKICAgICAgICAgICAgaWYgKHJlc2VuZFRpbWVyID4gMCkgewogICAgICAgICAgICAgICAgcmVzZW5kVGltZXItLQogICAgICAgICAgICAgICAgYmluZGluZy5yZXNlbmRUaW1lci50ZXh0ID0gItiv2LHYrtmI2KfYs9iqINmF2KzYr9ivINio2LnYryDYp9iyICRyZXNlbmRUaW1lciDYq9in2YbbjNmHIgogICAgICAgICAgICAgICAgaGFuZGxlci5wb3N0RGVsYXllZCh0aGlzLCAxMDAwKQogICAgICAgICAgICB9IGVsc2UgewogICAgICAgICAgICAgICAgYmluZGluZy5yZXNlbmRUaW1lci52aXNpYmlsaXR5ID0gVmlldy5HT05FCiAgICAgICAgICAgICAgICBiaW5kaW5nLnJlc2VuZEJ0bi52aXNpYmlsaXR5ID0gVmlldy5WSVNJQkxFCiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICB9CgogICAgb3ZlcnJpZGUgZnVuIG9uQ3JlYXRlKHNhdmVkSW5zdGFuY2VTdGF0ZTogQnVuZGxlPykgewogICAgICAgIHN1cGVyLm9uQ3JlYXRlKHNhdmVkSW5zdGFuY2VTdGF0ZSkKICAgICAgICBiaW5kaW5nID0gQWN0aXZpdHlBdXRoQmluZGluZy5pbmZsYXRlKGxheW91dEluZmxhdGVyKQogICAgICAgIHNldENvbnRlbnRWaWV3KGJpbmRpbmcucm9vdCkKICAgICAgICBwcmVmcyA9IFByZWZzKHRoaXMpCgogICAgICAgIC8vIEF1dG8tbG9naW4gaWYgYWxyZWFkeSBsb2dnZWQgaW4KICAgICAgICBpZiAocHJlZnMuaXNMb2dnZWRJbiAmJiBwcmVmcy51aWQuaXNOb3RFbXB0eSgpKSB7CiAgICAgICAgICAgIHN0YXJ0QWN0aXZpdHkoSW50ZW50KHRoaXMsIE1haW5BY3Rpdml0eTo6Y2xhc3MuamF2YSkpCiAgICAgICAgICAgIGZpbmlzaCgpCiAgICAgICAgICAgIHJldHVybgogICAgICAgIH0KCiAgICAgICAgc2V0dXBQaG9uZUlucHV0KCkKICAgICAgICBzZXR1cE9UUElucHV0cygpCiAgICAgICAgc2V0dXBCdXR0b25zKCkKICAgIH0KCiAgICBwcml2YXRlIGZ1biBzZXR1cFBob25lSW5wdXQoKSB7CiAgICAgICAgYmluZGluZy5waG9uZUlucHV0LmFkZFRleHRDaGFuZ2VkTGlzdGVuZXIob2JqZWN0IDogVGV4dFdhdGNoZXIgewogICAgICAgICAgICBvdmVycmlkZSBmdW4gYWZ0ZXJUZXh0Q2hhbmdlZChzOiBFZGl0YWJsZT8pIHsKICAgICAgICAgICAgICAgIHM/LmxldCB7CiAgICAgICAgICAgICAgICAgICAgdmFsIGRpZ2l0cyA9IGl0LnRvU3RyaW5nKCkucmVwbGFjZShSZWdleCgiXFxEIiksICIiKQogICAgICAgICAgICAgICAgICAgIGlmIChkaWdpdHMgIT0gaXQudG9TdHJpbmcoKSkgewogICAgICAgICAgICAgICAgICAgICAgICBiaW5kaW5nLnBob25lSW5wdXQuc2V0VGV4dChkaWdpdHMpCiAgICAgICAgICAgICAgICAgICAgICAgIGJpbmRpbmcucGhvbmVJbnB1dC5zZXRTZWxlY3Rpb24oZGlnaXRzLmxlbmd0aCkKICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgICAgYmluZGluZy5zZW5kT3RwQnRuLmlzRW5hYmxlZCA9IGRpZ2l0cy5sZW5ndGggPT0gOQogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9CiAgICAgICAgICAgIG92ZXJyaWRlIGZ1biBiZWZvcmVUZXh0Q2hhbmdlZChzOiBDaGFyU2VxdWVuY2U/LCBzdGFydDogSW50LCBjb3VudDogSW50LCBhZnRlcjogSW50KSB7fQogICAgICAgICAgICBvdmVycmlkZSBmdW4gb25UZXh0Q2hhbmdlZChzOiBDaGFyU2VxdWVuY2U/LCBzdGFydDogSW50LCBiZWZvcmU6IEludCwgY291bnQ6IEludCkge30KICAgICAgICB9KQogICAgfQoKICAgIHByaXZhdGUgZnVuIHNldHVwT1RQSW5wdXRzKCkgewogICAgICAgIHZhbCBib3hlcyA9IGFycmF5T2YoYmluZGluZy5vdHAxLCBiaW5kaW5nLm90cDIsIGJpbmRpbmcub3RwMywgYmluZGluZy5vdHA0LCBiaW5kaW5nLm90cDUsIGJpbmRpbmcub3RwNikKICAgICAgICBmb3IgKGkgaW4gYm94ZXMuaW5kaWNlcykgewogICAgICAgICAgICBib3hlc1tpXS5hZGRUZXh0Q2hhbmdlZExpc3RlbmVyKG9iamVjdCA6IFRleHRXYXRjaGVyIHsKICAgICAgICAgICAgICAgIG92ZXJyaWRlIGZ1biBhZnRlclRleHRDaGFuZ2VkKHM6IEVkaXRhYmxlPykgewogICAgICAgICAgICAgICAgICAgIHZhbCB0ZXh0ID0gcz8udG9TdHJpbmcoKSA/OiAiIgogICAgICAgICAgICAgICAgICAgIGlmICh0ZXh0LmlzTm90RW1wdHkoKSkgewogICAgICAgICAgICAgICAgICAgICAgICBpZiAoaSA8IDUpIGJveGVzW2kgKyAxXS5yZXF1ZXN0Rm9jdXMoKQogICAgICAgICAgICAgICAgICAgICAgICBlbHNlIHZlcmlmeU9UUCgpCiAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgb3ZlcnJpZGUgZnVuIGJlZm9yZVRleHRDaGFuZ2VkKHM6IENoYXJTZXF1ZW5jZT8sIHN0YXJ0OiBJbnQsIGNvdW50OiBJbnQsIGFmdGVyOiBJbnQpIHt9CiAgICAgICAgICAgICAgICBvdmVycmlkZSBmdW4gb25UZXh0Q2hhbmdlZChzOiBDaGFyU2VxdWVuY2U/LCBzdGFydDogSW50LCBiZWZvcmU6IEludCwgY291bnQ6IEludCkge30KICAgICAgICAgICAgfSkKCiAgICAgICAgICAgIGJveGVzW2ldLnNldE9uS2V5TGlzdGVuZXIgeyBfLCBrZXlDb2RlLCBldmVudCAtPgogICAgICAgICAgICAgICAgaWYgKGtleUNvZGUgPT0gYW5kcm9pZC52aWV3LktleUV2ZW50LktFWUNPREVfREVMICYmIGJveGVzW2ldLnRleHQuaXNFbXB0eSgpICYmIGkgPiAwKSB7CiAgICAgICAgICAgICAgICAgICAgYm94ZXNbaSAtIDFdLnJlcXVlc3RGb2N1cygpCiAgICAgICAgICAgICAgICAgICAgYm94ZXNbaSAtIDFdLnNldFRleHQoIiIpCiAgICAgICAgICAgICAgICAgICAgdHJ1ZQogICAgICAgICAgICAgICAgfSBlbHNlIGZhbHNlCiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICB9CgogICAgcHJpdmF0ZSBmdW4gc2V0dXBCdXR0b25zKCkgewogICAgICAgIGJpbmRpbmcuc2VuZE90cEJ0bi5zZXRPbkNsaWNrTGlzdGVuZXIgewogICAgICAgICAgICB2YWwgcGhvbmUgPSBiaW5kaW5nLnBob25lSW5wdXQudGV4dC50b1N0cmluZygpLnRyaW0oKQogICAgICAgICAgICBpZiAocGhvbmUubGVuZ3RoICE9IDkpIHsKICAgICAgICAgICAgICAgIHNob3dFcnJvcihiaW5kaW5nLnBob25lRXJyb3IsICLimqDvuI8g2LTZhdin2LHZhyDZhdi52KrYqNixINmG24zYs9iqIOKAlCDbuSDYsdmC2YUg2KjYr9mI2YYg2LXZgdixINmI2KfYsdivINqp2YbbjNivIikKICAgICAgICAgICAgICAgIHJldHVybkBzZXRPbkNsaWNrTGlzdGVuZXIKICAgICAgICAgICAgfQogICAgICAgICAgICBjdXJyZW50UGhvbmUgPSAiKzkzJHBob25lIgogICAgICAgICAgICBnZW5lcmF0ZU9UUCgpCiAgICAgICAgICAgIHNob3dPVFBTdGVwKCkKICAgICAgICB9CgogICAgICAgIGJpbmRpbmcucmVzZW5kQnRuLnNldE9uQ2xpY2tMaXN0ZW5lciB7CiAgICAgICAgICAgIGdlbmVyYXRlT1RQKCkKICAgICAgICAgICAgc3RhcnRSZXNlbmRUaW1lcigpCiAgICAgICAgICAgIGNsZWFyT1RQQm94ZXMoKQogICAgICAgIH0KCiAgICAgICAgYmluZGluZy52ZXJpZnlCdG4uc2V0T25DbGlja0xpc3RlbmVyIHsKICAgICAgICAgICAgdmVyaWZ5T1RQKCkKICAgICAgICB9CiAgICB9CgogICAgcHJpdmF0ZSBmdW4gZ2VuZXJhdGVPVFAoKSB7CiAgICAgICAgLy8gU0lNVUxBVEUgT1RQIOKAlCBzZXJ2ZXIgaXMgb2ZmbGluZSwgZ2VuZXJhdGUgbG9jYWxseQogICAgICAgIHZhbCByYW5kb20gPSBSYW5kb20oKQogICAgICAgIGN1cnJlbnRPVFAgPSBTdHJpbmcuZm9ybWF0KCIlMDZkIiwgcmFuZG9tLm5leHRJbnQoMTAwMDAwMCkpCiAgICB9CgogICAgcHJpdmF0ZSBmdW4gc2hvd09UUFN0ZXAoKSB7CiAgICAgICAgYmluZGluZy5waG9uZVN0ZXAudmlzaWJpbGl0eSA9IFZpZXcuR09ORQogICAgICAgIGJpbmRpbmcub3RwU3RlcC52aXNpYmlsaXR5ID0gVmlldy5WSVNJQkxFCgogICAgICAgIC8vIERpc3BsYXkgcGhvbmUgbnVtYmVyCiAgICAgICAgdmFsIGRpc3BsYXlQaG9uZSA9ICIwJHtjdXJyZW50UGhvbmUuc3Vic3RyaW5nKDMpfSIKICAgICAgICBiaW5kaW5nLm90cFBob25lRGlzcGxheS50ZXh0ID0gZGlzcGxheVBob25lCgogICAgICAgIC8vIFNob3cgT1RQIGNvZGUgZm9yIHRlc3RpbmcgKHNpbmNlIE9UUCBzZXJ2ZXIgaXMgb2ZmbGluZSkKICAgICAgICBiaW5kaW5nLm90cFRlc3REaXNwbGF5LnZpc2liaWxpdHkgPSBWaWV3LlZJU0lCTEUKICAgICAgICBiaW5kaW5nLm90cFRlc3REaXNwbGF5LnRleHQgPSAi8J+UkSDaqdivINiq2LPYqjogJGN1cnJlbnRPVFAiCgogICAgICAgIGNsZWFyT1RQQm94ZXMoKQogICAgICAgIHN0YXJ0UmVzZW5kVGltZXIoKQogICAgICAgIGJpbmRpbmcub3RwMS5yZXF1ZXN0Rm9jdXMoKQogICAgfQoKICAgIHByaXZhdGUgZnVuIHN0YXJ0UmVzZW5kVGltZXIoKSB7CiAgICAgICAgcmVzZW5kVGltZXIgPSA5MAogICAgICAgIGJpbmRpbmcucmVzZW5kVGltZXIudmlzaWJpbGl0eSA9IFZpZXcuVklTSUJMRQogICAgICAgIGJpbmRpbmcucmVzZW5kQnRuLnZpc2liaWxpdHkgPSBWaWV3LkdPTkUKICAgICAgICBiaW5kaW5nLnJlc2VuZFRpbWVyLnRleHQgPSAi2K/Ysdiu2YjYp9iz2Kog2YXYrNiv2K8g2KjYudivINin2LIgJHJlc2VuZFRpbWVyINir2KfZhtuM2YciCiAgICAgICAgaGFuZGxlci5yZW1vdmVDYWxsYmFja3MocmVzZW5kUnVubmFibGUpCiAgICAgICAgaGFuZGxlci5wb3N0RGVsYXllZChyZXNlbmRSdW5uYWJsZSwgMTAwMCkKICAgIH0KCiAgICBwcml2YXRlIGZ1biBjbGVhck9UUEJveGVzKCkgewogICAgICAgIGJpbmRpbmcub3RwMS5zZXRUZXh0KCIiKQogICAgICAgIGJpbmRpbmcub3RwMi5zZXRUZXh0KCIiKQogICAgICAgIGJpbmRpbmcub3RwMy5zZXRUZXh0KCIiKQogICAgICAgIGJpbmRpbmcub3RwNC5zZXRUZXh0KCIiKQogICAgICAgIGJpbmRpbmcub3RwNS5zZXRUZXh0KCIiKQogICAgICAgIGJpbmRpbmcub3RwNi5zZXRUZXh0KCIiKQogICAgICAgIGJpbmRpbmcub3RwRXJyb3IudmlzaWJpbGl0eSA9IFZpZXcuR09ORQogICAgICAgIGJpbmRpbmcub3RwU3VjY2Vzcy52aXNpYmlsaXR5ID0gVmlldy5HT05FCiAgICB9CgogICAgcHJpdmF0ZSBmdW4gdmVyaWZ5T1RQKCkgewogICAgICAgIHZhbCBjb2RlID0gIiR7YmluZGluZy5vdHAxLnRleHR9JHtiaW5kaW5nLm90cDIudGV4dH0ke2JpbmRpbmcub3RwMy50ZXh0fSR7YmluZGluZy5vdHA0LnRleHR9JHtiaW5kaW5nLm90cDUudGV4dH0ke2JpbmRpbmcub3RwNi50ZXh0fSIKICAgICAgICBpZiAoY29kZS5sZW5ndGggPCA2KSB7CiAgICAgICAgICAgIHNob3dPVFBFcnJvcigi4pqg77iPINmE2LfZgdin2Ysg2qnYryDbtiDYsdmC2YXbjCDYsdinINqp2KfZhdmEINmI2KfYsdivINqp2YbbjNivIikKICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgfQoKICAgICAgICBpZiAoY29kZSA9PSBjdXJyZW50T1RQKSB7CiAgICAgICAgICAgIC8vIE9UUCB2ZXJpZmllZCDigJQgbG9naW4KICAgICAgICAgICAgYmluZGluZy5vdHBFcnJvci52aXNpYmlsaXR5ID0gVmlldy5HT05FCiAgICAgICAgICAgIGJpbmRpbmcub3RwU3VjY2Vzcy52aXNpYmlsaXR5ID0gVmlldy5WSVNJQkxFCiAgICAgICAgICAgIGJpbmRpbmcub3RwU3VjY2Vzcy50ZXh0ID0gIuKckyDYqtij24zbjNivINi02K8hINiv2LEg2K3Yp9mEINmI2LHZiNivLi4uIgogICAgICAgICAgICBoYW5kbGVyLnJlbW92ZUNhbGxiYWNrcyhyZXNlbmRSdW5uYWJsZSkKCiAgICAgICAgICAgIGxvZ2luV2l0aFBob25lKGN1cnJlbnRQaG9uZSkKICAgICAgICB9IGVsc2UgewogICAgICAgICAgICBzaG93T1RQRXJyb3IoIuKdjCDaqdivINmI2KfYsdivINi02K/ZhyDYp9i02KrYqNin2Ycg2KfYs9iqIikKICAgICAgICB9CiAgICB9CgogICAgcHJpdmF0ZSBmdW4gbG9naW5XaXRoUGhvbmUocGhvbmU6IFN0cmluZykgewogICAgICAgIHZhbCB1aWQgPSBwaG9uZS5yZXBsYWNlKFJlZ2V4KCJbXjAtOV0iKSwgIiIpCiAgICAgICAgbGlmZWN5Y2xlU2NvcGUubGF1bmNoIHsKICAgICAgICAgICAgdHJ5IHsKICAgICAgICAgICAgICAgIC8vIENoZWNrIGlmIHVzZXIgZXhpc3RzCiAgICAgICAgICAgICAgICB2YXIgdXNlciA9IGFwaS5nZXRVc2VyKHVpZCkKICAgICAgICAgICAgICAgIGlmICh1c2VyID09IG51bGwgfHwgdXNlci51aWQuaXNFbXB0eSgpKSB7CiAgICAgICAgICAgICAgICAgICAgLy8gQ3JlYXRlIG5ldyB1c2VyCiAgICAgICAgICAgICAgICAgICAgYXBpLmNyZWF0ZU9yVXBkYXRlVXNlcih1aWQsIHBob25lLCAi2qnYp9ix2KjYsSDZh9mF4oCM2q/YqCIsICIiLCAiIikKICAgICAgICAgICAgICAgICAgICB1c2VyID0gYXBpLmdldFVzZXIodWlkKQogICAgICAgICAgICAgICAgfQoKICAgICAgICAgICAgICAgIC8vIFNhdmUgdG8gcHJlZnMKICAgICAgICAgICAgICAgIHByZWZzLnVpZCA9IHVpZAogICAgICAgICAgICAgICAgcHJlZnMucGhvbmUgPSBwaG9uZQogICAgICAgICAgICAgICAgcHJlZnMuaXNMb2dnZWRJbiA9IHRydWUKICAgICAgICAgICAgICAgIHByZWZzLm5hbWUgPSB1c2VyPy5uYW1lID86ICLaqdin2LHYqNixINmH2YXigIzar9ioIgogICAgICAgICAgICAgICAgcHJlZnMuYmlvID0gdXNlcj8uYmlvID86ICIiCiAgICAgICAgICAgICAgICBwcmVmcy5waG90b1VSTCA9IHVzZXI/LnBob3RvVVJMID86ICIiCgogICAgICAgICAgICAgICAgLy8gR28gdG8gbWFpbgogICAgICAgICAgICAgICAgc3RhcnRBY3Rpdml0eShJbnRlbnQodGhpc0BBdXRoQWN0aXZpdHksIE1haW5BY3Rpdml0eTo6Y2xhc3MuamF2YSkpCiAgICAgICAgICAgICAgICBmaW5pc2goKQogICAgICAgICAgICB9IGNhdGNoIChlOiBFeGNlcHRpb24pIHsKICAgICAgICAgICAgICAgIHNob3dPVFBFcnJvcigi4p2MINiu2LfYpyDYr9ixINmI2LHZiNivLiDYr9mI2KjYp9ix2Ycg2KrZhNin2LQg2qnZhtuM2K8uIikKICAgICAgICAgICAgfQogICAgICAgIH0KICAgIH0KCiAgICBwcml2YXRlIGZ1biBzaG93RXJyb3IodmlldzogVGV4dFZpZXcsIG1zZzogU3RyaW5nKSB7CiAgICAgICAgdmlldy50ZXh0ID0gbXNnCiAgICAgICAgdmlldy52aXNpYmlsaXR5ID0gVmlldy5WSVNJQkxFCiAgICB9CgogICAgcHJpdmF0ZSBmdW4gc2hvd09UUEVycm9yKG1zZzogU3RyaW5nKSB7CiAgICAgICAgYmluZGluZy5vdHBFcnJvci50ZXh0ID0gbXNnCiAgICAgICAgYmluZGluZy5vdHBFcnJvci52aXNpYmlsaXR5ID0gVmlldy5WSVNJQkxFCiAgICB9CgogICAgb3ZlcnJpZGUgZnVuIG9uRGVzdHJveSgpIHsKICAgICAgICBzdXBlci5vbkRlc3Ryb3koKQogICAgICAgIGhhbmRsZXIucmVtb3ZlQ2FsbGJhY2tzKHJlc2VuZFJ1bm5hYmxlKQogICAgfQp9Cg==
+package com.hamgab.messenger.auth
+
+import android.content.Intent
+import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.text.Editable
+import android.text.TextWatcher
+import android.view.View
+import android.widget.EditText
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import com.hamgab.messenger.MainActivity
+import com.hamgab.messenger.data.FirestoreApi
+import com.hamgab.messenger.data.Prefs
+import com.hamgab.messenger.databinding.ActivityAuthBinding
+import kotlinx.coroutines.launch
+import java.util.Random
+
+class AuthActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityAuthBinding
+    private val api = FirestoreApi()
+    private lateinit var prefs: Prefs
+    private var currentOTP = ""
+    private var currentPhone = ""
+    private var resendTimer: Int = 0
+    private val handler = Handler(Looper.getMainLooper())
+    private val resendRunnable = object : Runnable {
+        override fun run() {
+            if (resendTimer > 0) {
+                resendTimer--
+                binding.resendTimer.text = "درخواست مجدد بعد از $resendTimer ثانیه"
+                handler.postDelayed(this, 1000)
+            } else {
+                binding.resendTimer.visibility = View.GONE
+                binding.resendBtn.visibility = View.VISIBLE
+            }
+        }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityAuthBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        prefs = Prefs(this)
+
+        // Auto-login if already logged in
+        if (prefs.isLoggedIn && prefs.uid.isNotEmpty()) {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+            return
+        }
+
+        setupPhoneInput()
+        setupOTPInputs()
+        setupButtons()
+    }
+
+    private fun setupPhoneInput() {
+        binding.phoneInput.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                s?.let {
+                    val digits = it.toString().replace(Regex("\\D"), "")
+                    if (digits != it.toString()) {
+                        binding.phoneInput.setText(digits)
+                        binding.phoneInput.setSelection(digits.length)
+                    }
+                    binding.sendOtpBtn.isEnabled = digits.length == 9
+                }
+            }
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+        })
+    }
+
+    private fun setupOTPInputs() {
+        val boxes = arrayOf(binding.otp1, binding.otp2, binding.otp3, binding.otp4, binding.otp5, binding.otp6)
+        for (i in boxes.indices) {
+            boxes[i].addTextChangedListener(object : TextWatcher {
+                override fun afterTextChanged(s: Editable?) {
+                    val text = s?.toString() ?: ""
+                    if (text.isNotEmpty()) {
+                        if (i < 5) boxes[i + 1].requestFocus()
+                        else verifyOTP()
+                    }
+                }
+                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+            })
+
+            boxes[i].setOnKeyListener { _, keyCode, event ->
+                if (keyCode == android.view.KeyEvent.KEYCODE_DEL && boxes[i].text.isEmpty() && i > 0) {
+                    boxes[i - 1].requestFocus()
+                    boxes[i - 1].setText("")
+                    true
+                } else false
+            }
+        }
+    }
+
+    private fun setupButtons() {
+        binding.sendOtpBtn.setOnClickListener {
+            val phone = binding.phoneInput.text.toString().trim()
+            if (phone.length != 9) {
+                showError(binding.phoneError, "⚠️ شماره معتبر نیست — ۹ رقم بدون صفر وارد کنید")
+                return@setOnClickListener
+            }
+            currentPhone = "+93$phone"
+            generateOTP()
+            showOTPStep()
+        }
+
+        binding.resendBtn.setOnClickListener {
+            generateOTP()
+            startResendTimer()
+            clearOTPBoxes()
+        }
+
+        binding.verifyBtn.setOnClickListener {
+            verifyOTP()
+        }
+    }
+
+    private fun generateOTP() {
+        // SIMULATE OTP — server is offline, generate locally
+        val random = Random()
+        currentOTP = String.format("%06d", random.nextInt(1000000))
+    }
+
+    private fun showOTPStep() {
+        binding.phoneStep.visibility = View.GONE
+        binding.otpStep.visibility = View.VISIBLE
+
+        // Display phone number
+        val displayPhone = "0${currentPhone.substring(3)}"
+        binding.otpPhoneDisplay.text = displayPhone
+
+        // Show OTP code for testing (since OTP server is offline)
+        binding.otpTestDisplay.visibility = View.VISIBLE
+        binding.otpTestDisplay.text = "🔑 کد تست: $currentOTP"
+
+        clearOTPBoxes()
+        startResendTimer()
+        binding.otp1.requestFocus()
+    }
+
+    private fun startResendTimer() {
+        resendTimer = 90
+        binding.resendTimer.visibility = View.VISIBLE
+        binding.resendBtn.visibility = View.GONE
+        binding.resendTimer.text = "درخواست مجدد بعد از $resendTimer ثانیه"
+        handler.removeCallbacks(resendRunnable)
+        handler.postDelayed(resendRunnable, 1000)
+    }
+
+    private fun clearOTPBoxes() {
+        binding.otp1.setText("")
+        binding.otp2.setText("")
+        binding.otp3.setText("")
+        binding.otp4.setText("")
+        binding.otp5.setText("")
+        binding.otp6.setText("")
+        binding.otpError.visibility = View.GONE
+        binding.otpSuccess.visibility = View.GONE
+    }
+
+    private fun verifyOTP() {
+        val code = "${binding.otp1.text}${binding.otp2.text}${binding.otp3.text}${binding.otp4.text}${binding.otp5.text}${binding.otp6.text}"
+        if (code.length < 6) {
+            showOTPError("⚠️ لطفاً کد ۶ رقمی را کامل وارد کنید")
+            return
+        }
+
+        if (code == currentOTP) {
+            // OTP verified — login
+            binding.otpError.visibility = View.GONE
+            binding.otpSuccess.visibility = View.VISIBLE
+            binding.otpSuccess.text = "✓ تأیید شد! در حال ورود..."
+            handler.removeCallbacks(resendRunnable)
+
+            loginWithPhone(currentPhone)
+        } else {
+            showOTPError("❌ کد وارد شده اشتباه است")
+        }
+    }
+
+    private fun loginWithPhone(phone: String) {
+        val uid = phone.replace(Regex("[^0-9]"), "")
+        lifecycleScope.launch {
+            try {
+                // Check if user exists
+                var user = api.getUser(uid)
+                if (user == null || user.uid.isEmpty()) {
+                    // Create new user
+                    api.createOrUpdateUser(uid, phone, "کاربر هم‌گب", "", "")
+                    user = api.getUser(uid)
+                }
+
+                // Save to prefs
+                prefs.uid = uid
+                prefs.phone = phone
+                prefs.isLoggedIn = true
+                prefs.name = user?.name ?: "کاربر هم‌گب"
+                prefs.bio = user?.bio ?: ""
+                prefs.photoURL = user?.photoURL ?: ""
+
+                // Go to main
+                startActivity(Intent(this@AuthActivity, MainActivity::class.java))
+                finish()
+            } catch (e: Exception) {
+                showOTPError("❌ خطا در ورود. دوباره تلاش کنید.")
+            }
+        }
+    }
+
+    private fun showError(view: TextView, msg: String) {
+        view.text = msg
+        view.visibility = View.VISIBLE
+    }
+
+    private fun showOTPError(msg: String) {
+        binding.otpError.text = msg
+        binding.otpError.visibility = View.VISIBLE
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        handler.removeCallbacks(resendRunnable)
+    }
+}

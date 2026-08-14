@@ -1,1 +1,86 @@
-cGFja2FnZSBjb20uaGFtZ2FiLm1lc3Nlbmdlci5hZGFwdGVyCgppbXBvcnQgYW5kcm9pZC52aWV3LkxheW91dEluZmxhdGVyCmltcG9ydCBhbmRyb2lkLnZpZXcuVmlldwppbXBvcnQgYW5kcm9pZC52aWV3LlZpZXdHcm91cAppbXBvcnQgYW5kcm9pZHgucmVjeWNsZXJ2aWV3LndpZGdldC5SZWN5Y2xlclZpZXcKaW1wb3J0IGNvbS5oYW1nYWIubWVzc2VuZ2VyLmRhdGEuTWVzc2FnZQppbXBvcnQgY29tLmhhbWdhYi5tZXNzZW5nZXIuZGF0YWJpbmRpbmcuSXRlbU1lc3NhZ2VSZWNlaXZlZEJpbmRpbmcKaW1wb3J0IGNvbS5oYW1nYWIubWVzc2VuZ2VyLmRhdGFiaW5kaW5nLkl0ZW1NZXNzYWdlU2VudEJpbmRpbmcKCmNsYXNzIE1lc3NhZ2VBZGFwdGVyKAogICAgcHJpdmF0ZSB2YWwgbXlVaWQ6IFN0cmluZwopIDogUmVjeWNsZXJWaWV3LkFkYXB0ZXI8UmVjeWNsZXJWaWV3LlZpZXdIb2xkZXI+KCkgewoKICAgIGNvbXBhbmlvbiBvYmplY3QgewogICAgICAgIHByaXZhdGUgY29uc3QgdmFsIFRZUEVfU0VOVCA9IDEKICAgICAgICBwcml2YXRlIGNvbnN0IHZhbCBUWVBFX1JFQ0VJVkVEID0gMgogICAgfQoKICAgIHByaXZhdGUgdmFsIGl0ZW1zID0gbXV0YWJsZUxpc3RPZjxNZXNzYWdlPigpCgogICAgZnVuIHVwZGF0ZShtZXNzYWdlczogTGlzdDxNZXNzYWdlPikgewogICAgICAgIGl0ZW1zLmNsZWFyKCkKICAgICAgICBpdGVtcy5hZGRBbGwobWVzc2FnZXMuc29ydGVkQnkgeyBpdC50aW1lc3RhbXAgfSkKICAgICAgICBub3RpZnlEYXRhU2V0Q2hhbmdlZCgpCiAgICB9CgogICAgZnVuIGFkZE1lc3NhZ2UobXNnOiBNZXNzYWdlKSB7CiAgICAgICAgaXRlbXMuYWRkKG1zZykKICAgICAgICBub3RpZnlJdGVtSW5zZXJ0ZWQoaXRlbXMuc2l6ZSAtIDEpCiAgICB9CgogICAgb3ZlcnJpZGUgZnVuIGdldEl0ZW1WaWV3VHlwZShwb3NpdGlvbjogSW50KTogSW50IHsKICAgICAgICByZXR1cm4gaWYgKGl0ZW1zW3Bvc2l0aW9uXS5zZW5kZXJJZCA9PSBteVVpZCkgVFlQRV9TRU5UIGVsc2UgVFlQRV9SRUNFSVZFRAogICAgfQoKICAgIG92ZXJyaWRlIGZ1biBvbkNyZWF0ZVZpZXdIb2xkZXIocGFyZW50OiBWaWV3R3JvdXAsIHZpZXdUeXBlOiBJbnQpOiBSZWN5Y2xlclZpZXcuVmlld0hvbGRlciB7CiAgICAgICAgcmV0dXJuIHdoZW4gKHZpZXdUeXBlKSB7CiAgICAgICAgICAgIFRZUEVfU0VOVCAtPiB7CiAgICAgICAgICAgICAgICB2YWwgYmluZGluZyA9IEl0ZW1NZXNzYWdlU2VudEJpbmRpbmcuaW5mbGF0ZShMYXlvdXRJbmZsYXRlci5mcm9tKHBhcmVudC5jb250ZXh0KSwgcGFyZW50LCBmYWxzZSkKICAgICAgICAgICAgICAgIFNlbnRWSChiaW5kaW5nKQogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsc2UgLT4gewogICAgICAgICAgICAgICAgdmFsIGJpbmRpbmcgPSBJdGVtTWVzc2FnZVJlY2VpdmVkQmluZGluZy5pbmZsYXRlKExheW91dEluZmxhdGVyLmZyb20ocGFyZW50LmNvbnRleHQpLCBwYXJlbnQsIGZhbHNlKQogICAgICAgICAgICAgICAgUmVjZWl2ZWRWSChiaW5kaW5nKQogICAgICAgICAgICB9CiAgICAgICAgfQogICAgfQoKICAgIG92ZXJyaWRlIGZ1biBvbkJpbmRWaWV3SG9sZGVyKGhvbGRlcjogUmVjeWNsZXJWaWV3LlZpZXdIb2xkZXIsIHBvc2l0aW9uOiBJbnQpIHsKICAgICAgICB2YWwgbXNnID0gaXRlbXNbcG9zaXRpb25dCiAgICAgICAgd2hlbiAoaG9sZGVyKSB7CiAgICAgICAgICAgIGlzIFNlbnRWSCAtPiBob2xkZXIuYmluZChtc2cpCiAgICAgICAgICAgIGlzIFJlY2VpdmVkVkggLT4gaG9sZGVyLmJpbmQobXNnKQogICAgICAgIH0KICAgIH0KCiAgICBvdmVycmlkZSBmdW4gZ2V0SXRlbUNvdW50KCkgPSBpdGVtcy5zaXplCgogICAgaW5uZXIgY2xhc3MgU2VudFZIKHZhbCBiaW5kaW5nOiBJdGVtTWVzc2FnZVNlbnRCaW5kaW5nKSA6IFJlY3ljbGVyVmlldy5WaWV3SG9sZGVyKGJpbmRpbmcucm9vdCkgewogICAgICAgIGZ1biBiaW5kKG1zZzogTWVzc2FnZSkgewogICAgICAgICAgICBiaW5kaW5nLm1lc3NhZ2VUZXh0LnRleHQgPSBtc2cudGV4dAogICAgICAgICAgICBiaW5kaW5nLm1lc3NhZ2VUaW1lLnRleHQgPSBmb3JtYXRUaW1lKG1zZy50aW1lc3RhbXApCiAgICAgICAgfQogICAgfQoKICAgIGlubmVyIGNsYXNzIFJlY2VpdmVkVkgodmFsIGJpbmRpbmc6IEl0ZW1NZXNzYWdlUmVjZWl2ZWRCaW5kaW5nKSA6IFJlY3ljbGVyVmlldy5WaWV3SG9sZGVyKGJpbmRpbmcucm9vdCkgewogICAgICAgIGZ1biBiaW5kKG1zZzogTWVzc2FnZSkgewogICAgICAgICAgICBiaW5kaW5nLm1lc3NhZ2VUZXh0LnRleHQgPSBtc2cudGV4dAogICAgICAgICAgICBiaW5kaW5nLm1lc3NhZ2VUaW1lLnRleHQgPSBmb3JtYXRUaW1lKG1zZy50aW1lc3RhbXApCiAgICAgICAgICAgIGlmIChtc2cuc2VuZGVyTmFtZS5pc05vdEVtcHR5KCkpIHsKICAgICAgICAgICAgICAgIGJpbmRpbmcuc2VuZGVyTmFtZS50ZXh0ID0gbXNnLnNlbmRlck5hbWUKICAgICAgICAgICAgICAgIGJpbmRpbmcuc2VuZGVyTmFtZS52aXNpYmlsaXR5ID0gVmlldy5WSVNJQkxFCiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICB9CgogICAgcHJpdmF0ZSBmdW4gZm9ybWF0VGltZSh0czogTG9uZyk6IFN0cmluZyB7CiAgICAgICAgaWYgKHRzID09IDBMKSByZXR1cm4gIiIKICAgICAgICB2YWwgY2FsID0gamF2YS51dGlsLkNhbGVuZGFyLmdldEluc3RhbmNlKCkKICAgICAgICBjYWwudGltZUluTWlsbGlzID0gdHMKICAgICAgICB2YWwgaCA9IGNhbC5nZXQoamF2YS51dGlsLkNhbGVuZGFyLkhPVVJfT0ZfREFZKQogICAgICAgIHZhbCBtID0gY2FsLmdldChqYXZhLnV0aWwuQ2FsZW5kYXIuTUlOVVRFKQogICAgICAgIHJldHVybiBTdHJpbmcuZm9ybWF0KCIlMDJkOiUwMmQiLCBoLCBtKQogICAgfQp9Cg==
+package com.hamgab.messenger.adapter
+
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import com.hamgab.messenger.data.Message
+import com.hamgab.messenger.databinding.ItemMessageReceivedBinding
+import com.hamgab.messenger.databinding.ItemMessageSentBinding
+
+class MessageAdapter(
+    private val myUid: String
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+
+    companion object {
+        private const val TYPE_SENT = 1
+        private const val TYPE_RECEIVED = 2
+    }
+
+    private val items = mutableListOf<Message>()
+
+    fun update(messages: List<Message>) {
+        items.clear()
+        items.addAll(messages.sortedBy { it.timestamp })
+        notifyDataSetChanged()
+    }
+
+    fun addMessage(msg: Message) {
+        items.add(msg)
+        notifyItemInserted(items.size - 1)
+    }
+
+    override fun getItemViewType(position: Int): Int {
+        return if (items[position].senderId == myUid) TYPE_SENT else TYPE_RECEIVED
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        return when (viewType) {
+            TYPE_SENT -> {
+                val binding = ItemMessageSentBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+                SentVH(binding)
+            }
+            else -> {
+                val binding = ItemMessageReceivedBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+                ReceivedVH(binding)
+            }
+        }
+    }
+
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        val msg = items[position]
+        when (holder) {
+            is SentVH -> holder.bind(msg)
+            is ReceivedVH -> holder.bind(msg)
+        }
+    }
+
+    override fun getItemCount() = items.size
+
+    inner class SentVH(val binding: ItemMessageSentBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(msg: Message) {
+            binding.messageText.text = msg.text
+            binding.messageTime.text = formatTime(msg.timestamp)
+        }
+    }
+
+    inner class ReceivedVH(val binding: ItemMessageReceivedBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(msg: Message) {
+            binding.messageText.text = msg.text
+            binding.messageTime.text = formatTime(msg.timestamp)
+            if (msg.senderName.isNotEmpty()) {
+                binding.senderName.text = msg.senderName
+                binding.senderName.visibility = View.VISIBLE
+            }
+        }
+    }
+
+    private fun formatTime(ts: Long): String {
+        if (ts == 0L) return ""
+        val cal = java.util.Calendar.getInstance()
+        cal.timeInMillis = ts
+        val h = cal.get(java.util.Calendar.HOUR_OF_DAY)
+        val m = cal.get(java.util.Calendar.MINUTE)
+        return String.format("%02d:%02d", h, m)
+    }
+}

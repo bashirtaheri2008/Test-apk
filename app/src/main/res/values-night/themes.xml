@@ -1,1 +1,13 @@
-PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHJlc291cmNlcz4KICAgIDxzdHlsZSBuYW1lPSJUaGVtZS5IYW1HYWIiIHBhcmVudD0iVGhlbWUuTWF0ZXJpYWwzLkRheU5pZ2h0Lk5vQWN0aW9uQmFyIj4KICAgICAgICA8aXRlbSBuYW1lPSJjb2xvclByaW1hcnkiPkBjb2xvci9wcmltYXJ5PC9pdGVtPgogICAgICAgIDxpdGVtIG5hbWU9ImNvbG9yUHJpbWFyeVZhcmlhbnQiPkBjb2xvci9wcmltYXJ5X2Rhcms8L2l0ZW0+CiAgICAgICAgPGl0ZW0gbmFtZT0iY29sb3JPblByaW1hcnkiPkBjb2xvci93aGl0ZTwvaXRlbT4KICAgICAgICA8aXRlbSBuYW1lPSJjb2xvclNlY29uZGFyeSI+QGNvbG9yL3NlY29uZGFyeTwvaXRlbT4KICAgICAgICA8aXRlbSBuYW1lPSJjb2xvck9uU2Vjb25kYXJ5Ij5AY29sb3Ivd2hpdGU8L2l0ZW0+CiAgICAgICAgPGl0ZW0gbmFtZT0iYW5kcm9pZDp3aW5kb3dCYWNrZ3JvdW5kIj5AY29sb3IvYmc8L2l0ZW0+CiAgICAgICAgPGl0ZW0gbmFtZT0iYW5kcm9pZDpzdGF0dXNCYXJDb2xvciI+QGNvbG9yL3N1cmZhY2U8L2l0ZW0+CiAgICAgICAgPGl0ZW0gbmFtZT0iYW5kcm9pZDpuYXZpZ2F0aW9uQmFyQ29sb3IiPkBjb2xvci9zdXJmYWNlPC9pdGVtPgogICAgPC9zdHlsZT4KPC9yZXNvdXJjZXM+Cg==
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.HamGab" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:windowBackground">@color/bg</item>
+        <item name="android:statusBarColor">@color/surface</item>
+        <item name="android:navigationBarColor">@color/surface</item>
+    </style>
+</resources>
