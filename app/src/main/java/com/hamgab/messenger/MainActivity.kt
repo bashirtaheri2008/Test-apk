@@ -3,12 +3,15 @@ package com.hamgab.messenger
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import com.hamgab.messenger.adapter.ChatListAdapter
 import com.hamgab.messenger.auth.AuthActivity
 import com.hamgab.messenger.chat.ChatActivity
@@ -25,6 +28,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var prefs: Prefs
     private val api = FirestoreApi()
     private lateinit var adapter: ChatListAdapter
+    private var searchVisible = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +36,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         prefs = Prefs(this)
 
-        // Guard — must be logged in
         if (!prefs.isLoggedIn) {
             startActivity(Intent(this, AuthActivity::class.java))
             finish()
@@ -56,10 +59,23 @@ class MainActivity : AppCompatActivity() {
 
         binding.fabNewChat.setOnClickListener { showAddContactDialog() }
 
+        // Search functionality
+        binding.searchInput.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                adapter.filter(s.toString())
+            }
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+        })
+
         binding.toolbar.setOnMenuItemClickListener { item ->
             when (item.itemId) {
                 R.id.action_profile -> {
                     startActivity(Intent(this, ProfileActivity::class.java))
+                    true
+                }
+                R.id.action_search -> {
+                    toggleSearch()
                     true
                 }
                 R.id.action_about -> {
@@ -67,9 +83,16 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.action_logout -> {
-                    prefs.logout()
-                    startActivity(Intent(this, AuthActivity::class.java))
-                    finish()
+                    AlertDialog.Builder(this)
+                        .setTitle("خروج")
+                        .setMessage("آیا مطمئن هستید می‌خواهید خارج شوید؟")
+                        .setPositiveButton("بله") { _, _ ->
+                            prefs.logout()
+                            startActivity(Intent(this, AuthActivity::class.java))
+                            finishAffinity()
+                        }
+                        .setNegativeButton("انصراف", null)
+                        .show()
                     true
                 }
                 else -> false
@@ -77,6 +100,16 @@ class MainActivity : AppCompatActivity() {
         }
 
         loadChats()
+    }
+
+    private fun toggleSearch() {
+        searchVisible = !searchVisible
+        binding.searchBar.visibility = if (searchVisible) View.VISIBLE else View.GONE
+        if (searchVisible) {
+            binding.searchInput.requestFocus()
+        } else {
+            binding.searchInput.text.clear()
+        }
     }
 
     private fun loadChats() {
@@ -117,7 +150,6 @@ class MainActivity : AppCompatActivity() {
                     dialog.dismiss()
                     Toast.makeText(this@MainActivity, "مخاطب اضافه شد", Toast.LENGTH_SHORT).show()
                     loadChats()
-                    // Open chat
                     val intent = Intent(this@MainActivity, ChatActivity::class.java)
                     intent.putExtra("partnerId", user.uid)
                     intent.putExtra("partnerName", user.name.ifEmpty { normalizedPhone })

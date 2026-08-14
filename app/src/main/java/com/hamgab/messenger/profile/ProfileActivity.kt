@@ -3,9 +3,12 @@ package com.hamgab.messenger.profile
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
+import com.hamgab.messenger.MainActivity
 import com.hamgab.messenger.auth.AuthActivity
 import com.hamgab.messenger.data.FirestoreApi
 import com.hamgab.messenger.data.Prefs
@@ -25,33 +28,42 @@ class ProfileActivity : AppCompatActivity() {
         setContentView(binding.root)
         prefs = Prefs(this)
 
-        binding.toolbar.setNavigationOnClickListener { finish() }
-
         loadProfile()
 
-        binding.editBtn.setOnClickListener { showEditDialog() }
+        binding.btnEdit.setOnClickListener { showEditDialog() }
 
-        binding.logoutBtn.setOnClickListener {
-            prefs.logout()
-            val intent = Intent(this, AuthActivity::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-            startActivity(intent)
-            finish()
+        binding.btnEditAvatar.setOnClickListener {
+            Toast.makeText(this, "تغییر آواتار به‌زودی!", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.btnLogout.setOnClickListener {
+            AlertDialog.Builder(this)
+                .setTitle("خروج")
+                .setMessage("آیا مطمئن هستید می‌خواهید خارج شوید؟")
+                .setPositiveButton("بله") { _, _ ->
+                    prefs.logout()
+                    startActivity(Intent(this, AuthActivity::class.java))
+                    finishAffinity()
+                }
+                .setNegativeButton("انصراف", null)
+                .show()
         }
     }
 
     private fun loadProfile() {
-        binding.displayName.text = prefs.name.ifEmpty { "کاربر هم‌گب" }
-        binding.displayPhone.text = prefs.phone
-        binding.displayBio.text = prefs.bio
+        binding.profileName.text = prefs.name.ifEmpty { "کاربر هم‌گب" }
+        binding.profilePhone.text = prefs.phone
+        binding.profileNameField.text = prefs.name.ifEmpty { "نامشخص" }
+        binding.profilePhoneField.text = prefs.phone
+        binding.profileBioField.text = prefs.bio.ifEmpty { "بیوگرافی هنوز تنظیم نشده" }
 
         if (prefs.photoURL.isNotEmpty()) {
-            Glide.with(this).load(prefs.photoURL).circleCrop().into(binding.avatar)
+            Glide.with(this).load(prefs.photoURL).circleCrop().into(binding.profileAvatar)
         }
     }
 
     private fun showEditDialog() {
-        val dialogBinding = DialogEditProfileBinding.inflate(layoutInflater)
+        val dialogBinding = DialogEditProfileBinding.inflate(LayoutInflater.from(this))
         dialogBinding.editName.setText(prefs.name)
         dialogBinding.editBio.setText(prefs.bio)
 
@@ -59,24 +71,33 @@ class ProfileActivity : AppCompatActivity() {
             .setView(dialogBinding.root)
             .create()
 
+        dialogBinding.cancelBtn.setOnClickListener { dialog.dismiss() }
+
         dialogBinding.saveBtn.setOnClickListener {
             val name = dialogBinding.editName.text.toString().trim()
             val bio = dialogBinding.editBio.text.toString().trim()
 
             if (name.isEmpty()) {
-                dialogBinding.editName.error = "نام را وارد کنید"
+                Toast.makeText(this, "نام نمی‌تواند خالی باشد", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
+            prefs.name = name
+            prefs.bio = bio
+
             lifecycleScope.launch {
                 api.updateUserProfile(prefs.uid, name, bio, prefs.photoURL)
-                prefs.name = name
-                prefs.bio = bio
-                loadProfile()
                 dialog.dismiss()
+                loadProfile()
+                Toast.makeText(this@ProfileActivity, "پروفایل به‌روزرسانی شد", Toast.LENGTH_SHORT).show()
             }
         }
 
         dialog.show()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        loadProfile()
     }
 }

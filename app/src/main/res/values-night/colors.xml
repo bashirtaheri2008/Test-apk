@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#0ea5e9</color>
+    <color name="primary_dark">#0284c7</color>
+    <color name="primary_light">#0ea5e9</color>
+    <color name="primary_gradient_start">#0099ff</color>
+    <color name="primary_gradient_end">#8b5cf6</color>
+    <color name="secondary">#a78bfa</color>
+    <color name="accent">#fbbf24</color>
+
+    <color name="danger">#f87171</color>
+    <color name="success">#34d399</color>
+    <color name="warning">#fbbf24</color>
+    <color name="info">#60a5fa</color>
+
+    <color name="bg">#0f172a</color>
+    <color name="surface">#1e293b</color>
+    <color name="surface_variant">#334155</color>
+    <color name="text_primary">#f1f5f9</color>
+    <color name="text_secondary">#94a3b8</color>
+    <color name="text_hint">#64748b</color>
+    <color name="border">#334155</color>
+
+    <color name="chat_bg">#1a2332</color>
+    <color name="chat_bg_pattern">#1e293b</color>
+    <color name="hover_bg">#334155</color>
+    <color name="input_bg">#334155</color>
+
+    <color name="msg_out_bg">#0c4a3e</color>
+    <color name="msg_out_border">#0e5a4a</color>
+    <color name="msg_in_bg">#1e293b</color>
+    <color name="msg_in_border">#334155</color>
+
+    <color name="bubble_tail_out">#0c4a3e</color>
+    <color name="bubble_tail_in">#1e293b</color>
+
+    <color name="badge_bg">#0ea5e9</color>
+    <color name="online_dot">#34d399</color>
+    <color name="typing">#7dd3fc</color>
+
+    <color name="white">#f1f5f9</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="overlay">#CC000000</color>
+</resources>

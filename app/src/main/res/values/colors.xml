@@ -1,30 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Light theme colors -->
-    <color name="primary">#1a73e8</color>
-    <color name="primary_dark">#1558c0</color>
-    <color name="primary_light">#74a9f5</color>
-    <color name="secondary">#00cec9</color>
-    <color name="danger">#e74c3c</color>
-    <color name="success">#00b894</color>
-    <color name="warning">#f9ca24</color>
-    <color name="info">#74b9ff</color>
+    <color name="primary">#0ea5e9</color>
+    <color name="primary_dark">#0284c7</color>
+    <color name="primary_light">#7dd3fc</color>
+    <color name="primary_gradient_start">#0099ff</color>
+    <color name="primary_gradient_end">#0ea5e9</color>
+    <color name="secondary">#8b5cf6</color>
+    <color name="accent">#f59e0b</color>
 
-    <color name="bg">#f0f2f5</color>
+    <color name="danger">#ef4444</color>
+    <color name="success">#10b981</color>
+    <color name="warning">#f59e0b</color>
+    <color name="info">#3b82f6</color>
+
+    <color name="bg">#f8fafc</color>
     <color name="surface">#ffffff</color>
-    <color name="text_primary">#111b21</color>
-    <color name="text_secondary">#54656f</color>
-    <color name="text_hint">#8696a0</color>
-    <color name="border">#e9edef</color>
+    <color name="surface_variant">#f1f5f9</color>
+    <color name="text_primary">#0f172a</color>
+    <color name="text_secondary">#64748b</color>
+    <color name="text_hint">#94a3b8</color>
+    <color name="border">#e2e8f0</color>
 
-    <color name="chat_bg">#efeae2</color>
-    <color name="hover_bg">#f5f6f6</color>
-    <color name="input_bg">#f0f2f5</color>
+    <color name="chat_bg">#e7e0d4</color>
+    <color name="chat_bg_pattern">#dcd5c8</color>
+    <color name="hover_bg">#f1f5f9</color>
+    <color name="input_bg">#f1f5f9</color>
 
-    <color name="msg_out_bg">#d9fdd3</color>
+    <color name="msg_out_bg">#d1fae5</color>
+    <color name="msg_out_border">#a7f3d0</color>
     <color name="msg_in_bg">#ffffff</color>
+    <color name="msg_in_border">#f1f5f9</color>
+
+    <color name="bubble_tail_out">#d1fae5</color>
+    <color name="bubble_tail_in">#ffffff</color>
+
+    <color name="badge_bg">#0ea5e9</color>
+    <color name="online_dot">#10b981</color>
+    <color name="typing">#0ea5e9</color>
 
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
     <color name="transparent">#00000000</color>
+    <color name="overlay">#80000000</color>
 </resources>

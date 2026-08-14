@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
@@ -10,15 +11,14 @@
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:label="@string/app_name"
-        android:theme="@style/Theme.HamGab"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="false">
+        android:theme="@style/Theme.HamGab"
+        tools:targetApi="34">
 
         <activity
-            android:name=".auth.AuthActivity"
+            android:name=".splash.SplashActivity"
             android:exported="true"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize">
+            android:theme="@style/Theme.HamGab.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -26,21 +26,23 @@
         </activity>
 
         <activity
+            android:name=".auth.AuthActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HamGab.Auth"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
             android:name=".MainActivity"
             android:exported="false"
-            android:screenOrientation="portrait" />
+            android:windowSoftInputMode="adjustResize" />
 
         <activity
             android:name=".chat.ChatActivity"
             android:exported="false"
-            android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
 
         <activity
             android:name=".profile.ProfileActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-
+            android:exported="false" />
     </application>
-
 </manifest>

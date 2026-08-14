@@ -1,7 +1,6 @@
 package com.hamgab.messenger.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.hamgab.messenger.data.Message
@@ -61,6 +60,8 @@ class MessageAdapter(
         fun bind(msg: Message) {
             binding.messageText.text = msg.text
             binding.messageTime.text = formatTime(msg.timestamp)
+            // Status: show double check for "read" (simplified: always show double check)
+            binding.statusIcon.setImageResource(R.drawable.ic_check_double)
         }
     }
 
@@ -68,10 +69,6 @@ class MessageAdapter(
         fun bind(msg: Message) {
             binding.messageText.text = msg.text
             binding.messageTime.text = formatTime(msg.timestamp)
-            if (msg.senderName.isNotEmpty()) {
-                binding.senderName.text = msg.senderName
-                binding.senderName.visibility = View.VISIBLE
-            }
         }
     }
 

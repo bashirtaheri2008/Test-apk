@@ -3,18 +3,30 @@ package com.hamgab.messenger.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.hamgab.messenger.data.ChatItem
 import com.hamgab.messenger.databinding.ItemChatListBinding
-import com.bumptech.glide.Glide
 
 class ChatListAdapter(
     private val items: MutableList<ChatItem>,
     private val onClick: (ChatItem) -> Unit
 ) : RecyclerView.Adapter<ChatListAdapter.VH>() {
 
+    private var filteredItems: List<ChatItem> = items.toList()
+
     fun update(newItems: List<ChatItem>) {
         items.clear()
         items.addAll(newItems)
+        filteredItems = items.toList()
+        notifyDataSetChanged()
+    }
+
+    fun filter(query: String) {
+        filteredItems = if (query.isEmpty()) {
+            items.toList()
+        } else {
+            items.filter { it.partnerName.contains(query, ignoreCase = true) }
+        }
         notifyDataSetChanged()
     }
 
@@ -24,26 +36,23 @@ class ChatListAdapter(
     }
 
     override fun onBindViewHolder(holder: VH, position: Int) {
-        val item = items[position]
-        holder.bind(item)
+        holder.bind(filteredItems[position])
     }
 
-    override fun getItemCount() = items.size
+    override fun getItemCount() = filteredItems.size
 
     inner class VH(val binding: ItemChatListBinding) : RecyclerView.ViewHolder(binding.root) {
         init {
             binding.root.setOnClickListener {
                 val pos = adapterPosition
-                if (pos != RecyclerView.NO_POSITION) onClick(items[pos])
+                if (pos != RecyclerView.NO_POSITION) onClick(filteredItems[pos])
             }
         }
 
         fun bind(item: ChatItem) {
             binding.name.text = item.partnerName.ifEmpty { item.partnerId }
             binding.lastMessage.text = item.lastMessage.ifEmpty { "شروع گفتگو…" }
-
-            val timeStr = formatTime(item.lastTimestamp)
-            binding.time.text = timeStr
+            binding.time.text = formatTime(item.lastTimestamp)
 
             if (item.partnerPhoto.isNotEmpty()) {
                 Glide.with(binding.root).load(item.partnerPhoto).circleCrop().into(binding.avatar)
@@ -61,9 +70,19 @@ class ChatListAdapter(
             if (ts == 0L) return ""
             val cal = java.util.Calendar.getInstance()
             cal.timeInMillis = ts
+            val now = java.util.Calendar.getInstance()
+            val isToday = cal.get(java.util.Calendar.YEAR) == now.get(java.util.Calendar.YEAR) &&
+                    cal.get(java.util.Calendar.DAY_OF_YEAR) == now.get(java.util.Calendar.DAY_OF_YEAR)
+
             val h = cal.get(java.util.Calendar.HOUR_OF_DAY)
             val m = cal.get(java.util.Calendar.MINUTE)
-            return String.format("%02d:%02d", h, m)
+
+            return if (isToday) {
+                String.format("%02d:%02d", h, m)
+            } else {
+                val dayDiff = now.get(java.util.Calendar.DAY_OF_YEAR) - cal.get(java.util.Calendar.DAY_OF_YEAR)
+                if (dayDiff == 1) "دیروز" else String.format("%02d:%02d", h, m)
+            }
         }
     }
 }
