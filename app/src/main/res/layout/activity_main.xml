@@ -71,7 +71,7 @@
         android:layout_gravity="bottom|start"
         android:layout_margin="16dp"
         android:contentDescription="@string/new_chat"
-        app:srcCompat="@android:drawable/ic_input_add"
+        app:srcCompat="@drawable/ic_add"
         app:tint="@color/white"
         app:backgroundTint="@color/primary" />
 
