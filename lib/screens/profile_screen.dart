@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../services/api_service.dart';
-import '../widgets/avatar.dart';
 import '../services/prefs_service.dart';
+import '../widgets/avatar.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -24,12 +24,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
   Future<void> _loadProfile() async {
-    final prefs = await SharedPreferences.getInstance();
     setState(() {
-      _name = prefs.getString('name') ?? 'کاربر هم‌گب';
-      _phone = prefs.getString('phone') ?? '';
-      _bio = prefs.getString('bio') ?? '';
-      _photoURL = prefs.getString('photoURL') ?? '';
+      _name = PrefsService.name.isNotEmpty ? PrefsService.name : 'کاربر هم‌گب';
+      _phone = PrefsService.phone;
+      _bio = PrefsService.bio;
+      _photoURL = PrefsService.photoURL;
     });
   }
 
@@ -72,9 +71,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 final bio = bioController.text.trim();
                 if (name.isEmpty) return;
 
-                final prefs = await SharedPreferences.getInstance();
-                await prefs.setString('name', name);
-                await prefs.setString('bio', bio);
+                PrefsService.name = name;
+                PrefsService.bio = bio;
                 await ApiService.updateUserProfile(PrefsService.uid, name, bio, PrefsService.photoURL);
 
                 if (mounted) {
@@ -108,7 +106,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               onPressed: () async {
                 await PrefsService.logout();
                 if (mounted) {
-                  Navigator.pushReplacementNamed(context, '/');
+                  Navigator.pushNamedAndRemoveUntil(context, '/', (_) => false);
                 }
               },
               child: const Text('بله، خروج'),
@@ -127,7 +125,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
       child: Scaffold(
         body: CustomScrollView(
           slivers: [
-            // Gradient header
             SliverToBoxAdapter(
               child: Container(
                 decoration: BoxDecoration(
@@ -140,25 +137,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 padding: const EdgeInsets.only(top: 50, bottom: 30),
                 child: Column(
                   children: [
-                    Stack(
-                      children: [
-                        Avatar(name: _name, photoUrl: _photoURL, radius: 55),
-                        Positioned(
-                          bottom: 0,
-                          right: 0,
-                          child: Container(
-                            width: 36,
-                            height: 36,
-                            decoration: BoxDecoration(
-                              color: theme.colorScheme.primary,
-                              shape: BoxShape.circle,
-                              border: Border.all(color: Colors.white, width: 2),
-                            ),
-                            child: const Icon(Icons.edit, color: Colors.white, size: 18),
-                          ),
-                        ),
-                      ],
-                    ),
+                    Avatar(name: _name, photoUrl: _photoURL, radius: 55),
                     const SizedBox(height: 16),
                     Text(_name,
                         style: const TextStyle(
@@ -172,7 +151,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
               ),
             ),
-            // Info cards
             SliverToBoxAdapter(
               child: Container(
                 margin: const EdgeInsets.only(top: 0),

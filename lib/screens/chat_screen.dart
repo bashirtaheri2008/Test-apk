@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'dart:developer' as dev;
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import '../models/chat_models.dart';
 import '../services/api_service.dart';
+import '../services/prefs_service.dart';
 import '../widgets/avatar.dart';
 import '../widgets/message_bubble.dart';
 
@@ -36,7 +36,10 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   void initState() {
     super.initState();
-    _loadPrefs();
+    _myUid = PrefsService.uid;
+    _myName = PrefsService.name;
+    _loadMessages();
+    _startPolling();
   }
 
   @override
@@ -45,16 +48,6 @@ class _ChatScreenState extends State<ChatScreen> {
     _messageController.dispose();
     _scrollController.dispose();
     super.dispose();
-  }
-
-  Future<void> _loadPrefs() async {
-    final prefs = await SharedPreferences.getInstance();
-    setState(() {
-      _myUid = prefs.getString('uid') ?? '';
-      _myName = prefs.getString('name') ?? '';
-    });
-    _loadMessages();
-    _startPolling();
   }
 
   Future<void> _loadMessages() async {
@@ -94,7 +87,6 @@ class _ChatScreenState extends State<ChatScreen> {
     _messageController.clear();
     setState(() => _showSend = false);
 
-    // Optimistic UI
     final tempMsg = Message(
       id: 'temp_${DateTime.now().millisecondsSinceEpoch}',
       text: text,
@@ -103,16 +95,11 @@ class _ChatScreenState extends State<ChatScreen> {
       timestamp: DateTime.now().millisecondsSinceEpoch,
       status: MessageStatus.sending,
     );
-    setState(() {
-      _messages.add(tempMsg);
-    });
+    setState(() => _messages.add(tempMsg));
     _scrollToBottom();
 
     final success = await ApiService.sendMessage(_myUid, widget.partnerId, text, _myName);
     if (success) {
-      setState(() {
-        tempMsg.status == MessageStatus.sent;
-      });
       _loadMessages();
     } else {
       if (mounted) {
@@ -143,20 +130,20 @@ class _ChatScreenState extends State<ChatScreen> {
                   Text(widget.partnerName,
                       style: const TextStyle(fontSize: 17, fontWeight: FontWeight.bold)),
                   Text('آخرین بازدید اخیراً',
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: theme.colorScheme.onSurfaceVariant,
-                      )),
+                      style: TextStyle(fontSize: 12, color: theme.colorScheme.onSurfaceVariant)),
                 ],
               ),
             ],
           ),
           actions: [
-            IconButton(icon: const Icon(Icons.call_outlined), onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('تماس صوتی به‌زودی!')),
-              );
-            }),
+            IconButton(
+              icon: const Icon(Icons.call_outlined),
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('تماس صوتی به‌زودی!')),
+                );
+              },
+            ),
             IconButton(icon: const Icon(Icons.more_vert), onPressed: () {}),
           ],
         ),
@@ -166,7 +153,6 @@ class _ChatScreenState extends State<ChatScreen> {
           ),
           child: Column(
             children: [
-              // Messages
               Expanded(
                 child: _loading
                     ? const Center(child: CircularProgressIndicator())
@@ -176,12 +162,10 @@ class _ChatScreenState extends State<ChatScreen> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Icon(Icons.chat_outlined,
-                                    size: 64,
-                                    color: theme.colorScheme.onSurfaceVariant.withOpacity(0.3)),
+                                    size: 64, color: theme.colorScheme.onSurfaceVariant.withOpacity(0.3)),
                                 const SizedBox(height: 12),
                                 Text('شروع گفتگو',
-                                    style: TextStyle(
-                                        color: theme.colorScheme.onSurfaceVariant)),
+                                    style: TextStyle(color: theme.colorScheme.onSurfaceVariant)),
                               ],
                             ),
                           )
@@ -191,14 +175,10 @@ class _ChatScreenState extends State<ChatScreen> {
                             itemCount: _messages.length,
                             itemBuilder: (ctx, i) {
                               final msg = _messages[i];
-                              return MessageBubble(
-                                message: msg,
-                                isMe: msg.senderId == _myUid,
-                              );
+                              return MessageBubble(message: msg, isMe: msg.senderId == _myUid);
                             },
                           ),
               ),
-              // Input bar
               SafeArea(
                 child: Container(
                   color: isDark ? const Color(0xFF1e293b) : Colors.white,
@@ -206,8 +186,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   child: Row(
                     children: [
                       IconButton(
-                        icon: Icon(Icons.emoji_emotions_outlined,
-                            color: theme.colorScheme.onSurfaceVariant),
+                        icon: Icon(Icons.emoji_emotions_outlined, color: theme.colorScheme.onSurfaceVariant),
                         onPressed: () {},
                       ),
                       Expanded(
@@ -220,23 +199,18 @@ class _ChatScreenState extends State<ChatScreen> {
                             hintText: 'پیام خود را بنویسید…',
                             hintStyle: TextStyle(color: theme.colorScheme.onSurfaceVariant),
                             filled: true,
-                            fillColor: isDark
-                                ? const Color(0xFF334155)
-                                : const Color(0xFFf1f5f9),
+                            fillColor: isDark ? const Color(0xFF334155) : const Color(0xFFf1f5f9),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(24),
                               borderSide: BorderSide.none,
                             ),
                             contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
                           ),
-                          onChanged: (val) {
-                            setState(() => _showSend = val.trim().isNotEmpty);
-                          },
+                          onChanged: (val) => setState(() => _showSend = val.trim().isNotEmpty),
                         ),
                       ),
                       IconButton(
-                        icon: Icon(Icons.attach_file,
-                            color: theme.colorScheme.onSurfaceVariant),
+                        icon: Icon(Icons.attach_file, color: theme.colorScheme.onSurfaceVariant),
                         onPressed: () {
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(content: Text('ارسال فایل به‌زودی!')),
@@ -252,14 +226,10 @@ class _ChatScreenState extends State<ChatScreen> {
                           shape: BoxShape.circle,
                         ),
                         child: IconButton(
-                          icon: Icon(
-                            _showSend ? Icons.send : Icons.mic,
-                            color: Colors.white,
-                            size: 20,
-                          ),
+                          icon: Icon(_showSend ? Icons.send : Icons.mic, color: Colors.white, size: 20),
                           onPressed: _showSend ? _sendMessage : () {
                             ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(content: Text('ضبط صوت به‌زودی!')),
+                              const SnackBar(content: Text('ضبط صوت به‌زیدی!')),
                             );
                           },
                         ),

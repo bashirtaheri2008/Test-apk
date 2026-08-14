@@ -7,8 +7,12 @@ class PrefsService {
     _prefs = await SharedPreferences.getInstance();
   }
 
-  static SharedPreferences get _sp =>
-      _prefs ?? throw Exception('Prefs not initialized');
+  static SharedPreferences get _sp {
+    if (_prefs == null) {
+      throw StateError('Prefs not initialized. Call PrefsService.init() first.');
+    }
+    return _prefs!;
+  }
 
   static String get uid => _sp.getString('uid') ?? '';
   static set uid(String v) => _sp.setString('uid', v);
@@ -28,5 +32,8 @@ class PrefsService {
   static bool get isLoggedIn => _sp.getBool('logged_in') ?? false;
   static set isLoggedIn(bool v) => _sp.setBool('logged_in', v);
 
-  static Future<void> logout() async => await _sp.clear();
+  static Future<void> logout() async {
+    await _sp?.clear();
+    _prefs = null;
+  }
 }

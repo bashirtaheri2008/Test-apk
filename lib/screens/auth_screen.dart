@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import '../models/chat_models.dart';
 import '../services/api_service.dart';
+import '../services/prefs_service.dart';
 import 'chat_list_screen.dart';
 
 class AuthScreen extends StatefulWidget {
@@ -23,12 +23,14 @@ class _AuthScreenState extends State<AuthScreen> {
       List.generate(6, (_) => TextEditingController());
   final List<FocusNode> _otpFocusNodes = List.generate(6, (_) => FocusNode());
   bool _loading = false;
+  final _phoneController = TextEditingController();
 
   @override
   void dispose() {
     _timer?.cancel();
     for (final c in _otpControllers) c.dispose();
     for (final f in _otpFocusNodes) f.dispose();
+    _phoneController.dispose();
     super.dispose();
   }
 
@@ -44,7 +46,6 @@ class _AuthScreenState extends State<AuthScreen> {
       _showOtp = true;
       _startResendTimer();
     });
-    // Focus first OTP box after UI updates
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _otpFocusNodes[0].requestFocus();
     });
@@ -55,16 +56,12 @@ class _AuthScreenState extends State<AuthScreen> {
     setState(() => _resendTimer = 90);
     _timer = Timer.periodic(const Duration(seconds: 1), (t) {
       setState(() => _resendTimer--);
-      if (_resendTimer <= 0) {
-        t.cancel();
-      }
+      if (_resendTimer <= 0) t.cancel();
     });
   }
 
   void _resendOtp() {
-    setState(() {
-      _currentOtp = generateOtp();
-    });
+    setState(() => _currentOtp = generateOtp());
     _startResendTimer();
     for (final c in _otpControllers) c.clear();
     _otpFocusNodes[0].requestFocus();
@@ -81,9 +78,7 @@ class _AuthScreenState extends State<AuthScreen> {
       return;
     }
 
-    // Verified — login
     setState(() => _loading = true);
-    final prefs = await SharedPreferences.getInstance();
     final uid = _currentPhone.replaceAll(RegExp(r'[^0-9]'), '');
 
     var user = await ApiService.getUser(uid);
@@ -92,12 +87,12 @@ class _AuthScreenState extends State<AuthScreen> {
       user = await ApiService.getUser(uid);
     }
 
-    await prefs.setString('uid', uid);
-    await prefs.setString('phone', _currentPhone);
-    await prefs.setString('name', user?.name ?? 'کاربر هم‌گب');
-    await prefs.setString('bio', user?.bio ?? '');
-    await prefs.setString('photoURL', user?.photoURL ?? '');
-    await prefs.setBool('logged_in', true);
+    PrefsService.uid = uid;
+    PrefsService.phone = _currentPhone;
+    PrefsService.name = user?.name ?? 'کاربر هم‌گب';
+    PrefsService.bio = user?.bio ?? '';
+    PrefsService.photoURL = user?.photoURL ?? '';
+    PrefsService.isLoggedIn = true;
 
     if (mounted) {
       Navigator.pushReplacement(
@@ -117,8 +112,6 @@ class _AuthScreenState extends State<AuthScreen> {
     );
   }
 
-  final _phoneController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -127,7 +120,6 @@ class _AuthScreenState extends State<AuthScreen> {
         textDirection: TextDirection.rtl,
         child: CustomScrollView(
           slivers: [
-            // Gradient header
             SliverToBoxAdapter(
               child: Container(
                 decoration: BoxDecoration(
@@ -163,17 +155,13 @@ class _AuthScreenState extends State<AuthScreen> {
                 ),
               ),
             ),
-            // Content
             SliverToBoxAdapter(
               child: Container(
-                margin: const EdgeInsets.only(top: 0),
                 decoration: BoxDecoration(
                   color: theme.scaffoldBackgroundColor,
-                  borderRadius: const BorderRadius.vertical(
-                      top: Radius.circular(24)),
+                  borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
                 ),
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 28, vertical: 36),
+                padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 36),
                 child: _showOtp ? _buildOtpStep(theme) : _buildPhoneStep(theme),
               ),
             ),
@@ -209,9 +197,7 @@ class _AuthScreenState extends State<AuthScreen> {
                 children: const [
                   Text('🇦🇫', style: TextStyle(fontSize: 22)),
                   SizedBox(width: 6),
-                  Text('+93',
-                      style:
-                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
+                  Text('+93', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
                 ],
               ),
             ),
@@ -243,14 +229,11 @@ class _AuthScreenState extends State<AuthScreen> {
         Row(
           children: [
             Expanded(
-                child: Text('همگام‌سازی مخاطبین',
-                    style: TextStyle(
-                        fontSize: 13, color: theme.colorScheme.onSurfaceVariant))),
+              child: Text('همگام‌سازی مخاطبین',
+                  style: TextStyle(fontSize: 13, color: theme.colorScheme.onSurfaceVariant)),
+            ),
             StatefulBuilder(builder: (_, setS) {
-              return Checkbox(
-                value: true,
-                onChanged: (v) => setS(() {}),
-              );
+              return Checkbox(value: true, onChanged: (v) => setS(() {}));
             }),
           ],
         ),
@@ -261,11 +244,9 @@ class _AuthScreenState extends State<AuthScreen> {
           child: FilledButton(
             onPressed: _phoneController.text.trim().length == 9 ? _sendOtp : null,
             style: FilledButton.styleFrom(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(14)),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
             ),
-            child: const Text('دریافت کد',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+            child: const Text('دریافت کد', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
           ),
         ),
         const SizedBox(height: 16),
@@ -281,18 +262,11 @@ class _AuthScreenState extends State<AuthScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text('کد فعال‌سازی را وارد کنید',
-            style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: theme.colorScheme.onSurface)),
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: theme.colorScheme.onSurface)),
         const SizedBox(height: 6),
         Text(_currentPhone,
-            style: TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.bold,
-                color: theme.colorScheme.primary)),
+            style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: theme.colorScheme.primary)),
         const SizedBox(height: 8),
-        // OTP test display
         Container(
           width: double.infinity,
           padding: const EdgeInsets.all(12),
@@ -302,8 +276,7 @@ class _AuthScreenState extends State<AuthScreen> {
           ),
           child: Text('🔑 کد تست: $_currentOtp',
               textAlign: TextAlign.center,
-              style: const TextStyle(
-                  fontSize: 16, fontWeight: FontWeight.bold, color: Color(0xFF856404))),
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Color(0xFF856404))),
         ),
         const SizedBox(height: 20),
         Directionality(
@@ -315,13 +288,10 @@ class _AuthScreenState extends State<AuthScreen> {
         ),
         const SizedBox(height: 16),
         if (_resendTimer > 0)
-          Center(
-              child: Text('درخواست مجدد بعد از $_resendTimer ثانیه',
-                  style: TextStyle(fontSize: 13, color: theme.colorScheme.onSurfaceVariant)))
+          Center(child: Text('درخواست مجدد بعد از $_resendTimer ثانیه',
+              style: TextStyle(fontSize: 13, color: theme.colorScheme.onSurfaceVariant)))
         else
-          Center(
-            child: TextButton(onPressed: _resendOtp, child: const Text('ارسال مجدد کد')),
-          ),
+          Center(child: TextButton(onPressed: _resendOtp, child: const Text('ارسال مجدد کد'))),
         const SizedBox(height: 16),
         SizedBox(
           width: double.infinity,
@@ -329,15 +299,11 @@ class _AuthScreenState extends State<AuthScreen> {
           child: FilledButton(
             onPressed: _loading ? null : _verifyOtp,
             style: FilledButton.styleFrom(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(14)),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
             ),
             child: _loading
-                ? const SizedBox(
-                    width: 22, height: 22,
-                    child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2))
-                : const Text('تأیید و ورود',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                ? const SizedBox(width: 22, height: 22, child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2))
+                : const Text('تأیید و ورود', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
           ),
         ),
       ],

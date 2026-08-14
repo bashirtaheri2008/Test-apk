@@ -1,9 +1,8 @@
-import 'dart:async';
 import 'dart:developer' as dev;
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import '../models/chat_models.dart';
 import '../services/api_service.dart';
+import '../services/prefs_service.dart';
 import '../widgets/avatar.dart';
 import 'chat_screen.dart';
 import 'profile_screen.dart';
@@ -30,11 +29,10 @@ class _ChatListScreenState extends State<ChatListScreen> {
     _loadPrefs();
   }
 
-  Future<void> _loadPrefs() async {
-    final prefs = await SharedPreferences.getInstance();
+  void _loadPrefs() {
     setState(() {
-      _myUid = prefs.getString('uid') ?? '';
-      _myName = prefs.getString('name') ?? '';
+      _myUid = PrefsService.uid;
+      _myName = PrefsService.name;
     });
     _loadChats();
   }
@@ -59,9 +57,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
     setState(() {
       _filteredChats = query.isEmpty
           ? _chats
-          : _chats
-              .where((c) => c.partnerName.toLowerCase().contains(query.toLowerCase()))
-              .toList();
+          : _chats.where((c) => c.partnerName.toLowerCase().contains(query.toLowerCase())).toList();
     });
   }
 
@@ -77,8 +73,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Text('شماره تلفن مخاطب را وارد کنید',
-                  style: TextStyle(fontSize: 13, color: Colors.grey)),
+              const Text('شماره تلفن مخاطب را وارد کنید', style: TextStyle(fontSize: 13, color: Colors.grey)),
               const SizedBox(height: 16),
               Row(
                 children: [
@@ -168,10 +163,9 @@ class _ChatListScreenState extends State<ChatListScreen> {
             TextButton(
               style: TextButton.styleFrom(foregroundColor: Colors.red),
               onPressed: () async {
-                final prefs = await SharedPreferences.getInstance();
-                await prefs.clear();
+                await PrefsService.logout();
                 if (mounted) {
-                  Navigator.pushReplacementNamed(context, '/');
+                  Navigator.pushNamedAndRemoveUntil(context, '/', (_) => false);
                 }
               },
               child: const Text('بله، خروج'),
@@ -203,8 +197,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
                       ),
                       onChanged: _filter,
                     )
-                  : const Text('پیام‌ها',
-                      style: TextStyle(fontWeight: FontWeight.bold)),
+                  : const Text('پیام‌ها', style: TextStyle(fontWeight: FontWeight.bold)),
               actions: [
                 IconButton(
                   icon: Icon(_searching ? Icons.close : Icons.search),
@@ -220,8 +213,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
                 ),
                 IconButton(
                   icon: const Icon(Icons.person_outline),
-                  onPressed: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => const ProfileScreen())),
+                  onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const ProfileScreen())),
                 ),
                 PopupMenuButton(
                   itemBuilder: (_) => [
@@ -250,9 +242,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
               ],
             ),
             if (_loading)
-              const SliverFillRemaining(
-                child: Center(child: CircularProgressIndicator()),
-              )
+              const SliverFillRemaining(child: Center(child: CircularProgressIndicator()))
             else if (_filteredChats.isEmpty)
               SliverFillRemaining(
                 child: Column(
@@ -268,9 +258,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
                             color: theme.colorScheme.onSurfaceVariant)),
                     const SizedBox(height: 6),
                     Text('گفتگو را شروع کنید',
-                        style: TextStyle(
-                            fontSize: 14,
-                            color: theme.colorScheme.onSurfaceVariant.withOpacity(0.6))),
+                        style: TextStyle(fontSize: 14, color: theme.colorScheme.onSurfaceVariant.withOpacity(0.6))),
                   ],
                 ),
               )
@@ -312,10 +300,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
                           Expanded(
                             child: Text(
                               chat.lastMessage.isNotEmpty ? chat.lastMessage : 'شروع گفتگو…',
-                              style: TextStyle(
-                                fontSize: 14,
-                                color: theme.colorScheme.onSurfaceVariant,
-                              ),
+                              style: TextStyle(fontSize: 14, color: theme.colorScheme.onSurfaceVariant),
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                             ),
@@ -329,11 +314,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
                               ),
                               child: Text(
                                 chat.unreadCount.toString(),
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                                style: const TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.bold),
                               ),
                             ),
                         ],

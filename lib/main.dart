@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'screens/splash_screen.dart';
 import 'screens/auth_screen.dart';
 import 'screens/chat_list_screen.dart';
+import 'services/prefs_service.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await PrefsService.init();
   runApp(const HamgapApp());
 }
 
@@ -22,7 +24,6 @@ class HamgapApp extends StatelessWidget {
           brightness: Brightness.light,
         ),
         useMaterial3: true,
-        fontFamily: 'Vazirmatn',
         scaffoldBackgroundColor: const Color(0xFFf8fafc),
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.white,
@@ -37,7 +38,6 @@ class HamgapApp extends StatelessWidget {
           brightness: Brightness.dark,
         ),
         useMaterial3: true,
-        fontFamily: 'Vazirmatn',
         scaffoldBackgroundColor: const Color(0xFF0f172a),
         appBarTheme: const AppBarTheme(
           backgroundColor: Color(0xFF1e293b),
@@ -59,28 +59,29 @@ class Gatekeeper extends StatefulWidget {
 }
 
 class _GatekeeperState extends State<Gatekeeper> {
-  bool _loading = true;
-  bool _isLoggedIn = false;
-
   @override
   void initState() {
     super.initState();
-    _checkLogin();
+    WidgetsBinding.instance.addPostFrameCallback((_) => _checkLogin());
   }
 
-  Future<void> _checkLogin() async {
-    final prefs = await SharedPreferences.getInstance();
-    final loggedIn = prefs.getBool('logged_in') ?? false;
-    setState(() {
-      _isLoggedIn = loggedIn;
-      _loading = false;
-    });
+  void _checkLogin() {
+    final loggedIn = PrefsService.isLoggedIn;
+    if (!loggedIn) {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (_) => const AuthScreen()),
+      );
+    } else {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (_) => const ChatListScreen()),
+      );
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    if (_loading) return const SplashScreen();
-    if (_isLoggedIn) return const ChatListScreen();
-    return const AuthScreen();
+    return const SplashScreen();
   }
 }
